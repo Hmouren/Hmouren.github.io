@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>双系统配置ELK与简单使用 | Hexo</title><meta name="keywords" content="Elasticsearch,ELK,Logstash,Kibana"><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="win10配置ELK7.8.0+FileBeat Elasticseatch，Logstash，Kibana，FileBeat 此处均已7.8.0为例 elastic中文社区  一、配置Elasticsearch 修改Elasticsearch配置文件elasticsearch.yml 12345678910111213141516171819#节点名称（自定义）node.name: es-tes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="双系统配置ELK与简单使用">
+<meta property="og:url" content="http://example.com/2020/12/29/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AEELK%E4%B8%8E%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="win10配置ELK7.8.0+FileBeat Elasticseatch，Logstash，Kibana，FileBeat 此处均已7.8.0为例 elastic中文社区  一、配置Elasticsearch 修改Elasticsearch配置文件elasticsearch.yml 12345678910111213141516171819#节点名称（自定义）node.name: es-tes">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2020-12-29T09:38:00.000Z">
+<meta property="article:modified_time" content="2020-12-30T08:23:56.517Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Elasticsearch">
+<meta property="article:tag" content="ELK">
+<meta property="article:tag" content="Logstash">
+<meta property="article:tag" content="Kibana">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2020/12/29/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AEELK%E4%B8%8E%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-12-30 16:23:56'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">43</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">56</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">21</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">双系统配置ELK与简单使用</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-12-29T09:38:00.000Z" title="Created 2020-12-29 17:38:00">2020-12-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2020-12-30T08:23:56.517Z" title="Updated 2020-12-30 16:23:56">2020-12-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/ELK%E6%97%A5%E5%BF%97%E8%A7%A3%E5%86%B3/">ELK日志解决</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="双系统配置ELK与简单使用"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="win10配置ELK7-8-0-FileBeat"><a href="#win10配置ELK7-8-0-FileBeat" class="headerlink" title="win10配置ELK7.8.0+FileBeat"></a>win10配置ELK7.8.0+FileBeat</h1><blockquote>
+<p>Elasticseatch，Logstash，Kibana，FileBeat</p>
+<p>此处均已7.8.0为例</p>
+<p><a target="_blank" rel="noopener" href="https://elasticsearch.cn/download/">elastic中文社区</a></p>
+</blockquote>
+<h2 id="一、配置Elasticsearch"><a href="#一、配置Elasticsearch" class="headerlink" title="一、配置Elasticsearch"></a>一、配置Elasticsearch</h2><ol>
+<li><p>修改Elasticsearch配置文件elasticsearch.yml</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#节点名称（自定义）</span></span><br><span class="line"><span class="attr">node.name:</span> <span class="string">es-test</span></span><br><span class="line"><span class="comment">#数据存储位置</span></span><br><span class="line"><span class="attr">path.data:</span> <span class="string">E:\App\elasticsearch\data</span></span><br><span class="line"><span class="comment">#日志存储位置</span></span><br><span class="line"><span class="attr">path.logs:</span> <span class="string">E:\App\elasticsearch\logs</span></span><br><span class="line"><span class="comment">#绑定访问的主机ip，0.0.0.0为不限制</span></span><br><span class="line"><span class="attr">network.host:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br><span class="line"><span class="comment">#绑定的访问端口，默认的为9200</span></span><br><span class="line"><span class="attr">http.port:</span> <span class="number">9200</span></span><br><span class="line"><span class="comment">#集群初始化的主节点，这个需要包含node.name，否则报错</span></span><br><span class="line"><span class="attr">cluster.inital_master_nodes:</span> [<span class="string">&quot;es-test&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#下面的是es-head所需的配置（它是针对elasticsearch的客户端工具）</span></span><br><span class="line"><span class="attr">http.cors.enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">http.cors.allow-origin:</span> <span class="string">&quot;*&quot;</span></span><br><span class="line"><span class="attr">node.master:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">node.data:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">xpack.ml.enabled:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>2.修改完成后直接在bin中启动elasticsearch.bat</p>
+<p>浏览器访问 127.0.0.1:9200</p>
+<h2 id="二、配置Kibana"><a href="#二、配置Kibana" class="headerlink" title="二、配置Kibana"></a>二、配置Kibana</h2><ol>
+<li><p>修改kibana.yml</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#访问端口，默认即为5601</span></span><br><span class="line"><span class="attr">server.port:</span> <span class="number">5601</span></span><br><span class="line"><span class="comment">#配置后端服务器的主机地址(eg此为192.168.1.108，或者是0.0.0.0)</span></span><br><span class="line"><span class="attr">server.host:</span> <span class="string">xxx.xxx.xxx.xxx</span></span><br><span class="line"><span class="comment">#Kibana使用Elasticsearch中的索引来存储保存的检索，可视化控件及仪表板。若无索引则会新建(默认值为.kibana)</span></span><br><span class="line"><span class="attr">kibana.index:</span> <span class="string">&quot;.kibana&quot;</span></span><br><span class="line"><span class="comment">#设置默认加载的应用，默认值为&quot;discover&quot;</span></span><br><span class="line"><span class="attr">kibana.defaultAppId:</span> <span class="string">&quot;home&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#这个重要,</span></span><br><span class="line"><span class="attr">elaticsearch.hosts:</span> [<span class="string">&quot;http://192.168.1.108:9200&quot;</span>]</span><br></pre></td></tr></table></figure></li>
+<li><p>修改完成后启动kibana.bat</p>
+<p>本地访问端口<a target="_blank" rel="noopener" href="http://192.168.1.108:5601/">http://192.168.1.108:5601/</a></p>
+</li>
+</ol>
+<h2 id="三、配置Logstash"><a href="#三、配置Logstash" class="headerlink" title="三、配置Logstash"></a>三、配置Logstash</h2><blockquote>
+<p>需要jdk环境，自行安装</p>
+<p>在这里就直接使用Elasticsearch中生成的日志文件</p>
+</blockquote>
+<ol>
+<li>配置Logstash</li>
+</ol>
+<p>Logstash配置文件采用json格式，位于</p>
+<p>/etc/logstash/config中。包括三部分：输入、输出、过滤</p>
+<ol start="2">
+<li><p>创建filetest.conf来配置输入、输出、过滤(这里就直接用logstash本身的日志测试)</p>
+</li>
+<li><p>在config下创建filetest.conf，配置如下</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">input&#123;</span></span><br><span class="line">  <span class="string">file&#123;</span></span><br><span class="line">    <span class="string">path</span> <span class="string">=&gt;</span> [<span class="string">&quot;E:/App/logstash/logs/logstash-plain.log&quot;</span>]</span><br><span class="line">    <span class="string">type</span> <span class="string">=&gt;</span> <span class="string">&quot;system-log&quot;</span></span><br><span class="line">    <span class="string">start_position</span> <span class="string">=&gt;</span> <span class="string">&quot;beginning&quot;</span></span><br><span class="line">  <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"> </span><br><span class="line"><span class="string">filter&#123;</span></span><br><span class="line"> </span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"> </span><br><span class="line"><span class="string">output&#123;</span></span><br><span class="line">  <span class="string">elasticsearch&#123;</span></span><br><span class="line">    <span class="string">hosts</span> <span class="string">=&gt;</span> [<span class="string">&quot;192.168.1.108:9200&quot;</span>]</span><br><span class="line">    <span class="string">index</span> <span class="string">=&gt;</span> <span class="string">&quot;system-log-<span class="template-variable">%&#123;+YYYY.MM&#125;</span>&quot;</span></span><br><span class="line">  <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>运行logstash即可，可通过es-head查看</p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230162329.png" alt="image-20201229172739922"></p>
+<p>或者是kibana可视化</p>
+<h1 id="Centos7-5配置ELK7-6-2"><a href="#Centos7-5配置ELK7-6-2" class="headerlink" title="Centos7.5配置ELK7.6.2"></a>Centos7.5配置ELK7.6.2</h1><h2 id="一、配置Elasticsearch-1"><a href="#一、配置Elasticsearch-1" class="headerlink" title="一、配置Elasticsearch"></a>一、配置Elasticsearch</h2><h2 id="二、配置Kibana-1"><a href="#二、配置Kibana-1" class="headerlink" title="二、配置Kibana"></a>二、配置Kibana</h2><p>上面两个配置直接看这个链接<a target="_blank" rel="noopener" href="https://hmoumou.xyz/2020/09/16/linux-centos7-5-an-zhuang-7-6-2elasticsearch-deng/">配置</a></p>
+<h2 id="三、配置es-head"><a href="#三、配置es-head" class="headerlink" title="三、配置es-head"></a>三、配置es-head</h2><ol>
+<li>修改elasticsearch.yml增加参数</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#增加es-head所需参数</span></span><br><span class="line"><span class="attr">http.cors.enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">http.cors.allow-origin:</span> <span class="string">&quot;*&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>下载head插件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/mobz/elasticsearch-head/archive/master.zip</span><br></pre></td></tr></table></figure></li>
+<li><p>安装node</p>
+</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://npm.taobao.org/mirrors/node/latest-v4.x/node-v4.4.7-linux-x64.tar.gz</span><br><span class="line">tar -zxvf node-v4.4.7-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>4.修改环境变量profile</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export NODE_HOME=/opt/node-v4.4.7-linux-x64</span><br><span class="line">export PATH=$PATH:$NODE_HOME/bin</span><br><span class="line">export NODE_PATH=$NODE_HOME/lib/node_modules</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>安装grunt</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd elasticsearch-head-master</span><br><span class="line">npm install -g grunt-cli</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">version</span></span><br><span class="line">grunt -version</span><br></pre></td></tr></table></figure>
+
+
+
+<p>6.修改head插件源码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim elasticsearch-head-master/Gruntfile.js</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230162330.png" alt="image-20201229141331624"></p>
+<p>7.修改链接地址</p>
+<blockquote>
+<p>elasticsearch-head-master/_site/app.js </p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230162331.png" alt="image-20201229141420741"></p>
+<ol start="8">
+<li>下载运行head必要的文件（放置在文件夹/tmp下）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;tmp</span><br><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;Medium&#x2F;phantomjs&#x2F;releases&#x2F;download&#x2F;v2.1.1&#x2F;phantomjs-2.1.1-linux-x86_64.tar.bz2</span><br><span class="line">yum -y install bzip2</span><br></pre></td></tr></table></figure>
+
+<p>　　</p>
+<p> 　9. 运行head</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;opt&#x2F;elasticsearch-head-master</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p> 　10. 后台启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt server &amp;</span><br></pre></td></tr></table></figure>
+
+<p>验证9100端口</p>
+<h2 id="四、配置Logstash"><a href="#四、配置Logstash" class="headerlink" title="四、配置Logstash"></a>四、配置Logstash</h2><ol>
+<li>解压就可以了，然后先运行一下简单的（这是标准输入输出，页面输入什么就输出什么，以json格式输出）</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost leyou]# ./logstash-7.6.2/bin/logstash -e &#x27;input &#123; stdin&#123;&#125; &#125; output &#123; stdout &#123;&#125; &#125;&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="2">
+<li><p>输出到ES</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./logstash-7.6.2/bin/logstash -e &#x27;input &#123; stdin&#123;&#125; &#125; output &#123; elasticsearch &#123; hosts =&gt; [&quot;192.168.77.131:9200&quot;] index =&gt; &quot;logstash-%&#123;+YYYY.MM.dd&#125;&quot; &#125; &#125;&#x27;</span><br><span class="line">   </span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230162332.png" alt="image-20201229153423353"></p>
+<ol start="3">
+<li>写一个x.conf收集系统日志</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">vim /home/leyou/logstash-7.6.2/config/file.conf</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 配置如下</span></span><br><span class="line">input&#123;</span><br><span class="line">  file&#123;</span><br><span class="line">    path =&gt; [&quot;/var/log/messages&quot;]</span><br><span class="line">    type =&gt; &quot;system-log&quot;</span><br><span class="line">    start_position =&gt; &quot;beginning&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">filter&#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">output&#123;</span><br><span class="line">  elasticsearch&#123;</span><br><span class="line">    hosts =&gt; [&quot;192.168.77.131:9200&quot;]</span><br><span class="line">    index =&gt; &quot;system-log-%&#123;+YYYY.MM&#125;&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>启动防止在后台</p>
+<p><code>../bin/logstash -f ./file.conf &amp;</code></p>
+<p>当文件/var/log/messages有日志写入时就会写es，在head可查</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230162333.png" alt="image-20201229154715937"></p>
+<p>如果没有更新，可以手动添加一条</p>
+<blockquote>
+<p>在kibana 中显示</p>
+</blockquote>
+<p>1.在discovery中添加，然后创建图表即可</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230162334.png" alt="image-20201229155235530"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2020/12/29/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AEELK%E4%B8%8E%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">http://example.com/2020/12/29/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AEELK%E4%B8%8E%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Elasticsearch/">Elasticsearch</a><a class="post-meta__tags" href="/tags/ELK/">ELK</a><a class="post-meta__tags" href="/tags/Logstash/">Logstash</a><a class="post-meta__tags" href="/tags/Kibana/">Kibana</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/12/30/Typora-PicGoApp-%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Typora+PicGoApp+腾讯云实现图片上传</div></div></a></div><div class="next-post pull-right"><a href="/2020/09/16/Linux-Centos7-5%E5%AE%89%E8%A3%857-6-2elasticsearch%E7%AD%89/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Linux Centos7.5安装7.6.2elasticsearch等</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2020/09/16/Linux-Centos7-5安装7-6-2elasticsearch等/" title="Linux Centos7.5安装7.6.2elasticsearch等"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-16</div><div class="title">Linux Centos7.5安装7.6.2elasticsearch等</div></div></a></div><div><a href="/2020/08/24/Linux-Centos7-5安装使用Elasticsearch和IK分词器/" title="Linux Centos7.5安装使用Elasticsearch和IK分词器"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-24</div><div class="title">Linux Centos7.5安装使用Elasticsearch和IK分词器</div></div></a></div><div><a href="/2020/12/31/双系统配置Elastic-Beats/" title="双系统配置Elastic Beats"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-31</div><div class="title">双系统配置Elastic Beats</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">43</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">56</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">21</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#win10%E9%85%8D%E7%BD%AEELK7-8-0-FileBeat"><span class="toc-number">1.</span> <span class="toc-text">win10配置ELK7.8.0+FileBeat</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%85%8D%E7%BD%AEElasticsearch"><span class="toc-number">1.1.</span> <span class="toc-text">一、配置Elasticsearch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%85%8D%E7%BD%AEKibana"><span class="toc-number">1.2.</span> <span class="toc-text">二、配置Kibana</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E9%85%8D%E7%BD%AELogstash"><span class="toc-number">1.3.</span> <span class="toc-text">三、配置Logstash</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Centos7-5%E9%85%8D%E7%BD%AEELK7-6-2"><span class="toc-number">2.</span> <span class="toc-text">Centos7.5配置ELK7.6.2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%85%8D%E7%BD%AEElasticsearch-1"><span class="toc-number">2.1.</span> <span class="toc-text">一、配置Elasticsearch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%85%8D%E7%BD%AEKibana-1"><span class="toc-number">2.2.</span> <span class="toc-text">二、配置Kibana</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E9%85%8D%E7%BD%AEes-head"><span class="toc-number">2.3.</span> <span class="toc-text">三、配置es-head</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%85%8D%E7%BD%AELogstash"><span class="toc-number">2.4.</span> <span class="toc-text">四、配置Logstash</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/05/02/hello-world/" title="Hello World"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2021/05/02/hello-world/" title="Hello World">Hello World</a><time datetime="2021-05-02T10:57:43.062Z" title="Created 2021-05-02 18:57:43">2021-05-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/05/02/PC%E7%AB%AF%E5%BE%AE%E4%BF%A1%E9%98%B2%E6%92%A4%E5%9B%9E/" title="PC端微信防撤![10](C:/Users/Hmouren/Desktop/10.png)回">PC端微信防撤![10](C:/Users/Hmouren/Desktop/10.png)回</a><time datetime="2021-05-02T03:03:43.000Z" title="Created 2021-05-02 11:03:43">2021-05-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/05/02/EasyPOI%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3/" title="EasyPOI官方文档">EasyPOI官方文档</a><time datetime="2021-05-02T01:55:09.000Z" title="Created 2021-05-02 09:55:09">2021-05-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/04/15/Mybatis%E5%8A%A8%E6%80%81SQL%E5%AD%A6%E4%B9%A0/" title="Mybatis动态SQL学习">Mybatis动态SQL学习</a><time datetime="2021-04-15T02:26:25.000Z" title="Created 2021-04-15 10:26:25">2021-04-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/04/07/%E4%B8%8A%E4%BC%A08K%E5%9B%BE%E7%89%87%E5%AF%BC%E8%87%B4%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA/" title="上传8K图片导致内存溢出">上传8K图片导致内存溢出</a><time datetime="2021-04-07T09:23:27.000Z" title="Created 2021-04-07 17:23:27">2021-04-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
