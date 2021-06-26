@@ -6,7 +6,7 @@
   <link href="https://blog.hmoumou.xyz/atom.xml" rel="self"/>
   
   <link href="https://blog.hmoumou.xyz/"/>
-  <updated>2021-06-09T05:39:47.131Z</updated>
+  <updated>2021-06-26T05:36:00.056Z</updated>
   <id>https://blog.hmoumou.xyz/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blog.hmoumou.xyz/2021/06/09/crm-xiang-mu-shi-zhan-zhi-neng-xiao-shou-guan-li-xi-tong-nian-an/"/>
     <id>https://blog.hmoumou.xyz/2021/06/09/crm-xiang-mu-shi-zhan-zhi-neng-xiao-shou-guan-li-xi-tong-nian-an/</id>
     <published>2021-06-09T04:49:00.000Z</published>
-    <updated>2021-06-09T05:39:47.131Z</updated>
+    <updated>2021-06-26T05:36:00.056Z</updated>
     
     
       
@@ -283,32 +283,6 @@
   </entry>
   
   <entry>
-    <title>乐字节CRM项目学习实战</title>
-    <link href="https://blog.hmoumou.xyz/2021/04/06/le-zi-jie-crm-xiang-mu-xue-xi-shi-zhan/"/>
-    <id>https://blog.hmoumou.xyz/2021/04/06/le-zi-jie-crm-xiang-mu-xue-xi-shi-zhan/</id>
-    <published>2021-04-06T13:55:57.000Z</published>
-    <updated>2021-06-26T05:33:29.542Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;乐字节CRM项目学习实战&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2021/04/06/le-zi-jie-crm-xiang-mu-xue-xi-shi-zhan/image-20210406215905437.png&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="CRM" scheme="https://blog.hmoumou.xyz/tags/CRM/"/>
-    
-    <category term="项目实战" scheme="https://blog.hmoumou.xyz/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/"/>
-    
-  </entry>
-  
-  <entry>
     <title>利用Apache-POI操作word模板</title>
     <link href="https://blog.hmoumou.xyz/2021/04/02/li-yong-apache-poi-cao-zuo-word-mo-ban/"/>
     <id>https://blog.hmoumou.xyz/2021/04/02/li-yong-apache-poi-cao-zuo-word-mo-ban/</id>
@@ -532,6 +506,33 @@
     
     
     <category term="SpringSecurity" scheme="https://blog.hmoumou.xyz/tags/SpringSecurity/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis学习与使用</title>
+    <link href="https://blog.hmoumou.xyz/2021/03/10/redis-xue-xi-yu-shi-yong/"/>
+    <id>https://blog.hmoumou.xyz/2021/03/10/redis-xue-xi-yu-shi-yong/</id>
+    <published>2021-03-10T09:32:52.000Z</published>
+    <updated>2021-03-12T13:38:36.074Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;Redis学习与使用&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;win10安装&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="redis" scheme="https://blog.hmoumou.xyz/tags/redis/"/>
     
   </entry>
   

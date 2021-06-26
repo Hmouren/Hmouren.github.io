@@ -8,7 +8,7 @@
       <link href="2021/06/09/crm-xiang-mu-shi-zhan-zhi-neng-xiao-shou-guan-li-xi-tong-nian-an/"/>
       <url>2021/06/09/crm-xiang-mu-shi-zhan-zhi-neng-xiao-shou-guan-li-xi-tong-nian-an/</url>
       
-        <content type="html"><![CDATA[<p><strong>CRM项目实战-智能销售管理系统（念安）</strong></p><p>系统主要功能模块图：</p><p><img src="CRM%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98-%E6%99%BA%E8%83%BD%E9%94%80%E5%94%AE%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%BF%B5%E5%AE%89%EF%BC%89/image-20210609125110008.png" alt="image-20210609125110008"></p><h1 id="01-CRM用户管理"><a href="#01-CRM用户管理" class="headerlink" title="01-CRM用户管理"></a>01-CRM用户管理</h1><blockquote><p>主要解决问题如下：</p><ul><li>CRM系统概念：基本概念、分类、企业项目开发流程</li><li>CRM系统模块划分</li><li>数据库表结构设计</li><li>项目环境搭建与测试</li><li>功能：（登录、退出、密码修改；全局异常同意处理；非法请求拦截；记住我）</li></ul></blockquote>]]></content>
+        <content type="html"><![CDATA[<p><strong>CRM项目实战-智能销售管理系统（念安）</strong></p><p>系统主要功能模块图：</p><p><img src="/2021/06/09/crm-xiang-mu-shi-zhan-zhi-neng-xiao-shou-guan-li-xi-tong-nian-an/image-20210609125110008.png" alt="image-20210609125110008"></p><h1 id="01-CRM用户管理"><a href="#01-CRM用户管理" class="headerlink" title="01-CRM用户管理"></a>01-CRM用户管理</h1><blockquote><p>主要解决问题如下：</p><ul><li>CRM系统概念：基本概念、分类、企业项目开发流程</li><li>CRM系统模块划分</li><li>数据库表结构设计</li><li>项目环境搭建与测试</li><li>功能：（登录、退出、密码修改；全局异常同意处理；非法请求拦截；记住我）</li></ul></blockquote><p><img src="/2021/06/09/crm-xiang-mu-shi-zhan-zhi-neng-xiao-shou-guan-li-xi-tong-nian-an/image-20210626133558965.png" alt="image-20210626133558965"></p>]]></content>
       
       
       <categories>
@@ -206,27 +206,6 @@
             <tag> java </tag>
             
             <tag> java图片保存 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>乐字节CRM项目学习实战</title>
-      <link href="2021/04/06/le-zi-jie-crm-xiang-mu-xue-xi-shi-zhan/"/>
-      <url>2021/04/06/le-zi-jie-crm-xiang-mu-xue-xi-shi-zhan/</url>
-      
-        <content type="html"><![CDATA[<p><strong>乐字节CRM项目学习实战</strong></p><p><img src="/2021/04/06/le-zi-jie-crm-xiang-mu-xue-xi-shi-zhan/image-20210406215905437.png" alt="image-20210406215905437"></p><p>222</p><p><img src="/2021/04/06/le-zi-jie-crm-xiang-mu-xue-xi-shi-zhan/image-20210626133324225.png" alt="image-20210626133324225"></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> CRM </tag>
-            
-            <tag> 项目实战 </tag>
             
         </tags>
       
