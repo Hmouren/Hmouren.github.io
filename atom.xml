@@ -6,7 +6,7 @@
   <link href="https://blog.hmoumou.xyz/atom.xml" rel="self"/>
   
   <link href="https://blog.hmoumou.xyz/"/>
-  <updated>2020-12-28T07:37:20.101Z</updated>
+  <updated>2021-06-09T05:39:47.131Z</updated>
   <id>https://blog.hmoumou.xyz/</id>
   
   <author>
@@ -15,6 +15,139 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CRM项目实战-智能销售管理系统（念安）</title>
+    <link href="https://blog.hmoumou.xyz/2021/06/09/crm-xiang-mu-shi-zhan-zhi-neng-xiao-shou-guan-li-xi-tong-nian-an/"/>
+    <id>https://blog.hmoumou.xyz/2021/06/09/crm-xiang-mu-shi-zhan-zhi-neng-xiao-shou-guan-li-xi-tong-nian-an/</id>
+    <published>2021-06-09T04:49:00.000Z</published>
+    <updated>2021-06-09T05:39:47.131Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;CRM项目实战-智能销售管理系统（念安）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;系统主要功能模块图：&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="项目实战" scheme="https://blog.hmoumou.xyz/categories/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/"/>
+    
+    
+    <category term="CRM" scheme="https://blog.hmoumou.xyz/tags/CRM/"/>
+    
+    <category term="项目实战" scheme="https://blog.hmoumou.xyz/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/"/>
+    
+    <category term="管理系统" scheme="https://blog.hmoumou.xyz/tags/%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ajax实现动态列表li</title>
+    <link href="https://blog.hmoumou.xyz/2021/06/07/ajax-shi-xian-dong-tai-lie-biao-li/"/>
+    <id>https://blog.hmoumou.xyz/2021/06/07/ajax-shi-xian-dong-tai-lie-biao-li/</id>
+    <published>2021-06-07T09:37:45.000Z</published>
+    <updated>2021-06-07T10:38:10.316Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;Ajax实现动态列表li&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;html：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-html&quot; data-language=&quot;html&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    
+    <category term="ajax" scheme="https://blog.hmoumou.xyz/tags/ajax/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ajax实现动态下拉框</title>
+    <link href="https://blog.hmoumou.xyz/2021/06/07/ajax-shi-xian-dong-tai-xia-la-kuang/"/>
+    <id>https://blog.hmoumou.xyz/2021/06/07/ajax-shi-xian-dong-tai-xia-la-kuang/</id>
+    <published>2021-06-07T07:12:16.000Z</published>
+    <updated>2021-06-07T07:53:46.410Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;Ajax实现动态下拉框&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原先为静态数据，不利于后期维护，原代码如下：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-html&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="ajax" scheme="https://blog.hmoumou.xyz/tags/ajax/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决axios无法传递data参数问题</title>
+    <link href="https://blog.hmoumou.xyz/2021/06/07/jie-jue-axios-wu-fa-chuan-di-data-can-shu-wen-ti/"/>
+    <id>https://blog.hmoumou.xyz/2021/06/07/jie-jue-axios-wu-fa-chuan-di-data-can-shu-wen-ti/</id>
+    <published>2021-06-07T06:28:48.000Z</published>
+    <updated>2021-06-07T06:54:12.731Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;解决axios无法传递data参数问题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;首先出现这种问题的原因在于&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;默认情况下发送axios请求时请求头中的内容类型为：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>四种请求方式</title>
+    <link href="https://blog.hmoumou.xyz/2021/06/07/si-chong-qing-qiu-fang-shi/"/>
+    <id>https://blog.hmoumou.xyz/2021/06/07/si-chong-qing-qiu-fang-shi/</id>
+    <published>2021-06-07T05:36:01.000Z</published>
+    <updated>2021-06-07T05:45:44.294Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;请求方式大致可以分为四类&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Get请求：从数据库中&lt;strong&gt;获取&lt;/strong&gt;数据，不涉及数据库的修改操作；&lt;/li&gt;
+&lt;li&gt;Post请求：涉及数据库数据&lt;strong&gt;增加&lt;/strong&gt;操作；&lt;/l</summary>
+        
+      
+    
+    
+    
+    
+    <category term="请求方式" scheme="https://blog.hmoumou.xyz/tags/%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -399,146 +532,6 @@
     
     
     <category term="SpringSecurity" scheme="https://blog.hmoumou.xyz/tags/SpringSecurity/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Redis学习与使用</title>
-    <link href="https://blog.hmoumou.xyz/2021/03/10/redis-xue-xi-yu-shi-yong/"/>
-    <id>https://blog.hmoumou.xyz/2021/03/10/redis-xue-xi-yu-shi-yong/</id>
-    <published>2021-03-10T09:32:52.000Z</published>
-    <updated>2021-03-12T13:38:36.074Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Redis学习与使用&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;win10安装&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    
-    <category term="redis" scheme="https://blog.hmoumou.xyz/tags/redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>centos7.5安装Mysql8，并本地连接</title>
-    <link href="https://blog.hmoumou.xyz/2021/03/10/centos7-5-an-zhuang-mysql8-bing-ben-di-lian-jie/"/>
-    <id>https://blog.hmoumou.xyz/2021/03/10/centos7-5-an-zhuang-mysql8-bing-ben-di-lian-jie/</id>
-    <published>2021-03-10T08:48:14.000Z</published>
-    <updated>2021-03-22T07:35:19.049Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;安装centos7-5&quot;&gt;&lt;a href=&quot;#安装centos7-5&quot; class=&quot;headerlink&quot; title=&quot;安装centos7.5&quot;&gt;&lt;/a&gt;安装centos7.5&lt;/h1&gt;&lt;h1 id=&quot;安装MySQL8-0&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="配置" scheme="https://blog.hmoumou.xyz/categories/%E9%85%8D%E7%BD%AE/"/>
-    
-    
-    <category term="centos7.5" scheme="https://blog.hmoumou.xyz/tags/centos7-5/"/>
-    
-    <category term="mysql" scheme="https://blog.hmoumou.xyz/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vesper脚手架搭建</title>
-    <link href="https://blog.hmoumou.xyz/2021/02/25/vesper-jiao-shou-jia-da-jian/"/>
-    <id>https://blog.hmoumou.xyz/2021/02/25/vesper-jiao-shou-jia-da-jian/</id>
-    <published>2021-02-25T01:40:21.000Z</published>
-    <updated>2021-03-12T13:39:48.689Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Vesper脚手架搭建&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;前期准备&quot;&gt;&lt;a href=&quot;#前期准备&quot; class=&quot;headerlink&quot; title=&quot;前期准备&quot;&gt;&lt;/a&gt;前期准备&lt;/h1&gt;&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="脚手架" scheme="https://blog.hmoumou.xyz/categories/%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Win服务器安装SQL Server与IIS服务及FTP开启</title>
-    <link href="https://blog.hmoumou.xyz/2021/02/24/win-fu-wu-qi-an-zhuang-sql-server-yu-iis-fu-wu-ji-ftp-kai-qi/"/>
-    <id>https://blog.hmoumou.xyz/2021/02/24/win-fu-wu-qi-an-zhuang-sql-server-yu-iis-fu-wu-ji-ftp-kai-qi/</id>
-    <published>2021-02-24T01:02:01.000Z</published>
-    <updated>2021-04-06T01:21:43.462Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Win服务器安装SQL Server与IIS服务及FTP开启&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;SQL-server服务卸载-各版本均可&quot;&gt;&lt;a href=&quot;#SQL-server服务卸载-各版本均可&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="win服务器" scheme="https://blog.hmoumou.xyz/categories/win%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-    
-    <category term="SQL Server" scheme="https://blog.hmoumou.xyz/tags/SQL-Server/"/>
-    
-    <category term="服务器" scheme="https://blog.hmoumou.xyz/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-    <category term="IIS服务" scheme="https://blog.hmoumou.xyz/tags/IIS%E6%9C%8D%E5%8A%A1/"/>
-    
-    <category term="FTP" scheme="https://blog.hmoumou.xyz/tags/FTP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot项目双模块项目打包</title>
-    <link href="https://blog.hmoumou.xyz/2021/02/19/springboot-da-bao-duo-mo-kuai-xiang-mu/"/>
-    <id>https://blog.hmoumou.xyz/2021/02/19/springboot-da-bao-duo-mo-kuai-xiang-mu/</id>
-    <published>2021-02-19T08:55:50.000Z</published>
-    <updated>2021-02-19T13:09:20.803Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;SpringBoot+Mybatis配置多数据源&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;SpringBoot项目双模块项目打包&quot;&gt;&lt;a href=&quot;#SpringBoot项目双模块项目打包&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="SpringBoot" scheme="https://blog.hmoumou.xyz/categories/SpringBoot/"/>
-    
-    
-    <category term="SpringBoot" scheme="https://blog.hmoumou.xyz/tags/SpringBoot/"/>
-    
-    <category term="war" scheme="https://blog.hmoumou.xyz/tags/war/"/>
-    
-    <category term="打包" scheme="https://blog.hmoumou.xyz/tags/%E6%89%93%E5%8C%85/"/>
     
   </entry>
   
