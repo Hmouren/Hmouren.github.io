@@ -427,7 +427,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    171
+                    165
                 </div>
                 
 
@@ -458,9 +458,9 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p><strong>上传8K图片报错，显示堆内存溢出</strong></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lk519186921/article/details/7076105?utm_medium=distribute.pc_relevant.none-task-blog-2~default~OPENSEARCH~default-11.control&dist_request_id=&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~OPENSEARCH~default-11.control">参考文章</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lk519186921/article/details/7076105?utm_medium=distribute.pc_relevant.none-task-blog-2~default~OPENSEARCH~default-11.control&amp;dist_request_id=&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~OPENSEARCH~default-11.control">参考文章</a></p>
 <p><code>Handler dispatch failed; nested exception is java.lang.OutOfMemoryError: Java heap space</code></p>
-<p><img src="%E4%B8%8A%E4%BC%A08K%E5%9B%BE%E7%89%87%E5%AF%BC%E8%87%B4%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA/image-20210407172525033.png" alt="image-20210407172525033"></p>
+<p><img src="/2021/04/07/shang-chuan-8k-tu-pian-dao-zhi-nei-cun-yi-chu/image-20210407172525033.png" alt="image-20210407172525033"></p>
 <blockquote>
 <p>问题产生的原因是服务器端tomcat的内存不足，将服务器tomcat的内存扩充即可</p>
 <p>溢出错误有三种</p>
@@ -469,10 +469,14 @@
 </ol>
 </blockquote>
 <h1 id="win版本"><a href="#win版本" class="headerlink" title="win版本"></a>win版本</h1><h2 id="堆溢出解决"><a href="#堆溢出解决" class="headerlink" title="堆溢出解决"></a>堆溢出解决</h2><h3 id="解压版的tomcat"><a href="#解压版的tomcat" class="headerlink" title="解压版的tomcat"></a>解压版的tomcat</h3><p>找到tomcat\bin中的<code>catalina.bat</code>文件，并设置内存大小<code>set JAVA_OPTS=-Xms1024m -Xmx=1024m</code>  xms和xmx一般配置为一致较好</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rem ----- Execute The Requested Command ---------------------------------------</span><br><span class="line">set JAVA_OPTS&#x3D;-Xms512m -Xmx512m</span><br><span class="line">echo Using CATALINA_BASE:   &quot;%CATALINA_BASE%&quot;</span><br><span class="line">echo Using CATALINA_HOME:   &quot;%CATALINA_HOME%&quot;</span><br><span class="line">echo Using CATALINA_TMPDIR: &quot;%CATALINA_TMPDIR%&quot;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">rem ----- Execute The Requested Command ---------------------------------------
+set JAVA_OPTS=-Xms512m -Xmx512m
+echo Using CATALINA_BASE:   "%CATALINA_BASE%"
+echo Using CATALINA_HOME:   "%CATALINA_HOME%"
+echo Using CATALINA_TMPDIR: "%CATALINA_TMPDIR%"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="安装版tomcat"><a href="#安装版tomcat" class="headerlink" title="安装版tomcat"></a>安装版tomcat</h3><p>双击打开tomcat6w.exe，在java选项卡页面中分别设置<code>Initial memory pool</code>和<code>Maximun menory pool</code></p>
-<p><img src="%E4%B8%8A%E4%BC%A08K%E5%9B%BE%E7%89%87%E5%AF%BC%E8%87%B4%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA/image-20210407173540071.png" alt="image-20210407173540071"></p>
+<p><img src="/2021/04/07/shang-chuan-8k-tu-pian-dao-zhi-nei-cun-yi-chu/image-20210407173540071.png" alt="image-20210407173540071"></p>
 
                 
             </div>
@@ -1064,7 +1068,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">71.3k</span>&nbsp;字
+                class="white-color">66.3k</span>&nbsp;字
             
             
             

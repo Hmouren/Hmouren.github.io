@@ -423,7 +423,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    367
+                    361
                 </div>
                 
 
@@ -459,13 +459,25 @@
 </blockquote>
 <p>首先通过<code>ip addr</code>查看你的网卡名称</p>
 <p>修改网卡配置文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysconfig/network-scripts/ifcfg-ens32</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim /etc/sysconfig/network-scripts/ifcfg-ens32<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>如果采用动态获取IP地址修改如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BOOTPROTO&#x3D;&quot;dhcp&quot;</span><br><span class="line">ONBOOT&#x3D;&quot;yes&quot;</span><br><span class="line">#配置完成后需要重启网络服务</span><br><span class="line">systemctl restart network</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">BOOTPROTO="dhcp"
+ONBOOT="yes"
+#配置完成后需要重启网络服务
+systemctl restart network<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>不过动态IP有时会自己改变IP地址,不方便使用</p>
-<h1 id="2-配置静态IP地址"><a href="#2-配置静态IP地址" class="headerlink" title="2.配置静态IP地址"></a>2.配置静态IP地址</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">首先一样还是修改如下</span></span><br><span class="line">vim /etc/sysconfig/network-scripts/ifcfg-ens32</span><br><span class="line"><span class="meta">#</span><span class="bash">然后</span></span><br><span class="line">BOOTPROTO=&quot;static&quot;</span><br><span class="line"><span class="meta">#</span><span class="bash">并且加上如下配置</span></span><br><span class="line">IPADDR=192.168.1.160    #IP地址</span><br><span class="line">NETMASK=255.255.255.0	#子网掩码</span><br><span class="line">GATEWAY=192.168.1.1		#默认网关</span><br><span class="line">DNS1=119.29.29.29		#DNS服务器</span><br><span class="line">DNS2=8.8.8.8</span><br></pre></td></tr></table></figure>
+<h1 id="2-配置静态IP地址"><a href="#2-配置静态IP地址" class="headerlink" title="2.配置静态IP地址"></a>2.配置静态IP地址</h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#首先一样还是修改如下
+vim /etc/sysconfig/network-scripts/ifcfg-ens32
+#然后
+BOOTPROTO="static"
+#并且加上如下配置
+IPADDR=192.168.1.160    #IP地址
+NETMASK=255.255.255.0	#子网掩码
+GATEWAY=192.168.1.1		#默认网关
+DNS1=119.29.29.29		#DNS服务器
+DNS2=8.8.8.8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>重点讲一下GATEWAY默认网关的配置</strong></p>
 <blockquote>
@@ -478,10 +490,10 @@
 <p>查看网关并与其一致</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230111616.png" alt="image-20200827120915797"></p>
 <p>全部配置完毕后重启网络服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart network</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">systemctl restart network<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>然后可以ping一下百度,测试联网</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping www.baidu.com</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">ping www.baidu.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230111617.png" alt="image-20200827121100583"></p>
 <p>成功</p>
@@ -1092,7 +1104,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">71.3k</span>&nbsp;字
+                class="white-color">66.3k</span>&nbsp;字
             
             
             

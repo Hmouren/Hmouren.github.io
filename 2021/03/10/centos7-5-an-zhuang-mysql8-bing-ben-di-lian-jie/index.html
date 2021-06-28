@@ -427,7 +427,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    568
+                    539
                 </div>
                 
 
@@ -457,13 +457,56 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="安装centos7-5"><a href="#安装centos7-5" class="headerlink" title="安装centos7.5"></a>安装centos7.5</h1><h1 id="安装MySQL8-0"><a href="#安装MySQL8-0" class="headerlink" title="安装MySQL8.0"></a>安装MySQL8.0</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1.下载并添加存储库</span></span><br><span class="line">sudo yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</span><br><span class="line">（如果是在centos8中安装</span><br><span class="line">sudo yum localinstall https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm</span><br><span class="line">）</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2. 安装MySQL8.0包</span></span><br><span class="line">（如果是在centos8中安装先执行`yum module disable mysql`）</span><br><span class="line">yum install mysql-community-server</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3. 重载所有修改过的配置文件</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 4.开启服务</span></span><br><span class="line">systemctl start mysqld</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 5.开机自启</span></span><br><span class="line">systemctl enable mysqld</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 6.获取初始密码</span></span><br><span class="line">grep &#x27;password&#x27; /var/log/mysqld.log</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 7.登录mysql</span></span><br><span class="line">mysql -uroot -p</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 8.设置密码强度为低级</span></span><br><span class="line">set global validate_password.policy=0;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 9.设置密码长度</span></span><br><span class="line">set global validate_password.length=4;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 10.修改本地密码</span></span><br><span class="line">alter user &#x27;root&#x27;@&#x27;localhost&#x27; identified by &#x27;123456&#x27;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 11.退出并用新密码登录</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 12.创建用户</span></span><br><span class="line">create user &#x27;root&#x27;@&#x27;%&#x27; identified by &#x27;123456&#x27;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 13.允许远程连接</span></span><br><span class="line">grant all privileges on *.* to &#x27;root&#x27;@&#x27;%&#x27; with grant option;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 14.刷新权限</span></span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+                <h1 id="安装centos7-5"><a href="#安装centos7-5" class="headerlink" title="安装centos7.5"></a>安装centos7.5</h1><h1 id="安装MySQL8-0"><a href="#安装MySQL8-0" class="headerlink" title="安装MySQL8.0"></a>安装MySQL8.0</h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 1.下载并添加存储库</span>
+<span class="token function">sudo</span> yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
+（如果是在centos8中安装
+<span class="token function">sudo</span> yum localinstall https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm
+）
+
+<span class="token comment"># 2. 安装MySQL8.0包</span>
+（如果是在centos8中安装先执行<span class="token variable"><span class="token variable">`</span>yum module disable mysql<span class="token variable">`</span></span>）
+yum <span class="token function">install</span> mysql-community-server
+
+<span class="token comment"># 3. 重载所有修改过的配置文件</span>
+systemctl daemon-reload
+
+<span class="token comment"># 4.开启服务</span>
+systemctl start mysqld
+
+<span class="token comment"># 5.开机自启</span>
+systemctl <span class="token builtin class-name">enable</span> mysqld
+
+<span class="token comment"># 6.获取初始密码</span>
+<span class="token function">grep</span> <span class="token string">'password'</span> /var/log/mysqld.log
+
+<span class="token comment"># 7.登录mysql</span>
+mysql -uroot -p
+
+<span class="token comment"># 8.设置密码强度为低级</span>
+<span class="token builtin class-name">set</span> global validate_password.policy<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token comment"># 9.设置密码长度</span>
+<span class="token builtin class-name">set</span> global validate_password.length<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">;</span>
+
+<span class="token comment"># 10.修改本地密码</span>
+alter user <span class="token string">'root'</span>@<span class="token string">'localhost'</span> identified by <span class="token string">'123456'</span><span class="token punctuation">;</span>
+
+<span class="token comment"># 11.退出并用新密码登录</span>
+
+<span class="token comment"># 12.创建用户</span>
+create user <span class="token string">'root'</span>@<span class="token string">'%'</span> identified by <span class="token string">'123456'</span><span class="token punctuation">;</span>
+
+<span class="token comment"># 13.允许远程连接</span>
+grant all privileges on *.* to <span class="token string">'root'</span>@<span class="token string">'%'</span> with grant option<span class="token punctuation">;</span>
+
+<span class="token comment"># 14.刷新权限</span>
+flush privileges<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="本地连接虚拟机中的MySQL8-0"><a href="#本地连接虚拟机中的MySQL8-0" class="headerlink" title="本地连接虚拟机中的MySQL8.0"></a>本地连接虚拟机中的MySQL8.0</h1><blockquote>
 <p>如果配置到上面直接navicate连接的话会报错，因为8.0和5.x的密码策略不同</p>
 </blockquote>
-<p><img src="centos7-5%E5%AE%89%E8%A3%85Mysql8%EF%BC%8C%E5%B9%B6%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5/image-20210310170043956.png" alt="image-20210310170043956"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">上网搜索解决方案，网上说出现这种情况的原因是：mysql8 之前的版本中加密规则是mysql_native_password,而在mysql8之后,加密规则是caching_sha2_password, </span><br></pre></td></tr></table></figure>
+<p><img src="/2021/03/10/centos7-5-an-zhuang-mysql8-bing-ben-di-lian-jie/image-20210310170043956.png" alt="image-20210310170043956"></p>
+<pre class="line-numbers language-none"><code class="language-none">上网搜索解决方案，网上说出现这种情况的原因是：mysql8 之前的版本中加密规则是mysql_native_password,而在mysql8之后,加密规则是caching_sha2_password, <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
@@ -473,14 +516,47 @@
 <li>修改mysql密码策略；</li>
 </ol>
 <p>法二解决：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">1.登录mysql</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">2.</span></span><br><span class="line">use mysql;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">3.修改加密规则</span></span><br><span class="line">alter user &#x27;root&#x27;@&#x27;%&#x27; identified by &#x27;123456&#x27; password expire never;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">4.更新用户密码</span></span><br><span class="line">alter user &#x27;root&#x27;@&#x27;%&#x27; identified with mysql_native_password by &#x27;123456&#x27;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">5.刷新权限</span></span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment">#1.登录mysql</span>
+
+<span class="token comment">#2.</span>
+use mysql<span class="token punctuation">;</span>
+
+<span class="token comment">#3.修改加密规则</span>
+alter user <span class="token string">'root'</span>@<span class="token string">'%'</span> identified by <span class="token string">'123456'</span> password expire never<span class="token punctuation">;</span>
+
+<span class="token comment">#4.更新用户密码</span>
+alter user <span class="token string">'root'</span>@<span class="token string">'%'</span> identified with mysql_native_password by <span class="token string">'123456'</span><span class="token punctuation">;</span>
+
+<span class="token comment">#5.刷新权限</span>
+flush privileges<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>此时连接就是没有问题了</p>
 <h1 id="开放端口"><a href="#开放端口" class="headerlink" title="开放端口"></a>开放端口</h1><blockquote>
 <p> 由于端口3306默认未开放，方法关闭防火墙，或者是开放3306端口</p>
 </blockquote>
 <p>由于安全考虑，选择开放3306端口</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看防火墙状态</span></span><br><span class="line">firewall-cmd --state</span><br><span class="line">或  systemctl status firewalld</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">若防火墙关闭则开启</span></span><br><span class="line">systemctl start firewalld</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">开启3306端口</span></span><br><span class="line">firewall-cmd --zone=public --add-port=3306/tcp --permanent</span><br><span class="line"><span class="meta">#</span><span class="bash">--zone=public：表示作用域为公共</span></span><br><span class="line"><span class="meta">#</span><span class="bash">--add-port=3306/tcp：添加tcp协议的端口3306</span></span><br><span class="line"><span class="meta">#</span><span class="bash">--permanent：永久生效，若无此参数配置重启后失效</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">重启防火墙</span></span><br><span class="line">firewall-cmd --reload</span><br><span class="line">或systemctl restart firewalld</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">移除端口</span></span><br><span class="line">firewall-cmd -permanent --remove-port=3306/tcp</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">查看端口是否开放</span></span><br><span class="line">firewall-cmd --query-port=3306/tcp</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 查看防火墙状态</span>
+firewall-cmd --state
+或  systemctl status firewalld
+
+<span class="token comment">#若防火墙关闭则开启</span>
+systemctl start firewalld
+
+<span class="token comment">#开启3306端口</span>
+firewall-cmd --zone<span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">3306</span>/tcp --permanent
+<span class="token comment">#--zone=public：表示作用域为公共</span>
+<span class="token comment">#--add-port=3306/tcp：添加tcp协议的端口3306</span>
+<span class="token comment">#--permanent：永久生效，若无此参数配置重启后失效</span>
+
+<span class="token comment">#重启防火墙</span>
+firewall-cmd --reload
+或systemctl restart firewalld
+
+<span class="token comment">#移除端口</span>
+firewall-cmd -permanent --remove-port<span class="token operator">=</span><span class="token number">3306</span>/tcp
+
+<span class="token comment">#查看端口是否开放</span>
+firewall-cmd --query-port<span class="token operator">=</span><span class="token number">3306</span>/tcp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -1061,7 +1137,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">71.3k</span>&nbsp;字
+                class="white-color">66.3k</span>&nbsp;字
             
             
             

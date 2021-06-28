@@ -435,7 +435,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    934
                 </div>
                 
 
@@ -472,13 +472,41 @@
 </blockquote>
 <h2 id="一、配置Elasticsearch"><a href="#一、配置Elasticsearch" class="headerlink" title="一、配置Elasticsearch"></a>一、配置Elasticsearch</h2><ol>
 <li><p>修改Elasticsearch配置文件elasticsearch.yml</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#节点名称（自定义）</span></span><br><span class="line"><span class="attr">node.name:</span> <span class="string">es-test</span></span><br><span class="line"><span class="comment">#数据存储位置</span></span><br><span class="line"><span class="attr">path.data:</span> <span class="string">E:\App\elasticsearch\data</span></span><br><span class="line"><span class="comment">#日志存储位置</span></span><br><span class="line"><span class="attr">path.logs:</span> <span class="string">E:\App\elasticsearch\logs</span></span><br><span class="line"><span class="comment">#绑定访问的主机ip，0.0.0.0为不限制</span></span><br><span class="line"><span class="attr">network.host:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br><span class="line"><span class="comment">#绑定的访问端口，默认的为9200</span></span><br><span class="line"><span class="attr">http.port:</span> <span class="number">9200</span></span><br><span class="line"><span class="comment">#集群初始化的主节点，这个需要包含node.name，否则报错</span></span><br><span class="line"><span class="attr">cluster.inital_master_nodes:</span> [<span class="string">&quot;es-test&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#下面的是es-head所需的配置（它是针对elasticsearch的客户端工具）</span></span><br><span class="line"><span class="attr">http.cors.enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">http.cors.allow-origin:</span> <span class="string">&quot;*&quot;</span></span><br><span class="line"><span class="attr">node.master:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">node.data:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">xpack.ml.enabled:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">#节点名称（自定义）
+node.name: es-test
+#数据存储位置
+path.data: E:\App\elasticsearch\data
+#日志存储位置
+path.logs: E:\App\elasticsearch\logs
+#绑定访问的主机ip，0.0.0.0为不限制
+network.host: 0.0.0.0
+#绑定的访问端口，默认的为9200
+http.port: 9200
+#集群初始化的主节点，这个需要包含node.name，否则报错
+cluster.inital_master_nodes: ["es-test"]
+
+#下面的是es-head所需的配置（它是针对elasticsearch的客户端工具）
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+node.master: true
+node.data: true
+xpack.ml.enabled: false<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <p>2.修改完成后直接在bin中启动elasticsearch.bat</p>
 <p>浏览器访问 127.0.0.1:9200</p>
 <h2 id="二、配置Kibana"><a href="#二、配置Kibana" class="headerlink" title="二、配置Kibana"></a>二、配置Kibana</h2><ol>
 <li><p>修改kibana.yml</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#访问端口，默认即为5601</span></span><br><span class="line"><span class="attr">server.port:</span> <span class="number">5601</span></span><br><span class="line"><span class="comment">#配置后端服务器的主机地址(eg此为192.168.1.108，或者是0.0.0.0)</span></span><br><span class="line"><span class="attr">server.host:</span> <span class="string">xxx.xxx.xxx.xxx</span></span><br><span class="line"><span class="comment">#Kibana使用Elasticsearch中的索引来存储保存的检索，可视化控件及仪表板。若无索引则会新建(默认值为.kibana)</span></span><br><span class="line"><span class="attr">kibana.index:</span> <span class="string">&quot;.kibana&quot;</span></span><br><span class="line"><span class="comment">#设置默认加载的应用，默认值为&quot;discover&quot;</span></span><br><span class="line"><span class="attr">kibana.defaultAppId:</span> <span class="string">&quot;home&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#这个重要,</span></span><br><span class="line"><span class="attr">elaticsearch.hosts:</span> [<span class="string">&quot;http://192.168.1.108:9200&quot;</span>]</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-YML" data-language="YML"><code class="language-YML">#访问端口，默认即为5601
+server.port: 5601
+#配置后端服务器的主机地址(eg此为192.168.1.108，或者是0.0.0.0)
+server.host: xxx.xxx.xxx.xxx
+#Kibana使用Elasticsearch中的索引来存储保存的检索，可视化控件及仪表板。若无索引则会新建(默认值为.kibana)
+kibana.index: ".kibana"
+#设置默认加载的应用，默认值为"discover"
+kibana.defaultAppId: "home"
+
+#这个重要,
+elaticsearch.hosts: ["http://192.168.1.108:9200"]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>修改完成后启动kibana.bat</p>
 <p>本地访问端口<a target="_blank" rel="noopener" href="http://192.168.1.108:5601/">http://192.168.1.108:5601/</a></p>
 </li>
@@ -496,7 +524,24 @@
 <li><p>创建filetest.conf来配置输入、输出、过滤(这里就直接用logstash本身的日志测试)</p>
 </li>
 <li><p>在config下创建filetest.conf，配置如下</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">input&#123;</span></span><br><span class="line">  <span class="string">file&#123;</span></span><br><span class="line">    <span class="string">path</span> <span class="string">=&gt;</span> [<span class="string">&quot;E:/App/logstash/logs/logstash-plain.log&quot;</span>]</span><br><span class="line">    <span class="string">type</span> <span class="string">=&gt;</span> <span class="string">&quot;system-log&quot;</span></span><br><span class="line">    <span class="string">start_position</span> <span class="string">=&gt;</span> <span class="string">&quot;beginning&quot;</span></span><br><span class="line">  <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"> </span><br><span class="line"><span class="string">filter&#123;</span></span><br><span class="line"> </span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"> </span><br><span class="line"><span class="string">output&#123;</span></span><br><span class="line">  <span class="string">elasticsearch&#123;</span></span><br><span class="line">    <span class="string">hosts</span> <span class="string">=&gt;</span> [<span class="string">&quot;192.168.1.108:9200&quot;</span>]</span><br><span class="line">    <span class="string">index</span> <span class="string">=&gt;</span> <span class="string">&quot;system-log-<span class="template-variable">%&#123;+YYYY.MM&#125;</span>&quot;</span></span><br><span class="line">  <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">input{
+  file{
+    path =&gt; ["E:/App/logstash/logs/logstash-plain.log"]
+    type =&gt; "system-log"
+    start_position =&gt; "beginning"
+  }
+}
+ 
+filter{
+ 
+}
+ 
+output{
+  elasticsearch{
+    hosts =&gt; ["192.168.1.108:9200"]
+    index =&gt; "system-log-%{+YYYY.MM}"
+  }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>运行logstash即可，可通过es-head查看</p>
 </li>
@@ -507,28 +552,37 @@
 <h2 id="三、配置es-head"><a href="#三、配置es-head" class="headerlink" title="三、配置es-head"></a>三、配置es-head</h2><ol>
 <li>修改elasticsearch.yml增加参数</li>
 </ol>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#增加es-head所需参数</span></span><br><span class="line"><span class="attr">http.cors.enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">http.cors.allow-origin:</span> <span class="string">&quot;*&quot;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">#增加es-head所需参数
+http.cors.enabled: true
+http.cors.allow-origin: "*"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <ol start="2">
 <li><p>下载head插件</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/mobz/elasticsearch-head/archive/master.zip</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">wget https://github.com/mobz/elasticsearch-head/archive/master.zip<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>安装node</p>
 </li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://npm.taobao.org/mirrors/node/latest-v4.x/node-v4.4.7-linux-x64.tar.gz</span><br><span class="line">tar -zxvf node-v4.4.7-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">wget https://npm.taobao.org/mirrors/node/latest-v4.x/node-v4.4.7-linux-x64.tar.gz
+tar -zxvf node-v4.4.7-linux-x64.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>4.修改环境变量profile</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export NODE_HOME=/opt/node-v4.4.7-linux-x64</span><br><span class="line">export PATH=$PATH:$NODE_HOME/bin</span><br><span class="line">export NODE_PATH=$NODE_HOME/lib/node_modules</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-SHELL" data-language="SHELL"><code class="language-SHELL">export NODE_HOME=/opt/node-v4.4.7-linux-x64
+export PATH=$PATH:$NODE_HOME/bin
+export NODE_PATH=$NODE_HOME/lib/node_modules<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <ol start="5">
 <li>安装grunt</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd elasticsearch-head-master</span><br><span class="line">npm install -g grunt-cli</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">version</span></span><br><span class="line">grunt -version</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token builtin class-name">cd</span> elasticsearch-head-master
+<span class="token function">npm</span> <span class="token function">install</span> -g grunt-cli
+
+<span class="token comment">#version</span>
+grunt -version<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 <p>6.修改head插件源码</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim elasticsearch-head-master/Gruntfile.js</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">vim</span> elasticsearch-head-master/Gruntfile.js<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230162330.png" alt="image-20201229141331624"></p>
 <p>7.修改链接地址</p>
@@ -539,32 +593,58 @@
 <ol start="8">
 <li>下载运行head必要的文件（放置在文件夹/tmp下）</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;tmp</span><br><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;Medium&#x2F;phantomjs&#x2F;releases&#x2F;download&#x2F;v2.1.1&#x2F;phantomjs-2.1.1-linux-x86_64.tar.bz2</span><br><span class="line">yum -y install bzip2</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">cd /tmp
+wget https://github.com/Medium/phantomjs/releases/download/v2.1.1/phantomjs-2.1.1-linux-x86_64.tar.bz2
+yum -y install bzip2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>　　</p>
 <p> 　9. 运行head</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;opt&#x2F;elasticsearch-head-master</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">cd /opt/elasticsearch-head-master
+npm install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p> 　10. 后台启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt server &amp;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">grunt server &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>验证9100端口</p>
 <h2 id="四、配置Logstash"><a href="#四、配置Logstash" class="headerlink" title="四、配置Logstash"></a>四、配置Logstash</h2><ol>
 <li>解压就可以了，然后先运行一下简单的（这是标准输入输出，页面输入什么就输出什么，以json格式输出）</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost leyou]# ./logstash-7.6.2/bin/logstash -e &#x27;input &#123; stdin&#123;&#125; &#125; output &#123; stdout &#123;&#125; &#125;&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost leyou<span class="token punctuation">]</span><span class="token comment"># ./logstash-7.6.2/bin/logstash -e 'input { stdin{} } output { stdout {} }'</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
 <ol start="2">
 <li><p>输出到ES</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./logstash-7.6.2/bin/logstash -e &#x27;input &#123; stdin&#123;&#125; &#125; output &#123; elasticsearch &#123; hosts =&gt; [&quot;192.168.77.131:9200&quot;] index =&gt; &quot;logstash-%&#123;+YYYY.MM.dd&#125;&quot; &#125; &#125;&#x27;</span><br><span class="line">   </span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">./logstash-7.6.2/bin/logstash -e <span class="token string">'input { stdin{} } output { elasticsearch { hosts =&gt; ["192.168.77.131:9200"] index =&gt; "logstash-%{+YYYY.MM.dd}" } }'</span>
+   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 </ol>
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230162332.png" alt="image-20201229153423353"></p>
 <ol start="3">
 <li>写一个x.conf收集系统日志</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">vim /home/leyou/logstash-7.6.2/config/file.conf</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 配置如下</span></span><br><span class="line">input&#123;</span><br><span class="line">  file&#123;</span><br><span class="line">    path =&gt; [&quot;/var/log/messages&quot;]</span><br><span class="line">    type =&gt; &quot;system-log&quot;</span><br><span class="line">    start_position =&gt; &quot;beginning&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">filter&#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">output&#123;</span><br><span class="line">  elasticsearch&#123;</span><br><span class="line">    hosts =&gt; [&quot;192.168.77.131:9200&quot;]</span><br><span class="line">    index =&gt; &quot;system-log-%&#123;+YYYY.MM&#125;&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-SHELL" data-language="SHELL"><code class="language-SHELL">vim /home/leyou/logstash-7.6.2/config/file.conf
+
+# 配置如下
+input{
+  file{
+    path =&gt; ["/var/log/messages"]
+    type =&gt; "system-log"
+    start_position =&gt; "beginning"
+  }
+}
+ 
+filter{
+ 
+}
+ 
+output{
+  elasticsearch{
+    hosts =&gt; ["192.168.77.131:9200"]
+    index =&gt; "system-log-%{+YYYY.MM}"
+  }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>启动防止在后台</p>
 <p><code>../bin/logstash -f ./file.conf &amp;</code></p>
@@ -1199,7 +1279,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">71.3k</span>&nbsp;字
+                class="white-color">66.3k</span>&nbsp;字
             
             
             

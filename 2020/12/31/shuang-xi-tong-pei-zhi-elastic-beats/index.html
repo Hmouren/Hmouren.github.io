@@ -466,12 +466,26 @@
 <li>安装对应版本解压</li>
 <li>修改配置文件filebeat.yml</li>
 </ol>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">log</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Change to true to enable this input configuration.</span></span><br><span class="line">  <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Paths that should be crawled and fetched. Glob based paths.</span></span><br><span class="line">  <span class="attr">paths:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">E:\App\logstash\logs\logstash-plain.log</span></span><br><span class="line">    <span class="comment">#- c:\programdata\elasticsearch\logs\*</span></span><br><span class="line">  <span class="attr">setup.kibana:</span></span><br><span class="line">    <span class="attr">host:</span> <span class="string">&quot;localhost:5601&quot;</span></span><br><span class="line">  <span class="attr">output.elasticsearch:</span></span><br><span class="line">  	<span class="comment"># Array of hosts to connect to.</span></span><br><span class="line">  	<span class="attr">hosts:</span> [<span class="string">&quot;localhost:9200&quot;</span>]</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-YML" data-language="YML"><code class="language-YML">- type: log
+
+  # Change to true to enable this input configuration.
+  enabled: true
+
+  # Paths that should be crawled and fetched. Glob based paths.
+  paths:
+    - E:\App\logstash\logs\logstash-plain.log
+    #- c:\programdata\elasticsearch\logs\*
+  setup.kibana:
+    host: "localhost:5601"
+  output.elasticsearch:
+  	# Array of hosts to connect to.
+  	hosts: ["localhost:9200"]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ol start="3">
 <li>在filebeat安装目录，启动服务</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">filebeat setup</span><br><span class="line">filebeat -e</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">filebeat setup
+filebeat -e<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <ol start="4">
 <li>在es-head中查看，完成</li>
@@ -484,11 +498,16 @@
 <li><p>下载解压对应版本</p>
 </li>
 <li><p>修改metricbeat配置文件，metricbeat.yml</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">setup.kibana:</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">&quot;localhost:5601&quot;</span></span><br><span class="line"><span class="attr">output.elasticsearch:</span></span><br><span class="line">  <span class="comment"># Array of hosts to connect to.</span></span><br><span class="line">  <span class="attr">hosts:</span> [<span class="string">&quot;localhost:9200&quot;</span>]</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-YML" data-language="YML"><code class="language-YML">setup.kibana:
+  host: "localhost:5601"
+output.elasticsearch:
+  # Array of hosts to connect to.
+  hosts: ["localhost:9200"]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>启动</p>
 </li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">metricbeat setup</span><br><span class="line">metricbeat -e</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">metricbeat setup
+metricbeat -e<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>状态如下</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201231095744.png" alt="image-20201231095744299"></p>
@@ -502,10 +521,10 @@
 <li><p>下载解压对应版本</p>
 </li>
 <li><p>在安装目录下执行命令，install</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./install-service-packetbeat.ps1</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">./install-service-packetbeat.ps1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>若执行策略出错，则更改执行策略</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set-executionpolicy remotesigned</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">set-executionpolicy remotesigned<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201231102239.png" alt="image-20201231102238944"></p>
 </li>
@@ -515,25 +534,56 @@
 <li>修改packetbeat配置文件packetbeat.yml</li>
 </ol>
 <p>①监听的device</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">packetbeat.interfaces.device:</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-YML" data-language="YML"><code class="language-YML">packetbeat.interfaces.device: 0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>②配置协议type ports</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">packetbeat.protocols:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">icmp</span></span><br><span class="line">  <span class="comment"># Enable ICMPv4 and ICMPv6 monitoring. Default: false</span></span><br><span class="line">  <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">amqp</span></span><br><span class="line">  <span class="comment"># Configure the ports where to listen for AMQP traffic. You can disable</span></span><br><span class="line">  <span class="comment"># the AMQP protocol by commenting out the list of ports.</span></span><br><span class="line">  <span class="attr">ports:</span> [<span class="number">5672</span>]</span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">cassandra</span></span><br><span class="line">  <span class="comment">#Cassandra port for traffic monitoring.</span></span><br><span class="line">  <span class="attr">ports:</span> [<span class="number">9042</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="comment">#加上</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">dns</span></span><br><span class="line">  <span class="comment"># Configure the ports where to listen for DNS traffic. You can disable</span></span><br><span class="line">  <span class="comment"># the DNS protocol by commenting out the list of ports.</span></span><br><span class="line">  <span class="attr">ports:</span> [<span class="number">53</span>]</span><br><span class="line"></span><br><span class="line">  <span class="comment"># include_authorities controls whether or not the dns.authorities field</span></span><br><span class="line">  <span class="comment"># (authority resource records) is added to messages.</span></span><br><span class="line">  <span class="attr">include_authorities:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># include_additionals controls whether or not the dns.additionals field</span></span><br><span class="line">  <span class="comment"># (additional resource records) is added to messages.</span></span><br><span class="line">  <span class="attr">include_additionals:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">packetbeat.protocols:
+- type: icmp
+  # Enable ICMPv4 and ICMPv6 monitoring. Default: false
+  enabled: true
+
+- type: amqp
+  # Configure the ports where to listen for AMQP traffic. You can disable
+  # the AMQP protocol by commenting out the list of ports.
+  ports: [5672]
+
+- type: cassandra
+  #Cassandra port for traffic monitoring.
+  ports: [9042]
+  
+  #加上
+- type: dns
+  # Configure the ports where to listen for DNS traffic. You can disable
+  # the DNS protocol by commenting out the list of ports.
+  ports: [53]
+
+  # include_authorities controls whether or not the dns.authorities field
+  # (authority resource records) is added to messages.
+  include_authorities: true
+
+  # include_additionals controls whether or not the dns.additionals field
+  # (additional resource records) is added to messages.
+  include_additionals: true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>③配置日志的输出</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">output.elasticsearch:</span></span><br><span class="line">  <span class="comment"># Array of hosts to connect to.</span></span><br><span class="line">  <span class="attr">hosts:</span> [<span class="string">&quot;localhost:9200&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="attr">setup.kibana:</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">&quot;localhost:5601&quot;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-YML" data-language="YML"><code class="language-YML">output.elasticsearch:
+  # Array of hosts to connect to.
+  hosts: ["localhost:9200"]
+
+setup.kibana:
+  host: "localhost:5601"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ol start="5">
 <li>获取windows系统的device来配置packetbeat.interfaces.device</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">packetbeat.exe devices</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">packetbeat.exe devices<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ol start="6">
 <li>运行packetbeat</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">packetbeat.exe</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">packetbeat.exe<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">作为服务启动：Start-Service packetbeat</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">作为服务启动：Start-Service packetbeat<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
@@ -546,28 +596,34 @@
 <li>解压对应版本</li>
 <li>在安装目录下，安装服务</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">install-service-winlogbeat.ps1</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">install-service-winlogbeat.ps1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
 <p>如果在系统上禁用了脚本执行，则需要为当前会话设置执行策略以允许脚本运行。 PowerShell.exe -ExecutionPolicy UnRestricted -File .\install-service-winlogbeat.ps1.</p>
 </blockquote>
 <p>或者使用下列命令来关闭一些安全防护，输入后按确认</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Program Files\Winlogbeat&gt; set-executionpolicy remotesigned</span><br><span class="line">PS C:\Program Files\Winlogbeat&gt; set-executionpolicy Bypass</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">PS C:\Program Files\Winlogbeat&gt; set-executionpolicy remotesigned
+PS C:\Program Files\Winlogbeat&gt; set-executionpolicy Bypass<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <ol start="3">
 <li>修改winlogbeat的配置文件winlogbeat.yml</li>
 </ol>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">output.elasticsearch:</span></span><br><span class="line">  <span class="attr">hosts:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">localhost:9200</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">output.elasticsearch:
+  hosts:
+    - localhost:9200<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <ol start="4">
 <li>检查文件正确性</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winlogbeat.yml -e</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">winlogbeat.yml -e<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ol start="5">
 <li>启动winlogbeat</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Start-Service winlogbeat</span><br><span class="line"></span><br><span class="line">#启动用这个</span><br><span class="line">winlogbeat.exe -e</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">Start-Service winlogbeat
+
+#启动用这个
+winlogbeat.exe -e<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ol start="6">
 <li>在kibana或es-head查看即可</li>
@@ -580,42 +636,89 @@
 <li>下载对应版本</li>
 <li>安装目录下cmd执行intall脚本</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">install-service-heartbeat.ps1</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#若执行出错，则</span></span></span><br><span class="line">set-executionpolicy remotesigned</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">install-service-heartbeat.ps1
+
+<span class="token comment">##若执行出错，则</span>
+set-executionpolicy remotesigned<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>3.配置heartbeat.yml</p>
 <p>①监听的端口，数据传输类型，请求间隔</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Configure monitors inline</span></span><br><span class="line"><span class="attr">heartbeat.monitors:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">  <span class="comment"># ID used to uniquely identify this monitor in elasticsearch even if the config changes</span></span><br><span class="line">  <span class="attr">id:</span> <span class="string">my-monitor</span></span><br><span class="line">  <span class="comment"># Human readable display name for this service in Uptime UI and elsewhere</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">My</span> <span class="string">Monitor</span></span><br><span class="line">  <span class="comment"># List or urls to query</span></span><br><span class="line">  <span class="attr">urls:</span> [<span class="string">&quot;http://localhost:9200&quot;</span>]</span><br><span class="line">  <span class="comment"># Configure task schedule</span></span><br><span class="line">  <span class="attr">schedule:</span> <span class="string">&#x27;@every 10s&#x27;</span></span><br><span class="line">  <span class="comment"># Total test connection and data exchange timeout</span></span><br><span class="line">  <span class="comment">#timeout: 16s</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"># Configure monitors inline
+heartbeat.monitors:
+- type: http
+  # ID used to uniquely identify this monitor in elasticsearch even if the config changes
+  id: my-monitor
+  # Human readable display name for this service in Uptime UI and elsewhere
+  name: My Monitor
+  # List or urls to query
+  urls: ["http://localhost:9200"]
+  # Configure task schedule
+  schedule: '@every 10s'
+  # Total test connection and data exchange timeout
+  #timeout: 16s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>②配置kibana</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">setup.kibana:</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Kibana Host</span></span><br><span class="line">  <span class="comment"># Scheme and port can be left out and will be set to the default (http and 5601)</span></span><br><span class="line">  <span class="comment"># In case you specify and additional path, the scheme is required: http://localhost:5601/path</span></span><br><span class="line">  <span class="comment"># IPv6 addresses should always be defined as: https://[2001:db8::1]:5601</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">&quot;localhost:5601&quot;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">setup.kibana:
+
+  # Kibana Host
+  # Scheme and port can be left out and will be set to the default (http and 5601)
+  # In case you specify and additional path, the scheme is required: http://localhost:5601/path
+  # IPv6 addresses should always be defined as: https://[2001:db8::1]:5601
+  host: "localhost:5601"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>③配置message输出</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">output.elasticsearch:</span></span><br><span class="line">  <span class="comment"># Array of hosts to connect to.</span></span><br><span class="line">  <span class="attr">hosts:</span> [<span class="string">&quot;localhost:9200&quot;</span>]</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">output.elasticsearch:
+  # Array of hosts to connect to.
+  hosts: ["localhost:9200"]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <ol start="4">
 <li>运行heartbeat</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heartbeat.exe</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">heartbeat.exe<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">作为windows服务启动：Start-Service packetbeat</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">作为windows服务启动：Start-Service packetbeat<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201231132453.png" alt="image-20201231132453788"></p>
 <h1 id="Centos7-5配置上述Beats（无winlogbeat）"><a href="#Centos7-5配置上述Beats（无winlogbeat）" class="headerlink" title="Centos7.5配置上述Beats（无winlogbeat）"></a>Centos7.5配置上述Beats（无winlogbeat）</h1><h2 id="一、配置运行filebeat-1"><a href="#一、配置运行filebeat-1" class="headerlink" title="一、配置运行filebeat"></a>一、配置运行filebeat</h2><ol>
 <li>下载解压对应版本</li>
 <li>修改配置文件filebeat.yml</li>
 </ol>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">output.elasticsearch:</span></span><br><span class="line">  <span class="comment"># Array of hosts to connect to.</span></span><br><span class="line">  <span class="attr">hosts:</span> [<span class="string">&quot;localhost:9200&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="attr">setup.kibana:</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Kibana Host</span></span><br><span class="line">  <span class="comment"># Scheme and port can be left out and will be set to the default (http and 5601)</span></span><br><span class="line">  <span class="comment"># In case you specify and additional path, the scheme is required: http://localhost:5601/path</span></span><br><span class="line">  <span class="comment"># IPv6 addresses should always be defined as: https://[2001:db8::1]:5601</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">&quot;localhost:5601&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">log</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Change to true to enable this input configuration.</span></span><br><span class="line">  <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Paths that should be crawled and fetched. Glob based paths.</span></span><br><span class="line">  <span class="attr">paths:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">/var/log/*.log</span></span><br><span class="line">    <span class="comment">#- c:\programdata\elasticsearch\logs\*</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">output.elasticsearch:
+  # Array of hosts to connect to.
+  hosts: ["localhost:9200"]
+
+setup.kibana:
+
+  # Kibana Host
+  # Scheme and port can be left out and will be set to the default (http and 5601)
+  # In case you specify and additional path, the scheme is required: http://localhost:5601/path
+  # IPv6 addresses should always be defined as: https://[2001:db8::1]:5601
+  host: "localhost:5601"
+
+- type: log
+
+  # Change to true to enable this input configuration.
+  enabled: true
+
+  # Paths that should be crawled and fetched. Glob based paths.
+  paths:
+    - /var/log/*.log
+    #- c:\programdata\elasticsearch\logs\*
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ol start="3">
 <li><p>启动filebeat</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost filebeat]# .&#x2F;filebeat -e</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-none"><code class="language-none">[root@localhost filebeat]# ./filebeat -e<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ol>
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201231144310.png" alt="image-20201231144310089"></p>
 <h2 id="二、配置运行metricbeat-1"><a href="#二、配置运行metricbeat-1" class="headerlink" title="二、配置运行metricbeat"></a>二、配置运行metricbeat</h2><ol>
 <li>下载解压对应版本</li>
 <li>修改配置文件</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">就是修改kibana和elasticsearch就可以了，和上面的win差不多，下面不赘述</span><br><span class="line"></span><br><span class="line">#启动</span><br><span class="line">.&#x2F;metricbeat -e</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">就是修改kibana和elasticsearch就可以了，和上面的win差不多，下面不赘述
+
+#启动
+./metricbeat -e<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201231145229.png" alt="image-20201231145229581"></p>
 <h2 id="三、配置运行packetbeat-1"><a href="#三、配置运行packetbeat-1" class="headerlink" title="三、配置运行packetbeat"></a>三、配置运行packetbeat</h2><ol>
@@ -1233,7 +1336,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">71.3k</span>&nbsp;字
+                class="white-color">66.3k</span>&nbsp;字
             
             
             

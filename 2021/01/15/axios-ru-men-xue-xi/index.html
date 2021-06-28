@@ -423,14 +423,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    7 分
                 </div>
                 
 
@@ -454,18 +454,78 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p><strong>Axios</strong></p>
-<h1 id="Axios引言"><a href="#Axios引言" class="headerlink" title="Axios引言"></a>Axios引言</h1><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># axios引言</span></span><br><span class="line">Axios是一个异步请求技术</span><br><span class="line"></span><br><span class="line"><span class="section"># 异步请求技术</span></span><br><span class="line">  基于XMLHttpRequest对象发起的请求都是异步请求</span><br><span class="line"><span class="section"># 异步请求特点</span></span><br><span class="line"><span class="code">	请求之后页面不动，响应回来更新的是页面的局部，多个请求间互不影响，并行执行</span></span><br><span class="line"><span class="code">	ajax是jQuery中的</span></span><br><span class="line"><span class="code">	系统架构 前后端分离----异步请求技术---》Vue全家桶 前端技术 Vue 淘汰了jQuery</span></span><br></pre></td></tr></table></figure>
+<h1 id="Axios引言"><a href="#Axios引言" class="headerlink" title="Axios引言"></a>Axios引言</h1><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> axios引言</span>
+Axios是一个异步请求技术
+
+<span class="token title important"><span class="token punctuation">#</span> 异步请求技术</span>
+  基于XMLHttpRequest对象发起的请求都是异步请求
+<span class="token title important"><span class="token punctuation">#</span> 异步请求特点</span>
+	请求之后页面不动，响应回来更新的是页面的局部，多个请求间互不影响，并行执行
+	ajax是jQuery中的
+	系统架构 前后端分离----异步请求技术---》Vue全家桶 前端技术 Vue 淘汰了jQuery<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="Axios基本入门"><a href="#Axios基本入门" class="headerlink" title="Axios基本入门"></a>Axios基本入门</h1><h2 id="下载地址官网"><a href="#下载地址官网" class="headerlink" title="下载地址官网"></a>下载地址<a target="_blank" rel="noopener" href="http://www.axios-js.com/">官网</a></h2><p><a target="_blank" rel="noopener" href="https://www.kancloud.cn/yunye/axios/234845">中文文档</a></p>
 <h2 id="Axios案例"><a href="#Axios案例" class="headerlink" title="Axios案例"></a>Axios案例</h2><h3 id="Get请求"><a href="#Get请求" class="headerlink" title="Get请求"></a>Get请求</h3><p>首先自行构建一个简单的项目数据</p>
 <p>entity</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@ToString</span></span><br><span class="line"><span class="meta">@Accessors(chain = true)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line">    <span class="keyword">private</span> Date bir;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-JAVA" data-language="JAVA"><code class="language-JAVA">@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@Accessors(chain = true)
+public class User {
+
+    private Integer id;
+    private String name;
+    private Integer age;
+    private Date bir;
+
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>Controller</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/axios&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AxiosController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/findAll&quot;)</span></span><br><span class="line">    <span class="meta">@CrossOrigin</span>  <span class="comment">//允许请求跨域</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">findAll</span><span class="params">()</span></span>&#123;</span><br><span class="line">        List&lt;User&gt; users = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        users.add(<span class="keyword">new</span> User(<span class="number">1</span>,<span class="string">&quot;Peter&quot;</span>,<span class="number">15</span>,<span class="keyword">new</span> Date()));</span><br><span class="line">        users.add(<span class="keyword">new</span> User(<span class="number">2</span>,<span class="string">&quot;Kitty&quot;</span>,<span class="number">16</span>,<span class="keyword">new</span> Date()));</span><br><span class="line">        users.add(<span class="keyword">new</span> User(<span class="number">3</span>,<span class="string">&quot;Ben&quot;</span>,<span class="number">75</span>,<span class="keyword">new</span> Date()));</span><br><span class="line">        users.add(<span class="keyword">new</span> User(<span class="number">4</span>,<span class="string">&quot;Weidy&quot;</span>,<span class="number">45</span>,<span class="keyword">new</span> Date()));</span><br><span class="line">        <span class="keyword">return</span> users;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-JAVA" data-language="JAVA"><code class="language-JAVA">@RestController
+@RequestMapping("/axios")
+public class AxiosController {
+
+    @GetMapping("/findAll")
+    @CrossOrigin  //允许请求跨域
+    public List&lt;User&gt; findAll(){
+        List&lt;User&gt; users = new ArrayList&lt;&gt;();
+        users.add(new User(1,"Peter",15,new Date()));
+        users.add(new User(2,"Kitty",16,new Date()));
+        users.add(new User(3,"Ben",75,new Date()));
+        users.add(new User(4,"Weidy",45,new Date()));
+        return users;
+    }
+
+
+
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>html界面</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>axios<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/axios/dist/axios.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;script src=&quot;/static/axios.min.js&quot;&gt;&lt;/script&gt;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//get方式请求</span></span></span><br><span class="line"><span class="javascript">        axios.get(<span class="string">&#x27;http://127.0.0.1:8888/axios/findAll&#x27;</span>)  <span class="comment">//发送请求的url</span></span></span><br><span class="line"><span class="javascript">            .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(response.data);   <span class="comment">//响应回来出发的回调函数</span></span></span><br><span class="line"><span class="javascript">        &#125;).catch(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(err);   <span class="comment">//当请求错误时的回调函数</span></span></span><br><span class="line">        &#125;)</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>axios<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/axios/dist/axios.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!--    &lt;script src="/static/axios.min.js"&gt;&lt;/script&gt;--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+        <span class="token comment">//get方式请求</span>
+        axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'http://127.0.0.1:8888/axios/findAll'</span><span class="token punctuation">)</span>  <span class="token comment">//发送请求的url</span>
+            <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//响应回来出发的回调函数</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//当请求错误时的回调函数</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>启动后可在html中看到控制台已将数据打印</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20210115150406.png" alt="image-20210110151058710"></p>
@@ -477,24 +537,89 @@
 <ol>
 <li>在前台get请求中填写如所需参数</li>
 </ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>axios<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/axios/dist/axios.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;script src=&quot;/static/axios.min.js&quot;&gt;&lt;/script&gt;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//get方式请求</span></span></span><br><span class="line"><span class="javascript">        axios.get(<span class="string">&#x27;http://127.0.0.1:8888/axios/findAll?username=Peter&amp;age=15&#x27;</span>)  <span class="comment">//发送请求的url</span></span></span><br><span class="line"><span class="javascript">            .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(response.data);   <span class="comment">//响应回来出发的回调函数</span></span></span><br><span class="line"><span class="javascript">        &#125;).catch(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(err);   <span class="comment">//当请求错误时的回调函数</span></span></span><br><span class="line">        &#125;)</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;axios&lt;/title&gt;
+    &lt;script src="https://unpkg.com/axios/dist/axios.min.js"&gt;&lt;/script&gt;
+&lt;!--    &lt;script src="/static/axios.min.js"&gt;&lt;/script&gt;--&gt;
+    &lt;script&gt;
+        //get方式请求
+        axios.get('http://127.0.0.1:8888/axios/findAll?username=Peter&amp;age=15')  //发送请求的url
+            .then(function (response) {
+            console.log(response.data);   //响应回来出发的回调函数
+        }).catch(function (err){
+            console.log(err);   //当请求错误时的回调函数
+        })
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ol start="2">
 <li>在controller中要创建对应的对象接受前台传来的参数</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/axios&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AxiosController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/findAll&quot;)</span></span><br><span class="line">    <span class="meta">@CrossOrigin</span>  <span class="comment">//允许请求跨域</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">findAll</span><span class="params">(String username,Integer age)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;名字：&quot;</span>+username);</span><br><span class="line">        System.out.println(<span class="string">&quot;年龄：&quot;</span>+age);</span><br><span class="line"></span><br><span class="line">        List&lt;User&gt; users = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        users.add(<span class="keyword">new</span> User(<span class="number">1</span>,<span class="string">&quot;Peter&quot;</span>,<span class="number">15</span>,<span class="keyword">new</span> Date()));</span><br><span class="line">        users.add(<span class="keyword">new</span> User(<span class="number">2</span>,<span class="string">&quot;Kitty&quot;</span>,<span class="number">16</span>,<span class="keyword">new</span> Date()));</span><br><span class="line">        users.add(<span class="keyword">new</span> User(<span class="number">3</span>,<span class="string">&quot;Ben&quot;</span>,<span class="number">75</span>,<span class="keyword">new</span> Date()));</span><br><span class="line">        users.add(<span class="keyword">new</span> User(<span class="number">4</span>,<span class="string">&quot;Weidy&quot;</span>,<span class="number">45</span>,<span class="keyword">new</span> Date()));</span><br><span class="line">        <span class="keyword">return</span> users;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-JAVA" data-language="JAVA"><code class="language-JAVA">@RestController
+@RequestMapping("/axios")
+public class AxiosController {
+
+    @GetMapping("/findAll")
+    @CrossOrigin  //允许请求跨域
+    public List&lt;User&gt; findAll(String username,Integer age){
+        System.out.println("名字："+username);
+        System.out.println("年龄："+age);
+
+        List&lt;User&gt; users = new ArrayList&lt;&gt;();
+        users.add(new User(1,"Peter",15,new Date()));
+        users.add(new User(2,"Kitty",16,new Date()));
+        users.add(new User(3,"Ben",75,new Date()));
+        users.add(new User(4,"Weidy",45,new Date()));
+        return users;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>后台输出结果</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20210115150408.png" alt="image-20210110152615294"></p>
 <h3 id="Post请求"><a href="#Post请求" class="headerlink" title="Post请求"></a>Post请求</h3><ol>
 <li>在前端界面中定义请求</li>
 </ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>axiosPost请求<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/axios/dist/axios.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;script src=&quot;/static/axios.min.js&quot;&gt;&lt;/script&gt;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//post方式请求</span></span></span><br><span class="line"><span class="javascript">        axios.post(<span class="string">&#x27;http://127.0.0.1:8888/axios/save&#x27;</span>).then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(response.data);</span></span><br><span class="line"><span class="javascript">        &#125;).catch(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(err);</span></span><br><span class="line">        &#125;)</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;axiosPost请求&lt;/title&gt;
+    &lt;script src="https://unpkg.com/axios/dist/axios.min.js"&gt;&lt;/script&gt;
+&lt;!--    &lt;script src="/static/axios.min.js"&gt;&lt;/script&gt;--&gt;
+    &lt;script&gt;
+        //post方式请求
+        axios.post('http://127.0.0.1:8888/axios/save').then(function (response) {
+            console.log(response.data);
+        }).catch(function (err) {
+            console.log(err);
+        })
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ol start="2">
 <li>在controller中定义方法</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping(&quot;/save&quot;)</span></span><br><span class="line"> <span class="meta">@CrossOrigin</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> Map&lt;String,Object&gt; <span class="title">sava</span><span class="params">()</span></span>&#123;</span><br><span class="line">     Map&lt;String, Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">     map.put(<span class="string">&quot;status&quot;</span>,<span class="number">200</span>);</span><br><span class="line">     map.put(<span class="string">&quot;message&quot;</span>,<span class="string">&quot;成功了！&quot;</span>);</span><br><span class="line">     <span class="keyword">return</span>  map;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-JAVA" data-language="JAVA"><code class="language-JAVA">@PostMapping("/save")
+ @CrossOrigin
+ public Map&lt;String,Object&gt; sava(){
+     Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();
+     map.put("status",200);
+     map.put("message","成功了！");
+     return  map;
+ }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20210115150409.png" alt="image-20210110154704736"></p>
 <h3 id="Post请求携带参数"><a href="#Post请求携带参数" class="headerlink" title="Post请求携带参数"></a>Post请求携带参数</h3><blockquote>
@@ -508,16 +633,78 @@
 </ol>
 </blockquote>
 <p>第一种:字符串形式</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>axiosPost请求<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/axios/dist/axios.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;script src=&quot;/static/axios.min.js&quot;&gt;&lt;/script&gt;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//post方式请求</span></span></span><br><span class="line"><span class="javascript">        axios.post(<span class="string">&#x27;http://127.0.0.1:8888/axios/save&#x27;</span>,<span class="string">&quot;name=测试账号&amp;age=23&quot;</span>).then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(response.data);</span></span><br><span class="line"><span class="javascript">        &#125;).catch(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(err);</span></span><br><span class="line">        &#125;)</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;axiosPost请求&lt;/title&gt;
+    &lt;script src="https://unpkg.com/axios/dist/axios.min.js"&gt;&lt;/script&gt;
+&lt;!--    &lt;script src="/static/axios.min.js"&gt;&lt;/script&gt;--&gt;
+    &lt;script&gt;
+        //post方式请求
+        axios.post('http://127.0.0.1:8888/axios/save',"name=测试账号&amp;age=23").then(function (response) {
+            console.log(response.data);
+        }).catch(function (err) {
+            console.log(err);
+        })
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>CONTROLLER</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping(&quot;/save&quot;)</span></span><br><span class="line"><span class="meta">@CrossOrigin</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Map&lt;String,Object&gt; <span class="title">sava</span><span class="params">(String name,Integer age)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;name:&quot;</span>+name);</span><br><span class="line">    System.out.println(<span class="string">&quot;age:&quot;</span>+ age);</span><br><span class="line"></span><br><span class="line">    Map&lt;String, Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    map.put(<span class="string">&quot;status&quot;</span>,<span class="number">200</span>);</span><br><span class="line">    map.put(<span class="string">&quot;message&quot;</span>,<span class="string">&quot;成功了！&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span>  map;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-JAVA" data-language="JAVA"><code class="language-JAVA">@PostMapping("/save")
+@CrossOrigin
+public Map&lt;String,Object&gt; sava(String name,Integer age){
+    System.out.println("name:"+name);
+    System.out.println("age:"+ age);
+
+    Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();
+    map.put("status",200);
+    map.put("message","成功了！");
+    return  map;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20210115150410.png" alt="image-20210110162937316"></p>
 <p>第二种：使用@RequestBody注解</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>axiosPost请求<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/axios/dist/axios.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;script src=&quot;/static/axios.min.js&quot;&gt;&lt;/script&gt;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//post方式请求</span></span></span><br><span class="line"><span class="javascript">        axios.post(<span class="string">&#x27;http://127.0.0.1:8888/axios/save&#x27;</span>,&#123;</span></span><br><span class="line"><span class="javascript">            name: <span class="string">&#x27;张三&#x27;</span>,</span></span><br><span class="line">            age: 34</span><br><span class="line"><span class="javascript">        &#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(response.data);</span></span><br><span class="line"><span class="javascript">        &#125;).catch(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(err);</span></span><br><span class="line">        &#125;)</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;axiosPost请求&lt;/title&gt;
+    &lt;script src="https://unpkg.com/axios/dist/axios.min.js"&gt;&lt;/script&gt;
+&lt;!--    &lt;script src="/static/axios.min.js"&gt;&lt;/script&gt;--&gt;
+    &lt;script&gt;
+        //post方式请求
+        axios.post('http://127.0.0.1:8888/axios/save',{
+            name: '张三',
+            age: 34
+        }).then(function (response) {
+            console.log(response.data);
+        }).catch(function (err) {
+            console.log(err);
+        })
+    &lt;/script&gt;
+&lt;/head&gt;
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping(&quot;/save&quot;)</span></span><br><span class="line"><span class="meta">@CrossOrigin</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Map&lt;String,Object&gt; <span class="title">sava</span><span class="params">(<span class="meta">@RequestBody</span> User user)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;user:&quot;</span> + user);</span><br><span class="line"></span><br><span class="line">    Map&lt;String, Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    map.put(<span class="string">&quot;status&quot;</span>,<span class="number">200</span>);</span><br><span class="line">    map.put(<span class="string">&quot;message&quot;</span>,<span class="string">&quot;成功了！&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span>  map;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-JAVA" data-language="JAVA"><code class="language-JAVA">@PostMapping("/save")
+@CrossOrigin
+public Map&lt;String,Object&gt; sava(@RequestBody User user){
+    System.out.println("user:" + user);
+
+    Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();
+    map.put("status",200);
+    map.put("message","成功了！");
+    return  map;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20210115150411.png" alt="image-20210110163120410"></p>
 <h1 id="axios并发请求"><a href="#axios并发请求" class="headerlink" title="axios并发请求"></a>axios并发请求</h1><blockquote>
@@ -530,7 +717,33 @@
 <ol>
 <li>html界面</li>
 </ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>axiosPost请求<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/axios/dist/axios.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;script src=&quot;/static/axios.min.js&quot;&gt;&lt;/script&gt;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//axios并行请求</span></span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">findAll</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">           <span class="keyword">return</span>  axios.get(<span class="string">&#x27;http://127.0.0.1:8888/axios/findAll?username=zhangsan&amp;age=89&#x27;</span>)</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">save</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">           <span class="keyword">return</span>  axios.post(<span class="string">&#x27;http://127.0.0.1:8888/axios/save&#x27;</span>,&#123;<span class="attr">name</span>: <span class="string">&#x27;lisi&#x27;</span>,<span class="attr">age</span>: <span class="string">&#x27;99&#x27;</span>&#125;)</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        axios.all([findAll(),save()]).then(axios.spread(<span class="function"><span class="keyword">function</span> (<span class="params">result1,result2</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(result1);</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(result2);</span></span><br><span class="line">        &#125;))</span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;axiosPost请求&lt;/title&gt;
+    &lt;script src="https://unpkg.com/axios/dist/axios.min.js"&gt;&lt;/script&gt;
+&lt;!--    &lt;script src="/static/axios.min.js"&gt;&lt;/script&gt;--&gt;
+    &lt;script&gt;
+        //axios并行请求
+        function findAll(){
+           return  axios.get('http://127.0.0.1:8888/axios/findAll?username=zhangsan&amp;age=89')
+        }
+        function save(){
+           return  axios.post('http://127.0.0.1:8888/axios/save',{name: 'lisi',age: '99'})
+        }
+        axios.all([findAll(),save()]).then(axios.spread(function (result1,result2){
+            console.log(result1);
+            console.log(result2);
+        }))
+
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>结果</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20210115150412.png" alt="image-20210110172301066"></p>
@@ -1129,7 +1342,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">71.3k</span>&nbsp;字
+                class="white-color">66.3k</span>&nbsp;字
             
             
             

@@ -559,7 +559,10 @@ Handler dispatch failed; nested exception is java.lang.OutOfMemoryError: Java he
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    12345678910111213141516171819202122if (fileWidth &gt; 4096) &#123;                       if (fileWidth &gt; 7683)&#123; 
+                                    if (fileWidth &gt; 4096) {
+                       if (fileWidth &gt; 7683){
+                           /*通过ImageIO保存*/
+ 
                                 
                             </div>
                             <div class="publish-info">
@@ -619,7 +622,10 @@ Handler dispatch failed; nested exception is java.lang.OutOfMemoryError: Java he
                                     利用Apache-POI操作word模板
 pom依赖
 
-12345678910111213141516171819202122232425262728&lt;!--POI操作word--&gt;    &lt;!--导入操作excel所需要
+&lt;!--POI操作word--&gt;
+    &lt;!--导入操作excel所需要的jar包--&gt;
+    &lt;dependency&gt;
+      &lt;g
                                 
                             </div>
                             <div class="publish-info">
@@ -723,7 +729,7 @@ pom依赖
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">71.3k</span>&nbsp;字
+                class="white-color">66.3k</span>&nbsp;字
             
             
             

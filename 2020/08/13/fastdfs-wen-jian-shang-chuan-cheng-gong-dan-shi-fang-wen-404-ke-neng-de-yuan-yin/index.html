@@ -427,7 +427,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    151
+                    136
                 </div>
                 
 
@@ -458,21 +458,41 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="一、检查文件是否存在"><a href="#一、检查文件是否存在" class="headerlink" title="一、检查文件是否存在"></a>一、检查文件是否存在</h1><p>文件上传后的真实路径<code>/fastdfs/storage/data/M00/00/00</code></p>
-<h1 id="二、检查nginx能否正常启动"><a href="#二、检查nginx能否正常启动" class="headerlink" title="二、检查nginx能否正常启动"></a>二、检查nginx能否正常启动</h1><h2 id="1、检查nginx的主配置文件（nginx-conf）"><a href="#1、检查nginx的主配置文件（nginx-conf）" class="headerlink" title="1、检查nginx的主配置文件（nginx.conf）"></a>1、检查nginx的主配置文件（nginx.conf）</h2><p><img src="FastDFS%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%88%90%E5%8A%9F%EF%BC%8C%E4%BD%86%E6%98%AF%E8%AE%BF%E9%97%AE404%E5%8F%AF%E8%83%BD%E7%9A%84%E5%8E%9F%E5%9B%A0/image-20200813170920987.png" alt="image-20200813170920987"></p>
+<h1 id="二、检查nginx能否正常启动"><a href="#二、检查nginx能否正常启动" class="headerlink" title="二、检查nginx能否正常启动"></a>二、检查nginx能否正常启动</h1><h2 id="1、检查nginx的主配置文件（nginx-conf）"><a href="#1、检查nginx的主配置文件（nginx-conf）" class="headerlink" title="1、检查nginx的主配置文件（nginx.conf）"></a>1、检查nginx的主配置文件（nginx.conf）</h2><p><img src="/2020/08/13/fastdfs-wen-jian-shang-chuan-cheng-gong-dan-shi-fang-wen-404-ke-neng-de-yuan-yin/image-20200813170920987.png" alt="image-20200813170920987"></p>
 <h1 id="三、检查FastDFS"><a href="#三、检查FastDFS" class="headerlink" title="三、检查FastDFS"></a>三、检查FastDFS</h1><h2 id="1、检测FastDFS中的配置文件"><a href="#1、检测FastDFS中的配置文件" class="headerlink" title="1、检测FastDFS中的配置文件"></a>1、检测FastDFS中的配置文件</h2><p>storage.conf</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">group_name=group1     </span><br><span class="line"> </span><br><span class="line">base_path=/fastdfs/storage   </span><br><span class="line"> </span><br><span class="line">store_path0=/fastdfs/storage   </span><br><span class="line"> </span><br><span class="line">tracker_server=192.168.59.131:22122    </span><br><span class="line"> </span><br><span class="line">http.server_port=80     建议改成80</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">group_name=group1     
+ 
+base_path=/fastdfs/storage   
+ 
+store_path0=/fastdfs/storage   
+ 
+tracker_server=192.168.59.131:22122    
+ 
+http.server_port=80     建议改成80<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 <p>tracker.conf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">base_path&#x3D;&#x2F;fastdfs&#x2F;tracker   </span><br><span class="line"> </span><br><span class="line">tracker_server&#x3D;192.168.59.131:22122   </span><br><span class="line"> </span><br><span class="line">http.tracker_server_port&#x3D;80   </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">base_path=/fastdfs/tracker   
+ 
+tracker_server=192.168.59.131:22122   
+ 
+http.tracker_server_port=80   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 <p>client.conf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">base_path&#x3D;&#x2F;fastdfs&#x2F;tracker   </span><br><span class="line"> </span><br><span class="line">tracker_server&#x3D;192.168.59.131:22122   </span><br><span class="line"> </span><br><span class="line">http.tracker_server_port&#x3D;80   </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">base_path=/fastdfs/tracker   
+ 
+tracker_server=192.168.59.131:22122   
+ 
+http.tracker_server_port=80   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="2、检查mod-fastdfs-conf"><a href="#2、检查mod-fastdfs-conf" class="headerlink" title="2、检查mod_fastdfs.conf"></a>2、检查mod_fastdfs.conf</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tracker_server&#x3D;192.168.59.131:22122   </span><br><span class="line"> </span><br><span class="line">url_have_group_name &#x3D; true    </span><br><span class="line"> </span><br><span class="line">store_path0&#x3D;&#x2F;fastdfs&#x2F;storage    </span><br></pre></td></tr></table></figure>
+<h2 id="2、检查mod-fastdfs-conf"><a href="#2、检查mod-fastdfs-conf" class="headerlink" title="2、检查mod_fastdfs.conf"></a>2、检查mod_fastdfs.conf</h2><pre class="line-numbers language-none"><code class="language-none">tracker_server=192.168.59.131:22122   
+ 
+url_have_group_name = true    
+ 
+store_path0=/fastdfs/storage    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1071,7 +1091,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">71.3k</span>&nbsp;字
+                class="white-color">66.3k</span>&nbsp;字
             
             
             

@@ -480,11 +480,13 @@
 <li><strong>检测软件是否安装成功</strong></li>
 </ul>
 <p>在cmd中输入下列命令，若显示版本信息，则表示安装成功。否则卸载重新安装。Git安装成功后在桌面右键查看是否有Git GUI Here（图形界面的Git操作） 和 Git Bash Here（命令行） 选项</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">git</span> --version
+node -v
+<span class="token function">npm</span> -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230112502.png" alt="image-20200814103011890" style="zoom:200%;" />
+<img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230112502.png" alt="image-20200814103011890" style="zoom:200%;">
 
-<img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230112503.png" alt="image-20200814103038368" style="zoom: 150%;" />
+<img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230112503.png" alt="image-20200814103038368" style="zoom: 150%;">
 
 
 
@@ -492,7 +494,8 @@
 <li><strong>Hexo 安装</strong></li>
 </ul>
 <p>新建文件夹（eg：E:\HBlog），博客相关的文件均存储在此文件夹下，在该文件夹下右键，选择Git Bash Here，输入下列命令</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g		#表示安装hexo</span><br><span class="line">npm install hexo-deployer-git --save	#表示安装hexo部署到git page 的deployer</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">npm</span> <span class="token function">install</span> hexo-cli -g		<span class="token comment">#表示安装hexo</span>
+<span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save	<span class="token comment">#表示安装hexo部署到git page 的deployer</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
 
@@ -501,14 +504,15 @@
 <li><strong>Hexo初始化配置</strong></li>
 </ul>
 <p>新建文件夹（eg：E:\HBlog\Hexo）。进入该文件夹右键Git Bah Here，输入下列命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">hexo init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>hexo安装完毕后会自动生成下列文件（个别出入无伤大雅）</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230112504.png" alt="image-20200814104022259"></p>
 <ul>
 <li><strong>本地预览</strong></li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hexo generate
+hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>执行完毕后访问<code>localhost:4000</code> 即可预览  也可以使用<code>hexo g</code> <code>hexo s</code>命令</p>
 <p>显示如下则成功</p>
@@ -522,19 +526,29 @@
 <p>二、创建项目代码库，点击 new repositories创建</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230112506.png" alt="image-20200814105019137"></p>
 <p>三、配置SSH密钥： 只有配置SSH密钥后，才可以通过git操作实现本地代码库与Github代码库同步，在E:\HBlog\Hexo中使用Git Bash Here</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your email@xx.com&quot;</span><br><span class="line"><span class="meta">#</span><span class="bash">填写你的Github的注册邮箱</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ssh-keygen -t rsa -C <span class="token string">"your email@xx.com"</span>
+<span class="token comment">#填写你的Github的注册邮箱</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>接下来出现</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/c/Users/you/.ssh/id_rsa):</span><br><span class="line">//到这里可以直接回车将密钥按默认文件进行存储</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Generating public/private rsa key pair.
+Enter <span class="token function">file</span> <span class="token keyword">in</span> <span class="token function">which</span> to save the key <span class="token punctuation">(</span>/c/Users/you/.ssh/id_rsa<span class="token punctuation">)</span>:
+//到这里可以直接回车将密钥按默认文件进行存储<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>然后</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty for no passphrase):</span><br><span class="line">&#x2F;&#x2F;这里是要你输入密码，其实不需要输什么密码，直接回车就行</span><br><span class="line">Enter same passphrase again:</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">Enter passphrase (empty for no passphrase):
+//这里是要你输入密码，其实不需要输什么密码，直接回车就行
+Enter same passphrase again:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>然后</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Your identification has been saved in &#x2F;c&#x2F;Users&#x2F;you&#x2F;.ssh&#x2F;id_rsa.</span><br><span class="line">Your public key has been saved in &#x2F;c&#x2F;Users&#x2F;you&#x2F;.ssh&#x2F;id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">这里是各种字母数字组成的字符串，结尾是你的邮箱</span><br><span class="line">The key&#39;s randomart image is:</span><br><span class="line">这里也是各种字母数字符号组成的字符串</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">Your identification has been saved in /c/Users/you/.ssh/id_rsa.
+Your public key has been saved in /c/Users/you/.ssh/id_rsa.pub.
+The key fingerprint is:
+这里是各种字母数字组成的字符串，结尾是你的邮箱
+The key's randomart image is:
+这里也是各种字母数字符号组成的字符串<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>运行下列命令，将公钥的内容复制</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clip &lt; ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">clip &lt; ~/.ssh/id_rsa.pub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
@@ -549,13 +563,14 @@
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230112510.png" alt="image-20200814111300239"></p>
 <p>五、测试</p>
 <p>输入下列命令</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">ssh</span> -T git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>有下列显示则成功，可以中途需要输入<code>yes</code></p>
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230112511.png" alt="image-20200814111430254"></p>
 <p>六、配置Git个人信息</p>
 <p>Git会根据用户的名字和邮箱来记录提交，同时也是使用这些信息来做权限的处理，输入下列命令进行个人信息设置</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name	#替换为你的用户名，建议与Github一致，当然也可自定义</span><br><span class="line">git config --global user.email	#填写你的邮箱，建议与Github一致</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">git</span> config --global user.name	<span class="token comment">#替换为你的用户名，建议与Github一致，当然也可自定义</span>
+<span class="token function">git</span> config --global user.email	<span class="token comment">#填写你的邮箱，建议与Github一致</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p><strong>至此，本机已可成功连接Github</strong></p>
 <ul>
@@ -566,14 +581,15 @@
 <p>二、打开E:\HBlog\Hexo，即Hexo根目录下的_config.yml文件，并按图修改如下</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230112513.png" alt="image-20200814112237253"></p>
 <p>三、在Hexo文件夹中执行下列命令</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hexo g
+hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>或者<code>hexo g -d</code></p>
 <p>首次执行时会让你输入Github的账号与密码</p>
 <p>若产生下列报错</p>
 <p><code>ERROR Deployer not found: git</code></p>
 <p>说明你的deployer未安装成功，需要重新安装</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>然后执行<code>hexo g -d</code>即可部署到Github中</p>
 <p>七、访问</p>
@@ -582,7 +598,7 @@
 <li><strong>如何在博客中发表文章</strong></li>
 </ul>
 <p>在Hexo的根目录下Git Bash Here，输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;文章标题&quot;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hexo n <span class="token string">"文章标题"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>即在Hexo/source/_posts下新建<code>文章标题.md</code></p>
 <p>推荐使用 Typora 或者 vscode</p>
@@ -594,15 +610,16 @@
 <p>二、找到主题的github地址，复制</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Hmouren/tuchuang/img/20201230112514.png" alt="image-20200814113408772"></p>
 <p>三、在/Hexo/themes/中Git Bash Here，输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone 输入刚才复制的主题地址</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">git</span> clone 输入刚才复制的主题地址<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>四、下载完毕后，/Hexo/themes/ 会增加一个主题的文件夹</p>
 <p>五、打开Hexo根目录下的_config.yml 修改下列参数</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme： XXXXX	#xxxx是你的主题名称</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">theme： XXXXX	<span class="token comment">#xxxx是你的主题名称</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>六、完毕后，在Hexo根目录下<code>hexo g -s</code>预览</p>
 <p>七、效果如果满意则继续部署</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean #清除缓存，以防主题未更新</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hexo clean <span class="token comment">#清除缓存，以防主题未更新</span>
+hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
 
@@ -1207,7 +1224,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">71.3k</span>&nbsp;字
+                class="white-color">66.3k</span>&nbsp;字
             
             
             
