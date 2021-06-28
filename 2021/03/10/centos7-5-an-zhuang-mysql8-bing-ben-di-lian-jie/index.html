@@ -457,50 +457,50 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="安装centos7-5"><a href="#安装centos7-5" class="headerlink" title="安装centos7.5"></a>安装centos7.5</h1><h1 id="安装MySQL8-0"><a href="#安装MySQL8-0" class="headerlink" title="安装MySQL8.0"></a>安装MySQL8.0</h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 1.下载并添加存储库</span>
-<span class="token function">sudo</span> yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
+                <h1 id="安装centos7-5"><a href="#安装centos7-5" class="headerlink" title="安装centos7.5"></a>安装centos7.5</h1><h1 id="安装MySQL8-0"><a href="#安装MySQL8-0" class="headerlink" title="安装MySQL8.0"></a>安装MySQL8.0</h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 1.下载并添加存储库
+sudo yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
 （如果是在centos8中安装
-<span class="token function">sudo</span> yum localinstall https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm
+sudo yum localinstall https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm
 ）
 
-<span class="token comment"># 2. 安装MySQL8.0包</span>
-（如果是在centos8中安装先执行<span class="token variable"><span class="token variable">`</span>yum module disable mysql<span class="token variable">`</span></span>）
-yum <span class="token function">install</span> mysql-community-server
+# 2. 安装MySQL8.0包
+（如果是在centos8中安装先执行`yum module disable mysql`）
+yum install mysql-community-server
 
-<span class="token comment"># 3. 重载所有修改过的配置文件</span>
+# 3. 重载所有修改过的配置文件
 systemctl daemon-reload
 
-<span class="token comment"># 4.开启服务</span>
+# 4.开启服务
 systemctl start mysqld
 
-<span class="token comment"># 5.开机自启</span>
-systemctl <span class="token builtin class-name">enable</span> mysqld
+# 5.开机自启
+systemctl enable mysqld
 
-<span class="token comment"># 6.获取初始密码</span>
-<span class="token function">grep</span> <span class="token string">'password'</span> /var/log/mysqld.log
+# 6.获取初始密码
+grep 'password' /var/log/mysqld.log
 
-<span class="token comment"># 7.登录mysql</span>
+# 7.登录mysql
 mysql -uroot -p
 
-<span class="token comment"># 8.设置密码强度为低级</span>
-<span class="token builtin class-name">set</span> global validate_password.policy<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+# 8.设置密码强度为低级
+set global validate_password.policy=0;
 
-<span class="token comment"># 9.设置密码长度</span>
-<span class="token builtin class-name">set</span> global validate_password.length<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">;</span>
+# 9.设置密码长度
+set global validate_password.length=4;
 
-<span class="token comment"># 10.修改本地密码</span>
-alter user <span class="token string">'root'</span>@<span class="token string">'localhost'</span> identified by <span class="token string">'123456'</span><span class="token punctuation">;</span>
+# 10.修改本地密码
+alter user 'root'@'localhost' identified by '123456';
 
-<span class="token comment"># 11.退出并用新密码登录</span>
+# 11.退出并用新密码登录
 
-<span class="token comment"># 12.创建用户</span>
-create user <span class="token string">'root'</span>@<span class="token string">'%'</span> identified by <span class="token string">'123456'</span><span class="token punctuation">;</span>
+# 12.创建用户
+create user 'root'@'%' identified by '123456';
 
-<span class="token comment"># 13.允许远程连接</span>
-grant all privileges on *.* to <span class="token string">'root'</span>@<span class="token string">'%'</span> with grant option<span class="token punctuation">;</span>
+# 13.允许远程连接
+grant all privileges on *.* to 'root'@'%' with grant option;
 
-<span class="token comment"># 14.刷新权限</span>
-flush privileges<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# 14.刷新权限
+flush privileges;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="本地连接虚拟机中的MySQL8-0"><a href="#本地连接虚拟机中的MySQL8-0" class="headerlink" title="本地连接虚拟机中的MySQL8.0"></a>本地连接虚拟机中的MySQL8.0</h1><blockquote>
 <p>如果配置到上面直接navicate连接的话会报错，因为8.0和5.x的密码策略不同</p>
@@ -516,47 +516,47 @@ flush privileges<span class="token punctuation">;</span><span aria-hidden="true"
 <li>修改mysql密码策略；</li>
 </ol>
 <p>法二解决：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment">#1.登录mysql</span>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#1.登录mysql
 
-<span class="token comment">#2.</span>
-use mysql<span class="token punctuation">;</span>
+#2.
+use mysql;
 
-<span class="token comment">#3.修改加密规则</span>
-alter user <span class="token string">'root'</span>@<span class="token string">'%'</span> identified by <span class="token string">'123456'</span> password expire never<span class="token punctuation">;</span>
+#3.修改加密规则
+alter user 'root'@'%' identified by '123456' password expire never;
 
-<span class="token comment">#4.更新用户密码</span>
-alter user <span class="token string">'root'</span>@<span class="token string">'%'</span> identified with mysql_native_password by <span class="token string">'123456'</span><span class="token punctuation">;</span>
+#4.更新用户密码
+alter user 'root'@'%' identified with mysql_native_password by '123456';
 
-<span class="token comment">#5.刷新权限</span>
-flush privileges<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+#5.刷新权限
+flush privileges;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>此时连接就是没有问题了</p>
 <h1 id="开放端口"><a href="#开放端口" class="headerlink" title="开放端口"></a>开放端口</h1><blockquote>
 <p> 由于端口3306默认未开放，方法关闭防火墙，或者是开放3306端口</p>
 </blockquote>
 <p>由于安全考虑，选择开放3306端口</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 查看防火墙状态</span>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 查看防火墙状态
 firewall-cmd --state
 或  systemctl status firewalld
 
-<span class="token comment">#若防火墙关闭则开启</span>
+#若防火墙关闭则开启
 systemctl start firewalld
 
-<span class="token comment">#开启3306端口</span>
-firewall-cmd --zone<span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">3306</span>/tcp --permanent
-<span class="token comment">#--zone=public：表示作用域为公共</span>
-<span class="token comment">#--add-port=3306/tcp：添加tcp协议的端口3306</span>
-<span class="token comment">#--permanent：永久生效，若无此参数配置重启后失效</span>
+#开启3306端口
+firewall-cmd --zone=public --add-port=3306/tcp --permanent
+#--zone=public：表示作用域为公共
+#--add-port=3306/tcp：添加tcp协议的端口3306
+#--permanent：永久生效，若无此参数配置重启后失效
 
-<span class="token comment">#重启防火墙</span>
+#重启防火墙
 firewall-cmd --reload
 或systemctl restart firewalld
 
-<span class="token comment">#移除端口</span>
-firewall-cmd -permanent --remove-port<span class="token operator">=</span><span class="token number">3306</span>/tcp
+#移除端口
+firewall-cmd -permanent --remove-port=3306/tcp
 
-<span class="token comment">#查看端口是否开放</span>
-firewall-cmd --query-port<span class="token operator">=</span><span class="token number">3306</span>/tcp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+#查看端口是否开放
+firewall-cmd --query-port=3306/tcp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
