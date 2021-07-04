@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.hmoumou.xyz/2021/07/04/vue-zu-jian-fu-yong-hui-zhi-echarts-tu-li-1/</loc>
+    
+    <lastmod>2021-07-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hmoumou.xyz/2021/07/04/vue-zu-jian-fu-yong-hui-zhi-echarts-tu-2/</loc>
+    
+    <lastmod>2021-07-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hmoumou.xyz/2021/07/04/an-niu-ji-lian-xuan-ze-shi-xian/</loc>
+    
+    <lastmod>2021-07-04</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.hmoumou.xyz/2021/03/10/bian-cheng-bu-liang-ren-vue-elementui-vue-element-admin-xue-xi/</loc>
     
     <lastmod>2021-06-28</lastmod>
@@ -780,6 +801,27 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://blog.hmoumou.xyz/tags/vue3-0/</loc>
+    <lastmod>2021-07-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.hmoumou.xyz/tags/echarts/</loc>
+    <lastmod>2021-07-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.hmoumou.xyz/tags/%E7%BA%A7%E8%81%94%E9%80%89%E6%8B%A9/</loc>
+    <lastmod>2021-07-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -931,6 +973,13 @@
   
   <url>
     <loc>https://blog.hmoumou.xyz/categories/%E8%84%9A%E6%89%8B%E6%9E%B6/</loc>
+    <lastmod>2021-07-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.hmoumou.xyz/categories/%E5%8A%A8%E6%80%81/</loc>
     <lastmod>2021-07-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
