@@ -6,7 +6,7 @@
   <link href="https://blog.hmoumou.xyz/atom.xml" rel="self"/>
   
   <link href="https://blog.hmoumou.xyz/"/>
-  <updated>2021-07-04T13:33:50.746Z</updated>
+  <updated>2021-07-11T11:54:10.846Z</updated>
   <id>https://blog.hmoumou.xyz/</id>
   
   <author>
@@ -15,6 +15,88 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python获取word文档数据（含单选多选，暂未实现填空）</title>
+    <link href="https://blog.hmoumou.xyz/2021/07/11/python-huo-qu-word-wen-dang-shu-ju-han-dan-xuan-duo-xuan-zan-wei-shi-xian-tian-kong/"/>
+    <id>https://blog.hmoumou.xyz/2021/07/11/python-huo-qu-word-wen-dang-shu-ju-han-dan-xuan-duo-xuan-zan-wei-shi-xian-tian-kong/</id>
+    <published>2021-07-11T11:50:58.000Z</published>
+    <updated>2021-07-11T11:54:10.846Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;python获取word文档数据（含单选多选，暂未实现填空）&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;通过python爬取word文档题库数据  </summary>
+        
+      
+    
+    
+    
+    
+    <category term="python" scheme="https://blog.hmoumou.xyz/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python获取word文档数据（单一选择题）</title>
+    <link href="https://blog.hmoumou.xyz/2021/07/11/python-huo-qu-word-wen-dang-shu-ju-dan-yi-xuan-ze-ti/"/>
+    <id>https://blog.hmoumou.xyz/2021/07/11/python-huo-qu-word-wen-dang-shu-ju-dan-yi-xuan-ze-ti/</id>
+    <published>2021-07-11T11:47:07.000Z</published>
+    <updated>2021-07-11T11:54:20.901Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;python获取word文档数据（单一选择题）&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;通过python获取word文档中的数据并将其存入数据库中&lt;/p&gt;
+&lt;p&gt;主要操作过程备份&lt;/p&gt;
+&lt;p&gt;(1)XXXXXXXX&lt;/p&gt;
+&lt;p&gt;A.&lt;/</summary>
+        
+      
+    
+    
+    
+    
+    <category term="pythoin" scheme="https://blog.hmoumou.xyz/tags/pythoin/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python爬取网页数据</title>
+    <link href="https://blog.hmoumou.xyz/2021/07/11/python-pa-qu-wang-ye-shu-ju/"/>
+    <id>https://blog.hmoumou.xyz/2021/07/11/python-pa-qu-wang-ye-shu-ju/</id>
+    <published>2021-07-11T11:31:12.000Z</published>
+    <updated>2021-07-11T11:55:27.489Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;python爬取网页数据&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;城市爬取网页中的  题库类数据。在此作为过程备份&lt;/p&gt;
+&lt;p&gt;在此使用的时python3.X&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;完整代码：&lt;/p&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    
+    <category term="python" scheme="https://blog.hmoumou.xyz/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>vue组件复用绘制echarts图2</title>
@@ -460,85 +542,6 @@
     
     
     <category term="RBAC" scheme="https://blog.hmoumou.xyz/tags/RBAC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot通过JavaMailSender发生邮件</title>
-    <link href="https://blog.hmoumou.xyz/2021/03/19/springboot-tong-guo-javamailsender-fa-sheng-you-jian/"/>
-    <id>https://blog.hmoumou.xyz/2021/03/19/springboot-tong-guo-javamailsender-fa-sheng-you-jian/</id>
-    <published>2021-03-19T05:43:26.000Z</published>
-    <updated>2021-03-19T08:35:17.366Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;前期准备：开启163SMTP服务，并构建基本项目结构&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="SpringBoot" scheme="https://blog.hmoumou.xyz/categories/SpringBoot/"/>
-    
-    
-    <category term="JavaMailSender" scheme="https://blog.hmoumou.xyz/tags/JavaMailSender/"/>
-    
-    <category term="发邮件" scheme="https://blog.hmoumou.xyz/tags/%E5%8F%91%E9%82%AE%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>IDEA实现文件上传FastDFS</title>
-    <link href="https://blog.hmoumou.xyz/2021/03/12/idea-shi-xian-wen-jian-shang-chuan-fastdfs/"/>
-    <id>https://blog.hmoumou.xyz/2021/03/12/idea-shi-xian-wen-jian-shang-chuan-fastdfs/</id>
-    <published>2021-03-12T06:39:12.000Z</published>
-    <updated>2021-03-25T02:11:11.325Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    
-    <category term="fastDFS" scheme="https://blog.hmoumou.xyz/tags/fastDFS/"/>
-    
-    <category term="demo" scheme="https://blog.hmoumou.xyz/tags/demo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript学习</title>
-    <link href="https://blog.hmoumou.xyz/2021/03/10/javascript-xue-xi/"/>
-    <id>https://blog.hmoumou.xyz/2021/03/10/javascript-xue-xi/</id>
-    <published>2021-03-10T09:39:01.000Z</published>
-    <updated>2021-03-10T09:39:13.853Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;JavaScript学习笔记&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;JavaScript教程&quot;&gt;&lt;a href=&quot;#JavaScript教程&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="JavaScript" scheme="https://blog.hmoumou.xyz/tags/JavaScript/"/>
     
   </entry>
   
