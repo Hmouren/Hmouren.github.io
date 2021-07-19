@@ -407,14 +407,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-11
+                    2021-07-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    752
+                    773
                 </div>
                 
 
@@ -473,7 +473,6 @@ questionTitleId <span class="token operator">=</span> <span class="token boolean
 <span class="token keyword">def</span> <span class="token function">get_tag</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">try</span><span class="token punctuation">:</span>
         soup<span class="token operator">=</span>BeautifulSoup<span class="token punctuation">(</span>data<span class="token punctuation">,</span><span class="token string">'html.parser'</span><span class="token punctuation">)</span>
-        <span class="token comment"># 检索出所有的p标签</span>
         content<span class="token operator">=</span>soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">)</span>
     <span class="token keyword">except</span><span class="token punctuation">:</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"异常2"</span><span class="token punctuation">)</span>
@@ -482,7 +481,6 @@ questionTitleId <span class="token operator">=</span> <span class="token boolean
 <span class="token keyword">def</span> <span class="token function">get_answer</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">try</span><span class="token punctuation">:</span>
         soup<span class="token operator">=</span>BeautifulSoup<span class="token punctuation">(</span>data<span class="token punctuation">,</span><span class="token string">'html.parser'</span><span class="token punctuation">)</span>
-        <span class="token comment"># 检索出所有样式为bjh-strong 的span标签</span>
         trueAnswer <span class="token operator">=</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'span'</span><span class="token punctuation">,</span>class_<span class="token operator">=</span><span class="token string">"bjh-strong"</span><span class="token punctuation">)</span>
     <span class="token keyword">except</span><span class="token punctuation">:</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"异常3"</span><span class="token punctuation">)</span>
@@ -498,12 +496,19 @@ content<span class="token operator">=</span>get_tag<span class="token punctuatio
     conn <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">"localhost"</span><span class="token punctuation">,</span> db<span class="token operator">=</span><span class="token string">"freedom_issue"</span><span class="token punctuation">,</span> user<span class="token operator">=</span><span class="token string">"root"</span><span class="token punctuation">,</span> password<span class="token operator">=</span><span class="token string">"root"</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span>charset<span class="token operator">=</span><span class="token string">"utf8"</span><span class="token punctuation">)</span>
     <span class="token comment"># 获取游标</span>
     cur <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment">#-------</span>
+    <span class="token comment"># 生成随机uuid  uuid4是随机数构成  suid是depot表主键</span>
+    uid <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>uuid<span class="token punctuation">.</span>uuid4<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    suid <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>uid<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'-'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment"># 生成随机uuid</span>
+    <span class="token comment"># uuid4是随机数构成  是option表主键</span>
+    oid <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>uuid<span class="token punctuation">.</span>uuid4<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    soid <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>oid<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'-'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
 
     <span class="token keyword">if</span> val <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'^\d+'</span><span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token comment"># 生成随机uuid  uuid4是随机数构成</span>
-            uid <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>uuid<span class="token punctuation">.</span>uuid4<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-            suid <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>uid<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'-'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
             <span class="token comment"># 当前时间</span>
             dateNow <span class="token operator">=</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y-%m-%d %H:%M:%S"</span><span class="token punctuation">,</span>time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
             sign<span class="token operator">=</span><span class="token number">1</span>
@@ -541,10 +546,7 @@ content<span class="token operator">=</span>get_tag<span class="token punctuatio
             <span class="token comment"># 第二种通过字符串传入值结束</span>
             <span class="token keyword">continue</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span>sign <span class="token operator">==</span> <span class="token number">1</span> <span class="token keyword">and</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'^\D.'</span><span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token comment"># 生成随机uuid</span>
-            <span class="token comment"># uuid4是随机数构成</span>
-            uid <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>uuid<span class="token punctuation">.</span>uuid4<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-            suid <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>uid<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'-'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
             <span class="token comment"># 当前时间</span>
             dateNow <span class="token operator">=</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y-%m-%d %H:%M:%S"</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
             <span class="token comment"># print(suid)</span>
@@ -553,7 +555,7 @@ content<span class="token operator">=</span>get_tag<span class="token punctuatio
             <span class="token keyword">print</span><span class="token punctuation">(</span>quesOption<span class="token punctuation">)</span>
             <span class="token comment"># 将题目  的 选项数据  写入 option表开始</span>
             sql <span class="token operator">=</span> <span class="token string">"insert into issue_options(id,create_date,option_title,depot_id) values(%s,%s,%s,%s)"</span>
-            cur<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">,</span><span class="token punctuation">(</span>suid<span class="token punctuation">,</span>dateNow<span class="token punctuation">,</span>quesOption<span class="token punctuation">,</span>questionTitleId<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            cur<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">,</span><span class="token punctuation">(</span>soid<span class="token punctuation">,</span>dateNow<span class="token punctuation">,</span>quesOption<span class="token punctuation">,</span>questionTitleId<span class="token punctuation">)</span><span class="token punctuation">)</span>
             cur<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
             conn<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
             conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -564,6 +566,9 @@ content<span class="token operator">=</span>get_tag<span class="token punctuatio
                 valAnswer <span class="token operator">=</span> answer<span class="token punctuation">.</span>string
                 valAnswer <span class="token operator">=</span> valAnswer<span class="token punctuation">[</span><span class="token punctuation">(</span>valAnswer<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'．'</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token keyword">or</span> valAnswer<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'、'</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
                 <span class="token keyword">if</span> <span class="token punctuation">(</span>quesOption <span class="token operator">==</span> valAnswer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    <span class="token comment"># ////  是answer表主键</span>
+                    aid <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>uuid<span class="token punctuation">.</span>uuid4<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                    said <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>aid<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'-'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
                     <span class="token comment"># 配置数据库连接</span>
                     conn <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">"localhost"</span><span class="token punctuation">,</span> db<span class="token operator">=</span><span class="token string">"freedom_issue"</span><span class="token punctuation">,</span> user<span class="token operator">=</span><span class="token string">"root"</span><span class="token punctuation">,</span> password<span class="token operator">=</span><span class="token string">"root"</span><span class="token punctuation">,</span>
                                            port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span> charset<span class="token operator">=</span><span class="token string">"utf8"</span><span class="token punctuation">)</span>
@@ -572,16 +577,20 @@ content<span class="token operator">=</span>get_tag<span class="token punctuatio
                     <span class="token comment"># 正确答案</span>
                     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"正确答案是："</span><span class="token operator">+</span>valAnswer<span class="token punctuation">)</span>
                     <span class="token comment"># 将正确答案写入depot表  根据questionTitleId</span>
-                    sql <span class="token operator">=</span> <span class="token string">"update issue_depot set true_answer = %s where id = %s"</span>
-                    cur<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">,</span><span class="token punctuation">(</span>valAnswer<span class="token punctuation">,</span>questionTitleId<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                    <span class="token comment"># sql = "update issue_depot set true_answer = %s where id = %s"</span>
+                    <span class="token comment"># cur.execute(sql,(valAnswer,questionTitleId))</span>
+                    sql <span class="token operator">=</span> <span class="token string">"insert into issue_answer(id,create_date,depot_id,option_id) values (%s,%s,%s,%s)"</span>
+                    cur<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">,</span><span class="token punctuation">(</span>said<span class="token punctuation">,</span>dateNow<span class="token punctuation">,</span>questionTitleId<span class="token punctuation">,</span>soid<span class="token punctuation">)</span><span class="token punctuation">)</span>
                     cur<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
                     conn<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
                     conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
-                    <span class="token keyword">break</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    <span class="token keyword">continue</span>
 <span class="token comment"># 将输出结果中 ‘/u’转为中文  data.encode('utf-8').decode('unicode_escape')</span>
 <span class="token comment"># print(data.encode('utf-8').decode('unicode_escape'))</span>
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1169,7 +1178,7 @@ content<span class="token operator">=</span>get_tag<span class="token punctuatio
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">71.7k</span>&nbsp;字
+                class="white-color">72.7k</span>&nbsp;字
             
             
             
