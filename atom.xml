@@ -6,7 +6,7 @@
   <link href="https://blog.hmoumou.xyz/atom.xml" rel="self"/>
   
   <link href="https://blog.hmoumou.xyz/"/>
-  <updated>2021-07-19T03:16:41.433Z</updated>
+  <updated>2021-07-19T15:31:42.635Z</updated>
   <id>https://blog.hmoumou.xyz/</id>
   
   <author>
@@ -15,6 +15,110 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mybatis开启日志记录打印SQL，配合Mybatis Log使用</title>
+    <link href="https://blog.hmoumou.xyz/2021/07/19/mybatis-kai-qi-ri-zhi-ji-lu-da-yin-sql-pei-he-mybatis-log-shi-yong/"/>
+    <id>https://blog.hmoumou.xyz/2021/07/19/mybatis-kai-qi-ri-zhi-ji-lu-da-yin-sql-pei-he-mybatis-log-shi-yong/</id>
+    <published>2021-07-19T15:29:57.000Z</published>
+    <updated>2021-07-19T15:31:42.635Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;Mybatis开启日志记录打印SQL，配合Mybatis Log使用&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;application.yml设置：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-yml&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Mybatis" scheme="https://blog.hmoumou.xyz/tags/Mybatis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue中export和export default</title>
+    <link href="https://blog.hmoumou.xyz/2021/07/19/vue-zhong-export-he-export-default/"/>
+    <id>https://blog.hmoumou.xyz/2021/07/19/vue-zhong-export-he-export-default/</id>
+    <published>2021-07-19T15:24:56.000Z</published>
+    <updated>2021-07-19T15:28:42.064Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;Vue中export和export default&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;首先两则的区别在于：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;export 可以导出多个命名模块&lt;/li&gt;
+&lt;li&gt;export default</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Vue" scheme="https://blog.hmoumou.xyz/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>v-for Vue插槽学习</title>
+    <link href="https://blog.hmoumou.xyz/2021/07/19/v-for-vue-cha-cao-xue-xi/"/>
+    <id>https://blog.hmoumou.xyz/2021/07/19/v-for-vue-cha-cao-xue-xi/</id>
+    <published>2021-07-19T14:32:36.000Z</published>
+    <updated>2021-07-19T15:20:10.996Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;v-for Vue插槽学习&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class=&quot;line-numbers language-vue&quot; data-language=&quot;vue&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Vue" scheme="https://blog.hmoumou.xyz/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>elementUI-Plus实现图片上传</title>
+    <link href="https://blog.hmoumou.xyz/2021/07/19/elementui-plus-shi-xian-tu-pian-shang-chuan/"/>
+    <id>https://blog.hmoumou.xyz/2021/07/19/elementui-plus-shi-xian-tu-pian-shang-chuan/</id>
+    <published>2021-07-19T14:28:22.000Z</published>
+    <updated>2021-07-19T14:33:13.009Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;elementUI-Plus实现图片上传&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Vue&quot;&gt;&lt;a href=&quot;#Vue&quot; class=&quot;headerlink&quot; title=&quot;Vue&quot;&gt;&lt;/a&gt;Vue&lt;/h1&gt;&lt;pre</summary>
+        
+      
+    
+    
+    
+    
+    <category term="elementUI" scheme="https://blog.hmoumou.xyz/tags/elementUI/"/>
+    
+    <category term="图片上传" scheme="https://blog.hmoumou.xyz/tags/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>获取URL地址栏中跳转携带的参数</title>
@@ -436,119 +540,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>PC端微信防撤![10](C:/Users/Hmouren/Desktop/10.png)回</title>
-    <link href="https://blog.hmoumou.xyz/2021/05/02/pc-duan-wei-xin-fang-che-hui/"/>
-    <id>https://blog.hmoumou.xyz/2021/05/02/pc-duan-wei-xin-fang-che-hui/</id>
-    <published>2021-05-02T03:03:43.000Z</published>
-    <updated>2021-05-02T03:19:57.236Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;PC端微信消息防撤回&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;准备工具：&lt;/p&gt;
-&lt;p&gt;x64dbg&lt;/p&gt;
-&lt;p&gt;​    &lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="反汇编" scheme="https://blog.hmoumou.xyz/categories/%E5%8F%8D%E6%B1%87%E7%BC%96/"/>
-    
-    
-    <category term="x32dbg" scheme="https://blog.hmoumou.xyz/tags/x32dbg/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mybatis动态SQL学习</title>
-    <link href="https://blog.hmoumou.xyz/2021/04/15/mybatis-dong-tai-sql-xue-xi/"/>
-    <id>https://blog.hmoumou.xyz/2021/04/15/mybatis-dong-tai-sql-xue-xi/</id>
-    <published>2021-04-15T02:26:25.000Z</published>
-    <updated>2021-04-15T09:43:06.463Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;动态 SQL&lt;/strong&gt; 是 MyBatis 的强大特性之一。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;if&lt;/li&gt;
-&lt;li&gt;choose (when, otherwise)&lt;/li&gt;
-&lt;li&gt;trim (where,</summary>
-        
-      
-    
-    
-    
-    <category term="Mybatis" scheme="https://blog.hmoumou.xyz/categories/Mybatis/"/>
-    
-    
-    <category term="动态SQL" scheme="https://blog.hmoumou.xyz/tags/%E5%8A%A8%E6%80%81SQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>上传8K图片导致内存溢出</title>
-    <link href="https://blog.hmoumou.xyz/2021/04/07/shang-chuan-8k-tu-pian-dao-zhi-nei-cun-yi-chu/"/>
-    <id>https://blog.hmoumou.xyz/2021/04/07/shang-chuan-8k-tu-pian-dao-zhi-nei-cun-yi-chu/</id>
-    <published>2021-04-07T09:23:27.000Z</published>
-    <updated>2021-04-07T09:37:17.963Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;上传8K图片报错，显示堆内存溢出&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="error" scheme="https://blog.hmoumou.xyz/categories/error/"/>
-    
-    
-    <category term="tomcat" scheme="https://blog.hmoumou.xyz/tags/tomcat/"/>
-    
-    <category term="图片上传" scheme="https://blog.hmoumou.xyz/tags/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java保存图片三种方式</title>
-    <link href="https://blog.hmoumou.xyz/2021/04/07/java-bao-cun-tu-pian-san-chong-fang-shi/"/>
-    <id>https://blog.hmoumou.xyz/2021/04/07/java-bao-cun-tu-pian-san-chong-fang-shi/</id>
-    <published>2021-04-07T08:34:15.000Z</published>
-    <updated>2021-04-07T08:34:44.970Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;if (fileWidth &amp;gt; 4096) {
-                       if (fileWidth &amp;gt;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="java" scheme="https://blog.hmoumou.xyz/tags/java/"/>
-    
-    <category term="java图片保存" scheme="https://blog.hmoumou.xyz/tags/java%E5%9B%BE%E7%89%87%E4%BF%9D%E5%AD%98/"/>
     
   </entry>
   
