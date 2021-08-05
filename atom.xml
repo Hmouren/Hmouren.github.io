@@ -6,7 +6,7 @@
   <link href="https://blog.hmoumou.xyz/atom.xml" rel="self"/>
   
   <link href="https://blog.hmoumou.xyz/"/>
-  <updated>2021-07-20T01:47:31.459Z</updated>
+  <updated>2021-08-05T15:34:09.068Z</updated>
   <id>https://blog.hmoumou.xyz/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ECMAScript特性学习es6-11</title>
+    <link href="https://blog.hmoumou.xyz/2021/08/03/ecmascript-te-xing-xue-xi-es6-11/"/>
+    <id>https://blog.hmoumou.xyz/2021/08/03/ecmascript-te-xing-xue-xi-es6-11/</id>
+    <published>2021-08-03T14:59:36.000Z</published>
+    <updated>2021-08-05T15:34:09.068Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;ECMAScript特性学习es6-11&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ES全称ECMAScript，ECMAScript是ECMA制定的标准化脚本语言。目前JavaScript使用的ECMAScript版本为&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="es特性" scheme="https://blog.hmoumou.xyz/tags/es%E7%89%B9%E6%80%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue3中不显示echarts tooltip问题</title>
+    <link href="https://blog.hmoumou.xyz/2021/07/31/vue3-zhong-bu-xian-shi-echarts-tooltip-wen-ti/"/>
+    <id>https://blog.hmoumou.xyz/2021/07/31/vue3-zhong-bu-xian-shi-echarts-tooltip-wen-ti/</id>
+    <published>2021-07-30T16:32:35.000Z</published>
+    <updated>2021-07-30T16:37:53.239Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;vue3中不显示echarts</summary>
+        
+      
+    
+    
+    
+    
+    <category term="vue3" scheme="https://blog.hmoumou.xyz/tags/vue3/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript学习（二）</title>
@@ -492,57 +540,6 @@
     
     
     <category term="ajax" scheme="https://blog.hmoumou.xyz/tags/ajax/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决axios无法传递data参数问题</title>
-    <link href="https://blog.hmoumou.xyz/2021/06/07/jie-jue-axios-wu-fa-chuan-di-data-can-shu-wen-ti/"/>
-    <id>https://blog.hmoumou.xyz/2021/06/07/jie-jue-axios-wu-fa-chuan-di-data-can-shu-wen-ti/</id>
-    <published>2021-06-07T06:28:48.000Z</published>
-    <updated>2021-06-07T06:54:12.731Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;解决axios无法传递data参数问题&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;首先出现这种问题的原因在于&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;默认情况下发送axios请求时请求头中的内容类型为：&lt;/p&gt;
-&lt;pre class=&quot;line-numbers</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>四种请求方式</title>
-    <link href="https://blog.hmoumou.xyz/2021/06/07/si-chong-qing-qiu-fang-shi/"/>
-    <id>https://blog.hmoumou.xyz/2021/06/07/si-chong-qing-qiu-fang-shi/</id>
-    <published>2021-06-07T05:36:01.000Z</published>
-    <updated>2021-06-07T05:45:44.294Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;请求方式大致可以分为四类&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Get请求：从数据库中&lt;strong&gt;获取&lt;/strong&gt;数据，不涉及数据库的修改操作；&lt;/li&gt;
-&lt;li&gt;Post请求：涉及数据库数据&lt;strong&gt;增加&lt;/strong&gt;操作；&lt;/l</summary>
-        
-      
-    
-    
-    
-    
-    <category term="请求方式" scheme="https://blog.hmoumou.xyz/tags/%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F/"/>
     
   </entry>
   
