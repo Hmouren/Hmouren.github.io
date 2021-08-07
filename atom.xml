@@ -6,7 +6,7 @@
   <link href="https://blog.hmoumou.xyz/atom.xml" rel="self"/>
   
   <link href="https://blog.hmoumou.xyz/"/>
-  <updated>2021-08-05T15:34:09.068Z</updated>
+  <updated>2021-08-07T11:00:36.754Z</updated>
   <id>https://blog.hmoumou.xyz/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ECMAScript6阮一峰</title>
+    <link href="https://blog.hmoumou.xyz/2021/08/07/ecmascript6-ruan-yi-feng/"/>
+    <id>https://blog.hmoumou.xyz/2021/08/07/ecmascript6-ruan-yi-feng/</id>
+    <published>2021-08-07T04:44:20.000Z</published>
+    <updated>2021-08-07T11:00:36.754Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;ECMAScript6阮一峰&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;let-和-const-命令&quot;&gt;&lt;a href=&quot;#let-和-const-命令&quot; class=&quot;headerlink&quot; title=&quot;let 和 const 命令&quot;&gt;&lt;/a&gt;let</summary>
+        
+      
+    
+    
+    
+    <category term="阮一峰" scheme="https://blog.hmoumou.xyz/categories/%E9%98%AE%E4%B8%80%E5%B3%B0/"/>
+    
+    
+    <category term="ES6" scheme="https://blog.hmoumou.xyz/tags/ES6/"/>
+    
+  </entry>
   
   <entry>
     <title>ECMAScript特性学习es6-11</title>
@@ -507,32 +533,6 @@
     <summary type="html">&lt;p&gt;&lt;strong&gt;Ajax实现动态列表li&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;html：&lt;/p&gt;
 &lt;pre class=&quot;line-numbers language-html&quot; data-language=&quot;html&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
-    
-    <category term="ajax" scheme="https://blog.hmoumou.xyz/tags/ajax/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ajax实现动态下拉框</title>
-    <link href="https://blog.hmoumou.xyz/2021/06/07/ajax-shi-xian-dong-tai-xia-la-kuang/"/>
-    <id>https://blog.hmoumou.xyz/2021/06/07/ajax-shi-xian-dong-tai-xia-la-kuang/</id>
-    <published>2021-06-07T07:12:16.000Z</published>
-    <updated>2021-06-07T07:53:46.410Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Ajax实现动态下拉框&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;原先为静态数据，不利于后期维护，原代码如下：&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-html&quot;</summary>
         
       
     
