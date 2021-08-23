@@ -6,7 +6,7 @@
   <link href="https://blog.hmoumou.xyz/atom.xml" rel="self"/>
   
   <link href="https://blog.hmoumou.xyz/"/>
-  <updated>2021-08-08T15:49:29.492Z</updated>
+  <updated>2021-08-23T16:21:31.265Z</updated>
   <id>https://blog.hmoumou.xyz/</id>
   
   <author>
@@ -17,11 +17,108 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>SpringBoot进行参数校验Validation</title>
+    <link href="https://blog.hmoumou.xyz/2021/08/23/springboot-jin-xing-can-shu-xiao-yan-validation/"/>
+    <id>https://blog.hmoumou.xyz/2021/08/23/springboot-jin-xing-can-shu-xiao-yan-validation/</id>
+    <published>2021-08-23T15:59:55.000Z</published>
+    <updated>2021-08-23T16:21:31.265Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;为什么需要参数校验&quot;&gt;&lt;a href=&quot;#为什么需要参数校验&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="SpringBoot" scheme="https://blog.hmoumou.xyz/categories/SpringBoot/"/>
+    
+    
+    <category term="参数校验" scheme="https://blog.hmoumou.xyz/tags/%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML界面显示光线粒子效果</title>
+    <link href="https://blog.hmoumou.xyz/2021/08/23/html-jie-mian-xian-shi-guang-xian-li-zi-xiao-guo/"/>
+    <id>https://blog.hmoumou.xyz/2021/08/23/html-jie-mian-xian-shi-guang-xian-li-zi-xiao-guo/</id>
+    <published>2021-08-23T15:31:23.000Z</published>
+    <updated>2021-08-23T15:32:31.557Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;html&quot;&gt;&lt;a href=&quot;#html&quot; class=&quot;headerlink&quot; title=&quot;html&quot;&gt;&lt;/a&gt;html&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-html&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="HTML效果" scheme="https://blog.hmoumou.xyz/tags/HTML%E6%95%88%E6%9E%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot定时执行（时间段内、并发）</title>
+    <link href="https://blog.hmoumou.xyz/2021/08/23/springboot-ding-shi-zhi-xing-shi-jian-duan-nei-bing-fa/"/>
+    <id>https://blog.hmoumou.xyz/2021/08/23/springboot-ding-shi-zhi-xing-shi-jian-duan-nei-bing-fa/</id>
+    <published>2021-08-23T14:36:42.000Z</published>
+    <updated>2021-08-23T15:27:39.593Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;常用方法类&quot;&gt;&lt;a href=&quot;#常用方法类&quot; class=&quot;headerlink&quot; title=&quot;常用方法类&quot;&gt;&lt;/a&gt;常用方法类&lt;/h1&gt;&lt;h2 id=&quot;获取两个时间之间的间隔天数&quot;&gt;&lt;a href=&quot;#获取两个时间之间的间隔天数&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="SpringBoot" scheme="https://blog.hmoumou.xyz/categories/SpringBoot/"/>
+    
+    
+    <category term="定时任务" scheme="https://blog.hmoumou.xyz/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
+    
+    <category term="并发for循环" scheme="https://blog.hmoumou.xyz/tags/%E5%B9%B6%E5%8F%91for%E5%BE%AA%E7%8E%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java中ArrayList五种去除重复数据的方法</title>
+    <link href="https://blog.hmoumou.xyz/2021/08/19/java-zhong-arraylist-wu-chong-qu-chu-chong-fu-shu-ju-de-fang-fa/"/>
+    <id>https://blog.hmoumou.xyz/2021/08/19/java-zhong-arraylist-wu-chong-qu-chu-chong-fu-shu-ju-de-fang-fa/</id>
+    <published>2021-08-19T14:48:17.000Z</published>
+    <updated>2021-08-19T15:07:55.286Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;以下介绍五种-不同的方法去除 Java 中ArrayList中的重复数据`&lt;/p&gt;
+&lt;h1 id=&quot;使用LinkedHashSet删除arraylist中的重复数据&quot;&gt;&lt;a href=&quot;#使用LinkedHashSet删除arraylist中的重复数据&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>ECMAScript6阮一峰</title>
     <link href="https://blog.hmoumou.xyz/2021/08/07/ecmascript6-ruan-yi-feng/"/>
     <id>https://blog.hmoumou.xyz/2021/08/07/ecmascript6-ruan-yi-feng/</id>
     <published>2021-08-07T04:44:20.000Z</published>
-    <updated>2021-08-08T15:49:29.492Z</updated>
+    <updated>2021-08-09T15:18:49.999Z</updated>
     
     
       
@@ -431,115 +528,6 @@
     <category term="vue3.0" scheme="https://blog.hmoumou.xyz/tags/vue3-0/"/>
     
     <category term="echarts" scheme="https://blog.hmoumou.xyz/tags/echarts/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue组件复用绘制echarts图例1</title>
-    <link href="https://blog.hmoumou.xyz/2021/07/04/vue-zu-jian-fu-yong-hui-zhi-echarts-tu-li-1/"/>
-    <id>https://blog.hmoumou.xyz/2021/07/04/vue-zu-jian-fu-yong-hui-zhi-echarts-tu-li-1/</id>
-    <published>2021-07-04T12:52:09.000Z</published>
-    <updated>2021-07-04T13:34:13.958Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;vue组件复用绘制echarts图例1&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在此先简单认识 了解</summary>
-        
-      
-    
-    
-    
-    
-    <category term="vue3.0" scheme="https://blog.hmoumou.xyz/tags/vue3-0/"/>
-    
-    <category term="echarts" scheme="https://blog.hmoumou.xyz/tags/echarts/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>按钮级联选择实现</title>
-    <link href="https://blog.hmoumou.xyz/2021/07/04/an-niu-ji-lian-xuan-ze-shi-xian/"/>
-    <id>https://blog.hmoumou.xyz/2021/07/04/an-niu-ji-lian-xuan-ze-shi-xian/</id>
-    <published>2021-07-04T09:18:47.000Z</published>
-    <updated>2021-07-04T12:51:13.850Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;按钮级联选择实现&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2021/07/04/an-niu-ji-lian-xuan-ze-shi-xian/image-20210704172145651.png&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="动态" scheme="https://blog.hmoumou.xyz/categories/%E5%8A%A8%E6%80%81/"/>
-    
-    
-    <category term="级联选择" scheme="https://blog.hmoumou.xyz/tags/%E7%BA%A7%E8%81%94%E9%80%89%E6%8B%A9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CRM项目实战-智能销售管理系统（念安）</title>
-    <link href="https://blog.hmoumou.xyz/2021/06/09/crm-xiang-mu-shi-zhan-zhi-neng-xiao-shou-guan-li-xi-tong-nian-an/"/>
-    <id>https://blog.hmoumou.xyz/2021/06/09/crm-xiang-mu-shi-zhan-zhi-neng-xiao-shou-guan-li-xi-tong-nian-an/</id>
-    <published>2021-06-09T04:49:00.000Z</published>
-    <updated>2021-06-27T03:18:13.400Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;CRM项目实战-智能销售管理系统（念安）&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;系统主要功能模块图：&lt;/p&gt;
-&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="项目实战" scheme="https://blog.hmoumou.xyz/categories/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/"/>
-    
-    
-    <category term="项目实战" scheme="https://blog.hmoumou.xyz/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/"/>
-    
-    <category term="管理系统" scheme="https://blog.hmoumou.xyz/tags/%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
-    
-    <category term="CRM" scheme="https://blog.hmoumou.xyz/tags/CRM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ajax实现动态列表li</title>
-    <link href="https://blog.hmoumou.xyz/2021/06/07/ajax-shi-xian-dong-tai-lie-biao-li/"/>
-    <id>https://blog.hmoumou.xyz/2021/06/07/ajax-shi-xian-dong-tai-lie-biao-li/</id>
-    <published>2021-06-07T09:37:45.000Z</published>
-    <updated>2021-06-07T10:38:10.316Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Ajax实现动态列表li&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;html：&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-html&quot; data-language=&quot;html&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
-    
-    <category term="ajax" scheme="https://blog.hmoumou.xyz/tags/ajax/"/>
     
   </entry>
   
