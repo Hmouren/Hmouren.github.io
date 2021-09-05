@@ -6,7 +6,7 @@
   <link href="https://blog.hmoumou.xyz/atom.xml" rel="self"/>
   
   <link href="https://blog.hmoumou.xyz/"/>
-  <updated>2021-08-23T16:21:31.265Z</updated>
+  <updated>2021-09-05T09:20:21.855Z</updated>
   <id>https://blog.hmoumou.xyz/</id>
   
   <author>
@@ -15,6 +15,106 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java8使用Stream流实现List列表的查询、统计、排序、分组</title>
+    <link href="https://blog.hmoumou.xyz/2021/09/05/java8-shi-yong-stream-liu-shi-xian-list-lie-biao-de-cha-xun-tong-ji-pai-xu-fen-zu/"/>
+    <id>https://blog.hmoumou.xyz/2021/09/05/java8-shi-yong-stream-liu-shi-xian-list-lie-biao-de-cha-xun-tong-ji-pai-xu-fen-zu/</id>
+    <published>2021-09-05T07:16:10.000Z</published>
+    <updated>2021-09-05T09:20:21.855Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;Java8使用Stream流实现List列表的查询、统计、排序、分组&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Java8提供了Stream（流）处理集合的关键抽象概念，它可以对集合进行的操作，可以执行非常复杂的查找、过滤和映射数据等操作。Stream API</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://blog.hmoumou.xyz/categories/Java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java8 Stream.distinct()去重</title>
+    <link href="https://blog.hmoumou.xyz/2021/09/05/java8-stream-distinct-qu-chong/"/>
+    <id>https://blog.hmoumou.xyz/2021/09/05/java8-stream-distinct-qu-chong/</id>
+    <published>2021-09-05T05:41:53.000Z</published>
+    <updated>2021-09-05T06:55:38.507Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;Java8 Stream.distinct()去重&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在这篇文章里，我们将提供Java8 Stream distinct（）示例。</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://blog.hmoumou.xyz/categories/Java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>java8新特性Optional，非空判断</title>
+    <link href="https://blog.hmoumou.xyz/2021/09/05/java8-xin-te-xing-optional-fei-kong-pan-duan/"/>
+    <id>https://blog.hmoumou.xyz/2021/09/05/java8-xin-te-xing-optional-fei-kong-pan-duan/</id>
+    <published>2021-09-05T04:20:50.000Z</published>
+    <updated>2021-09-05T05:09:50.485Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;java8新特性Optional，非空判断&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Optional&quot;&gt;&lt;a href=&quot;#Optional&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://blog.hmoumou.xyz/categories/Java/"/>
+    
+    
+    <category term="jdk8" scheme="https://blog.hmoumou.xyz/tags/jdk8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常见for循环优化方式</title>
+    <link href="https://blog.hmoumou.xyz/2021/09/04/chang-jian-for-xun-huan-you-hua-fang-shi/"/>
+    <id>https://blog.hmoumou.xyz/2021/09/04/chang-jian-for-xun-huan-you-hua-fang-shi/</id>
+    <published>2021-09-04T14:17:37.000Z</published>
+    <updated>2021-09-04T16:08:05.186Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;常见for循环优化方式&quot;&gt;&lt;a href=&quot;#常见for循环优化方式&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://blog.hmoumou.xyz/categories/Java/"/>
+    
+    
+    <category term="循环" scheme="https://blog.hmoumou.xyz/tags/%E5%BE%AA%E7%8E%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot进行参数校验Validation</title>
@@ -417,117 +517,6 @@
     
     
     <category term="vue" scheme="https://blog.hmoumou.xyz/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python获取word文档数据（含单选多选，暂未实现填空）</title>
-    <link href="https://blog.hmoumou.xyz/2021/07/11/python-huo-qu-word-wen-dang-shu-ju-han-dan-xuan-duo-xuan-zan-wei-shi-xian-tian-kong/"/>
-    <id>https://blog.hmoumou.xyz/2021/07/11/python-huo-qu-word-wen-dang-shu-ju-han-dan-xuan-duo-xuan-zan-wei-shi-xian-tian-kong/</id>
-    <published>2021-07-11T11:50:58.000Z</published>
-    <updated>2021-07-11T11:54:10.846Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;python获取word文档数据（含单选多选，暂未实现填空）&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;通过python爬取word文档题库数据  </summary>
-        
-      
-    
-    
-    
-    
-    <category term="python" scheme="https://blog.hmoumou.xyz/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python获取word文档数据（单一选择题）</title>
-    <link href="https://blog.hmoumou.xyz/2021/07/11/python-huo-qu-word-wen-dang-shu-ju-dan-yi-xuan-ze-ti/"/>
-    <id>https://blog.hmoumou.xyz/2021/07/11/python-huo-qu-word-wen-dang-shu-ju-dan-yi-xuan-ze-ti/</id>
-    <published>2021-07-11T11:47:07.000Z</published>
-    <updated>2021-07-11T11:54:20.901Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;python获取word文档数据（单一选择题）&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;通过python获取word文档中的数据并将其存入数据库中&lt;/p&gt;
-&lt;p&gt;主要操作过程备份&lt;/p&gt;
-&lt;p&gt;(1)XXXXXXXX&lt;/p&gt;
-&lt;p&gt;A.&lt;/</summary>
-        
-      
-    
-    
-    
-    
-    <category term="pythoin" scheme="https://blog.hmoumou.xyz/tags/pythoin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python爬取网页数据</title>
-    <link href="https://blog.hmoumou.xyz/2021/07/11/python-pa-qu-wang-ye-shu-ju/"/>
-    <id>https://blog.hmoumou.xyz/2021/07/11/python-pa-qu-wang-ye-shu-ju/</id>
-    <published>2021-07-11T11:31:12.000Z</published>
-    <updated>2021-07-19T01:46:55.659Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;python爬取网页数据&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;城市爬取网页中的  题库类数据。在此作为过程备份&lt;/p&gt;
-&lt;p&gt;在此使用的时python3.X&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;完整代码：&lt;/p&gt;
-&lt;pre</summary>
-        
-      
-    
-    
-    
-    
-    <category term="python" scheme="https://blog.hmoumou.xyz/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue组件复用绘制echarts图2</title>
-    <link href="https://blog.hmoumou.xyz/2021/07/04/vue-zu-jian-fu-yong-hui-zhi-echarts-tu-2/"/>
-    <id>https://blog.hmoumou.xyz/2021/07/04/vue-zu-jian-fu-yong-hui-zhi-echarts-tu-2/</id>
-    <published>2021-07-04T13:27:53.000Z</published>
-    <updated>2021-07-04T13:33:50.746Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;vue组件复用绘制echarts图2&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在此通过另一种方式实现vue组件复用实现echarts&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;main-js&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    
-    <category term="vue3.0" scheme="https://blog.hmoumou.xyz/tags/vue3-0/"/>
-    
-    <category term="echarts" scheme="https://blog.hmoumou.xyz/tags/echarts/"/>
     
   </entry>
   
