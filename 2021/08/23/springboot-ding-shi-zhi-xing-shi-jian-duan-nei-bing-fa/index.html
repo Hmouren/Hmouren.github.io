@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
 </head>
 
 
@@ -420,14 +420,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-23
+                    2021-09-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    282
+                    284
                 </div>
                 
 
@@ -476,42 +476,42 @@
 <span class="token comment">//提一句：如果想随机获取指定数组中的数据，可以先随机生成数据作为下标读取</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
-<li><p>获取当前时间小时：</p>
-<ul>
-<li>```java<br>Calendar calendar = Calendar.getInstance();<br>int hourNow = calendar.get(Calendar.HOUR_OF_DAY);<pre class="line-numbers language-none"><code class="language-none">
+<li>获取当前时间小时：</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Calendar</span> calendar <span class="token operator">=</span> <span class="token class-name">Calendar</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> hourNow <span class="token operator">=</span> calendar<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span>HOUR_OF_DAY<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
-## for循环数组并发执行
 
-```java
-    /**
+
+
+<h2 id="for循环数组并发执行-多线程"><a href="#for循环数组并发执行-多线程" class="headerlink" title="for循环数组并发执行(多线程)"></a>for循环数组并发执行(多线程)</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java">    <span class="token comment">/**
      * 并发执行for循环数组
      * @param list
-     */
-    public void concurrentExecution( List&lt;GarbageWarningUtil&gt; list,int hourNow) {
-//        ExecutorService pool = Executors.newCachedThreadPool();
-        ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(list.size(),list.size()*2
-                ,10, TimeUnit.SECONDS
-                ,new ArrayBlockingQueue&lt;&gt;(20),new ThreadPoolExecutor.CallerRunsPolicy());
-        for (int i = 0; i &lt; list.size(); i++) {
-            int finalI = i;
-            Runnable run = new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        System.out.println(hourNow);
-                    } catch (Exception e) {
-                    }
-                }
-            };
-            poolExecutor.execute(run);
-        }
-        poolExecutor.shutdown();
-    }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-</li>
-<li><p>Thread.sleep()线程暂停一定时间执行，单位：ms</p>
-</li>
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">concurrentExecution</span><span class="token punctuation">(</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">GarbageWarningUtil</span><span class="token punctuation">&gt;</span></span> list<span class="token punctuation">,</span><span class="token keyword">int</span> hourNow<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment">//        ExecutorService pool = Executors.newCachedThreadPool();</span>
+        <span class="token class-name">ThreadPoolExecutor</span> poolExecutor <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ThreadPoolExecutor</span><span class="token punctuation">(</span>list<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>list<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">2</span>
+                <span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>SECONDS
+                <span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">ArrayBlockingQueue</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">ThreadPoolExecutor<span class="token punctuation">.</span>CallerRunsPolicy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> list<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> finalI <span class="token operator">=</span> i<span class="token punctuation">;</span>
+            <span class="token class-name">Runnable</span> run <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Runnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token annotation punctuation">@Override</span>
+                <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>hourNow<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+            poolExecutor<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span>run<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        poolExecutor<span class="token punctuation">.</span><span class="token function">shutdown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>Thread.sleep()线程暂停一定时间执行，单位：ms</li>
 </ul>
 <p>通过以上几个方法可以实现每天任意几个时间段执行相关方法</p>
 
@@ -1089,7 +1089,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">153.3k</span>&nbsp;字
+                class="white-color">154.5k</span>&nbsp;字
             
             
             
