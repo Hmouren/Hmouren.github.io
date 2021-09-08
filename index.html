@@ -527,39 +527,37 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/09/07/xiang-mu-zhong-mybatisplus-cha-ru-shu-ju-you-hua-chang-shi/">
+                    <a href="/2021/09/08/vue-dui-xiang-shu-zu-qu-chong/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="项目中MybatisPlus插入数据优化尝试">
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Vue对象数组去重">
                             
-                            <span class="card-title">项目中MybatisPlus插入数据优化尝试</span>
+                            <span class="card-title">Vue对象数组去重</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                项目中MybatisPlus插入数据优化尝试
+                                
+一般的数组去重可以直接用 new Set() 方法即可，但是数组对象的话，比较复杂，不能直接用，我们可以采取间接的方法来去重
 
-问题描述：当数据较多时10w量级，插入表中时间较长10min。最终优化为19s
-
-解决方案一
-第一次优化是在mysql链接的参数上
-
-##例如 jdbc.url=jdbc:mysql://lo
+unique(arr) {
+  const res = new Map();
+  return arr.fil
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/MybatisPlus/" class="post-category">
-                                    MybatisPlus
+                                <a href="/categories/Vue/" class="post-category">
+                                    Vue
                                 </a>
                                 
                                 
@@ -573,30 +571,329 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/09/07/vue-lu-you-chuan-can-fang-shi-han-ye-mian-shua-xin-can-shu-diu-shi-wen-ti-jie-jue/">
+                    <a href="/2021/09/08/mysql-zhong-tong-guo-replace-chu-li-uuid-shu-ju-chong-fu/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="vue路由传参方式/含页面刷新参数丢失问题解决">
+                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Mysql中通过replace处理uuid数据重复">
                             
-                            <span class="card-title">vue路由传参方式/含页面刷新参数丢失问题解决</span>
+                            <span class="card-title">Mysql中通过replace处理uuid数据重复</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                vue路由传参方式/含页面刷新参数丢失问题解决
-传参方式一：params传参 页面刷新参数丢失
-参数传递页面// 点击跳转详情页面
-        toDetail(){
-            this.$router.push({
-  
+                                问题：在SQL中直接使用replace()去除uuid()中的“-”,可能会造成数据重复
+select REPLACE(uuid(),"-","") as uid,REPLACE(uuid(),"-","") as uid2
+
+
+
+解决方法
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/SQL%E8%AF%AD%E5%8F%A5/" class="post-category">
+                                    SQL语句
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/MySQL/">
+                            <span class="chip bg-color">MySQL</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/09/08/js-shan-chu-zi-fu-chuan-zui-hou-yi-ge-zi-fu/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Js删除字符串最后一个字符">
+                            
+                            <span class="card-title">Js删除字符串最后一个字符</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+需求：数据str = “测试数据1，测试数据2，”
+目标：删除最后一个逗号
+
+
+最常用的方法就是通过ｓｕｂｓｔｒｉｎｇ（）
+
+let strNew = str.substring(0,str.length()-1)
+
+
+
+
+删除特定字符
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/js/">
+                            <span class="chip bg-color">js</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/09/08/js-huo-qu-shu-zu-zhong-chu-xian-ci-shu-zui-duo-de-yuan-su-zhi/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Js获取数组中出现次数最多的元素值">
+                            
+                            <span class="card-title">Js获取数组中出现次数最多的元素值</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                js获取数组中出现次数做多的元素值//参数a为数组  let a = []
+function findMany(a) {
+  let result = [0, 0];
+  for (let i = 0; i &lt; a.length; i
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/js/">
+                            <span class="chip bg-color">js</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/09/08/axios-huo-ajax-qian-duan-gen-ju-fan-hui-shu-ju-liu-sheng-cheng-wen-jian-xia-zai/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Axios或Ajax前端根据返回数据流生成文件下载">
+                            
+                            <span class="card-title">Axios或Ajax前端根据返回数据流生成文件下载</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                axios（ajax）前端根据返回数据流生成文件下载axios({
+      method: "post",
+      url: "你的url",
+    responseType: 'blob'
+      // 这里可以在heade
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Axios/" class="post-category">
+                                    Axios
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/09/08/js-shi-yong-split-han-shu/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Js使用split()函数">
+                            
+                            <span class="card-title">Js使用split()函数</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                split分隔字符串获取数组let string = "这是一个，我没见过的"
+let arr = []
+arr = string.split(",")
+console.log(arr)
+//["这是一个","我没见过的"]
+
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/js/">
+                            <span class="chip bg-color">js</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/09/08/element-plus-xuan-ze-qi-huo-qu-label-zhi-wen-ti/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Element-Plus选择器获取label值问题">
+                            
+                            <span class="card-title">Element-Plus选择器获取label值问题</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                element-plus选择器获取label值elementUI选择器选中后，展示用户的是label，方法回调的值是value。如果此时需要select选择器的label值，操作如下：
+&lt;template&gt;
+&lt;el-sel
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Element-Plus/" class="post-category">
+                                    Element-Plus
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/09/08/vue-lu-you-tiao-zhuan-da-kai-xin-biao-qian-ye/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Vue路由跳转打开新标签页">
+                            
+                            <span class="card-title">Vue路由跳转打开新标签页</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                Vue路由跳转打开新标签页let routerUrl = this.$router.resolve({
+  name: 'Order',
+});
+window.open(routerUrl.href, '_blank');
+
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
                             </span>
                             <span class="publish-author">
                                 
@@ -614,8 +911,8 @@
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/%E8%B7%AF%E7%94%B1%E4%BC%A0%E5%8F%82/">
-                            <span class="chip bg-color">路由传参</span>
+                        <a href="/tags/vue3-0/">
+                            <span class="chip bg-color">vue3.0</span>
                         </a>
                         
                     </div>
@@ -625,36 +922,37 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/09/06/js-zhong-foreach-for-in-for-of-xun-huan-yong-fa/">
+                    <a href="/2021/09/08/element-plus-biao-ge-zhi-ti-huan/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="js中forEach，for in，for of循环用法">
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Element-Plus表格值替换">
                             
-                            <span class="card-title">js中forEach，for in，for of循环用法</span>
+                            <span class="card-title">Element-Plus表格值替换</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                js中forEach，for in，for of循环用法
-一、一般的遍历数组的方法:
-var array = [1,2,3,4,5,6,7];
-for (var i = 0; i &lt; array.length; i++) {
-  co
+                                element-plus表格值替换表格从后端获取数据为0，1，2（其中0为性别未知，1为女，2为男）
+&lt;el-table-column
+    prop="status"
+    label="状态"
+    width="150"
+
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/JavaScript/" class="post-category">
-                                    JavaScript
+                                <a href="/categories/Element-Plus/" class="post-category">
+                                    Element-Plus
                                 </a>
                                 
                                 
@@ -668,40 +966,34 @@ for (var i = 0; i &lt; array.length; i++) {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/09/06/js-chang-yong-de-xun-huan-bian-li/">
+                    <a href="/2021/09/08/element-plus-biao-ge-shi-xian-lan-jia-zai-zhan-kai-xing/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="js常用的循环遍历">
+                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Element-Plus表格实现懒加载展开行">
                             
-                            <span class="card-title">js常用的循环遍历</span>
+                            <span class="card-title">Element-Plus表格实现懒加载展开行</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                js常用的循环遍历forEach()遍历数组
-arr.forEach((el,ix) =&gt; {
-    
-})
+                                element-plus表格实现懒加载展开行
 
-
-
-map()
-map()方法定义在JavaScript的Array中，它返回一个新的数组，数组中的元素为原始数组调用函
+支持树类型的数据的显示。当row中包含children字段时，被视为树形数据。渲染树形数据时，必须要指定row-key。支持子节点数据异步加载。设置Table的    lazy属性为true与
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/JavaScript/" class="post-category">
-                                    JavaScript
+                                <a href="/categories/Element-Plus/" class="post-category">
+                                    Element-Plus
                                 </a>
                                 
                                 
@@ -710,56 +1002,34 @@ map()方法定义在JavaScript的Array中，它返回一个新的数组，数组
                     </div>
 
                     
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/ES6/">
-                            <span class="chip bg-color">ES6</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/09/06/es6-ji-chu-zhi-new-set/">
+                    <a href="/2021/09/08/js-sheng-cheng-uuid/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="ES6基础之-new Set">
+                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Js生成UUID">
                             
-                            <span class="card-title">ES6基础之-new Set</span>
+                            <span class="card-title">Js生成UUID</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                ES6基础之-new SetSet 对象存储的值总是唯一的
-Set 对象方法
-
-
-方法
-描述
-
-
-
-add
-添加某个值，返回Set对象本身。
-
-
-clear
-删除所有的键/值对，没有返回值。
-
-
-delete
-删除某个键，返回true。如果
+                                js生成uuid/*uuid*/
+export const uuid =
+    function guid() {
+        function S4() {
+            return (((1 + Math.random
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
                             </span>
                             <span class="publish-author">
                                 
@@ -777,8 +1047,8 @@ delete
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/ES6/">
-                            <span class="chip bg-color">ES6</span>
+                        <a href="/tags/js/">
+                            <span class="chip bg-color">js</span>
                         </a>
                         
                     </div>
@@ -788,36 +1058,35 @@ delete
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/09/06/java-shi-yong-easypoi-dao-chu-excel-bing-zi-dong-sheng-cheng-xu-hao-lie/">
+                    <a href="/2021/09/08/js-shi-jian-ge-shi-hua/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Java使用EasyPOI导出excel并自动生成序号列">
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Js时间格式化">
                             
-                            <span class="card-title">Java使用EasyPOI导出excel并自动生成序号列</span>
+                            <span class="card-title">Js时间格式化</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Java使用EasyPOI导出excel并自动生成序号列
-原有的easyPOI方法导出是不支持自动序号列的，所以此时需要重写EasyPOI方法
-
-添加相关依赖&lt;!-- easyPOI依赖引入--&gt;
-&lt;dependency&
+                                js时间格式化（标准时间转String类型时间）/*时间格式化*/
+export const formatDate = (date) =&gt; {
+    window.console.log(date)
+    if(date.incl
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/Java/" class="post-category">
-                                    Java
+                                <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
                                 </a>
                                 
                                 
@@ -828,306 +1097,8 @@ delete
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/EasyPOI/">
-                            <span class="chip bg-color">EasyPOI</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/09/06/java-shu-chu-liu-zhuan-wei-shu-ru-liu/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Java输出流转为输入流">
-                            
-                            <span class="card-title">Java输出流转为输入流</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Java输出流转为输入流
-OutputStream excelResponse = this.chooseService.exportExcelUserChoose(chooseServiceList);
-
-   /*将文件输出流转为输入流
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-06
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Java/" class="post-category">
-                                    Java
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/OutputStream/">
-                            <span class="chip bg-color">OutputStream</span>
-                        </a>
-                        
-                        <a href="/tags/InputStream/">
-                            <span class="chip bg-color">InputStream</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/09/06/java-huo-qu-zhi-ding-shi-jian/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Java获取指定时间">
-                            
-                            <span class="card-title">Java获取指定时间</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Java获取指定时间
-获取每天上午九点Calendar calendar = Calendar.getInstance();
-calendar.set(Calendar.SECOND, 0);
-calendar.set(Calendar.M
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-06
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Java/" class="post-category">
-                                    Java
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/09/06/date-lei-xing-shi-jian-zhuan-wei-string-lei-xing/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Date类型时间转为String类型">
-                            
-                            <span class="card-title">Date类型时间转为String类型</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Date类型时间转为String类型
-SimpleDateFormat simpleFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-Date time = new Date();
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-06
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Java/" class="post-category">
-                                    Java
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/09/05/java-shi-xian-wen-jian-liu-shu-ru-liu-shang-chuan/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Java实现文件流（输入流）上传">
-                            
-                            <span class="card-title">Java实现文件流（输入流）上传</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Java实现文件流（输入流）上传
-public class HttpHostUtil {
-        /**
-     * 成
-     * 文件流上传
-     * @param postUrl
-     * @param fileN
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-05
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Java/" class="post-category">
-                                    Java
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%96%87%E4%BB%B6%E6%B5%81/">
-                            <span class="chip bg-color">文件流</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/09/05/dong-tai-sql-zhong-if-pan-duan/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="动态SQL中if判断">
-                            
-                            <span class="card-title">动态SQL中if判断</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                动态SQL中if判断
-判断非空&lt;if test="name != null"&gt;
-	and name = #{name}
-&lt;/if&gt;
-
-
-
-判断是否是指定值此时如果使用!=，貌似无效
-应该是
-&lt;if test='
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-05
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/MybatisPlus/" class="post-category">
-                                    MybatisPlus
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/09/05/xiang-mu-zong-jie-yi/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="项目总结（一）">
-                            
-                            <span class="card-title">项目总结（一）</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Vue设置网页标题titlerouter文件夹中的index.jsimport { createRouter, createWebHashHistory } from "vue-router";
-
-const routes = [
-  {
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-05
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/" class="post-category">
-                                    项目总结
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/JavaScript/">
-                            <span class="chip bg-color">JavaScript</span>
-                        </a>
-                        
-                        <a href="/tags/vue3/">
-                            <span class="chip bg-color">vue3</span>
-                        </a>
-                        
-                        <a href="/tags/element-plus/">
-                            <span class="chip bg-color">element-plus</span>
+                        <a href="/tags/js/">
+                            <span class="chip bg-color">js</span>
                         </a>
                         
                     </div>
@@ -1151,7 +1122,7 @@ const routes = [
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">1 / 8</div>
+            <div class="center-align b-text-gray">1 / 10</div>
         </div>
         <div class="col s6 m4 l4">
             
@@ -1236,7 +1207,7 @@ const routes = [
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">154.5k</span>&nbsp;字
+                class="white-color">154.7k</span>&nbsp;字
             
             
             
