@@ -416,14 +416,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-10
+                    2021-09-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    369
+                    412
                 </div>
                 
 
@@ -469,7 +469,7 @@
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> CONCAT<span class="token punctuation">(</span><span class="token string">"%"</span><span class="token punctuation">,</span>t<span class="token punctuation">.</span>username<span class="token punctuation">,</span><span class="token string">"是"</span><span class="token punctuation">,</span>t<span class="token punctuation">.</span>sex<span class="token punctuation">,</span><span class="token string">"的"</span><span class="token punctuation">,</span><span class="token string">"%"</span><span class="token punctuation">)</span> <span class="token keyword">from</span> test <span class="token keyword">as</span> t <span class="token keyword">where</span> t<span class="token punctuation">.</span>id<span class="token operator">=</span><span class="token number">5</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="/2021/09/09/mysql-zhong-de-concat-concat-ws-concat-group-han-shu-jian-qu-bie/image-20210909233222174.png" alt="image-20210909233222174"></p>
-<h1 id="CONCAT-WA-函数"><a href="#CONCAT-WA-函数" class="headerlink" title="CONCAT_WA()函数"></a>CONCAT_WA()函数</h1><blockquote>
+<h1 id="CONCAT-WS-函数"><a href="#CONCAT-WS-函数" class="headerlink" title="CONCAT_WS()函数"></a>CONCAT_WS()函数</h1><blockquote>
 <p>使用此函数可以指定参数之间的分隔符</p>
 </blockquote>
 <h2 id="语法及特点"><a href="#语法及特点" class="headerlink" title="语法及特点"></a>语法及特点</h2><ul>
@@ -488,6 +488,17 @@
 
 <p><img src="/2021/09/09/mysql-zhong-de-concat-concat-ws-concat-group-han-shu-jian-qu-bie/image-20210909234523854.png" alt="image-20210909234523854"></p>
 <h1 id="GROUP-CONCAT-函数"><a href="#GROUP-CONCAT-函数" class="headerlink" title="GROUP_CONCAT()函数"></a>GROUP_CONCAT()函数</h1><h2 id="函数用法"><a href="#函数用法" class="headerlink" title="函数用法"></a>函数用法</h2><p>GROUP_CONCAT函数返回一个字符串结果，该结果由分组中的值连接组合而成。</p>
+<p><img src="/2021/09/09/mysql-zhong-de-concat-concat-ws-concat-group-han-shu-jian-qu-bie/image-20210917232456296.png" alt="image-20210917232456296"></p>
+<ol>
+<li>```sql<br>select GROUP_CONCAT(hobby) from test where name = “张三”<pre class="line-numbers language-none"><code class="language-none">
+![image-20210917232529912](MySQL中的concat-concat-ws-concat-group函数间区别/image-20210917232529912.png)
+
+2. 通过Distinct去重
+
+```sql
+select GROUP_CONCAT(DISTINCT hobby) from test where name = "张三"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<p><img src="/2021/09/09/mysql-zhong-de-concat-concat-ws-concat-group-han-shu-jian-qu-bie/image-20210917232623020.png" alt="image-20210917232623020"></p>
 
                 
             </div>
@@ -1067,7 +1078,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">159.2k</span>&nbsp;字
+                class="white-color">209k</span>&nbsp;字
             
             
             

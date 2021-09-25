@@ -420,14 +420,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-07
+                    2021-09-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    284
+                    356
                 </div>
                 
 
@@ -514,6 +514,22 @@
 <li>Thread.sleep()线程暂停一定时间执行，单位：ms</li>
 </ul>
 <p>通过以上几个方法可以实现每天任意几个时间段执行相关方法</p>
+<h1 id="SpringBoot定时任务示例"><a href="#SpringBoot定时任务示例" class="headerlink" title="SpringBoot定时任务示例"></a>SpringBoot定时任务示例</h1><h2 id="注解-EnableScheduling"><a href="#注解-EnableScheduling" class="headerlink" title="注解@EnableScheduling"></a>注解@EnableScheduling</h2><p>​        在启动类上标记注解  @EnableScheduling</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@EnableScheduling</span> <span class="token comment">// 开启定时任务功能</span>
+<span class="token annotation punctuation">@SpringBootApplication</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AdminApplication</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="注解-Scheduled"><a href="#注解-Scheduled" class="headerlink" title="注解@Scheduled"></a>注解@Scheduled</h2><blockquote>
+<p> @Scheduled(cron = “0 00 06,11,17 * * ?”)</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//cron表达式每周一上午5点初始化用户签到数据   </span>
+<span class="token annotation punctuation">@Scheduled</span><span class="token punctuation">(</span>cron <span class="token operator">=</span> <span class="token string">"0 10 05 * * ?"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">everyDayInitial</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        userDao<span class="token punctuation">.</span><span class="token function">initializeUserName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -1089,7 +1105,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">159.2k</span>&nbsp;字
+                class="white-color">209k</span>&nbsp;字
             
             
             
