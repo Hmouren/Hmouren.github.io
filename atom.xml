@@ -6,7 +6,7 @@
   <link href="https://blog.hmoumou.xyz/atom.xml" rel="self"/>
   
   <link href="https://blog.hmoumou.xyz/"/>
-  <updated>2021-09-25T10:24:06.412Z</updated>
+  <updated>2021-10-03T05:20:32.816Z</updated>
   <id>https://blog.hmoumou.xyz/</id>
   
   <author>
@@ -15,6 +15,89 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java将文件打包为压缩包输出</title>
+    <link href="https://blog.hmoumou.xyz/2021/10/03/java-jiang-wen-jian-da-bao-wei-ya-suo-bao-shu-chu/"/>
+    <id>https://blog.hmoumou.xyz/2021/10/03/java-jiang-wen-jian-da-bao-wei-ya-suo-bao-shu-chu/</id>
+    <published>2021-10-03T04:43:44.000Z</published>
+    <updated>2021-10-03T05:20:32.816Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;Java将文件打包为压缩包输出&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.cnblogs.com/zeng1994/p/7862288.html&quot;&gt;参考文章&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;工具类&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://blog.hmoumou.xyz/categories/Java/"/>
+    
+    
+    <category term="文件压缩导出" scheme="https://blog.hmoumou.xyz/tags/%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9%E5%AF%BC%E5%87%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot+Poi-tl根据Word模板动态生成word（含动态行表格、合并单元格）</title>
+    <link href="https://blog.hmoumou.xyz/2021/10/02/springboot-poi-tl-gen-ju-word-mo-ban-dong-tai-sheng-cheng-word-han-dong-tai-xing-biao-ge-he-bing-dan-yuan-ge/"/>
+    <id>https://blog.hmoumou.xyz/2021/10/02/springboot-poi-tl-gen-ju-word-mo-ban-dong-tai-sheng-cheng-word-han-dong-tai-xing-biao-ge-he-bing-dan-yuan-ge/</id>
+    <published>2021-10-02T11:56:51.000Z</published>
+    <updated>2021-10-03T04:31:11.903Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;SpringBoot+Poi-tl根据Word模板动态生成word（含动态行表格、合并单元格）&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;延伸功能&quot;&gt;&lt;a href=&quot;#延伸功能&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="SpringBoot" scheme="https://blog.hmoumou.xyz/categories/SpringBoot/"/>
+    
+    
+    <category term="Poi-tl" scheme="https://blog.hmoumou.xyz/tags/Poi-tl/"/>
+    
+    <category term="word模板操作" scheme="https://blog.hmoumou.xyz/tags/word%E6%A8%A1%E6%9D%BF%E6%93%8D%E4%BD%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot+Poi-tl根据Word模板动态生成word（含动态行表格）</title>
+    <link href="https://blog.hmoumou.xyz/2021/10/02/springboot-poi-tl-gen-ju-word-mo-ban-dong-tai-sheng-cheng-word-han-dong-tai-xing-biao-ge/"/>
+    <id>https://blog.hmoumou.xyz/2021/10/02/springboot-poi-tl-gen-ju-word-mo-ban-dong-tai-sheng-cheng-word-han-dong-tai-xing-biao-ge/</id>
+    <published>2021-10-02T11:13:43.000Z</published>
+    <updated>2021-10-02T11:56:01.816Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt; &lt;strong&gt;SpringBoot+Poi-tl根据Word模板动态生成word（含动态行表格）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="SpringBoot" scheme="https://blog.hmoumou.xyz/categories/SpringBoot/"/>
+    
+    
+    <category term="Poi-tl" scheme="https://blog.hmoumou.xyz/tags/Poi-tl/"/>
+    
+    <category term="word模板操作" scheme="https://blog.hmoumou.xyz/tags/word%E6%A8%A1%E6%9D%BF%E6%93%8D%E4%BD%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>前端鉴权必须了解的-cookie、session、token、jwt、单点登录</title>
@@ -448,89 +531,6 @@
     
     <category term="Vue" scheme="https://blog.hmoumou.xyz/categories/Vue/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Mysql中通过replace处理uuid数据重复</title>
-    <link href="https://blog.hmoumou.xyz/2021/09/08/mysql-zhong-tong-guo-replace-chu-li-uuid-shu-ju-chong-fu/"/>
-    <id>https://blog.hmoumou.xyz/2021/09/08/mysql-zhong-tong-guo-replace-chu-li-uuid-shu-ju-chong-fu/</id>
-    <published>2021-09-08T15:14:22.000Z</published>
-    <updated>2021-09-08T15:19:22.320Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;问题：在SQL中直接使用replace()去除uuid()中的“-”,可能会造成数据重复&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-sql&quot; data-language=&quot;sql&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
-    <category term="SQL语句" scheme="https://blog.hmoumou.xyz/categories/SQL%E8%AF%AD%E5%8F%A5/"/>
-    
-    
-    <category term="MySQL" scheme="https://blog.hmoumou.xyz/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Js删除字符串最后一个字符</title>
-    <link href="https://blog.hmoumou.xyz/2021/09/08/js-shan-chu-zi-fu-chuan-zui-hou-yi-ge-zi-fu/"/>
-    <id>https://blog.hmoumou.xyz/2021/09/08/js-shan-chu-zi-fu-chuan-zui-hou-yi-ge-zi-fu/</id>
-    <published>2021-09-08T15:08:13.000Z</published>
-    <updated>2021-09-08T15:13:10.876Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;需求：数据str = “测试数据1，测试数据2，”&lt;/p&gt;
-&lt;p&gt;目标：删除最后一个逗号&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;最常用的方法就是通过ｓｕｂｓｔｒｉｎｇ（）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre</summary>
-        
-      
-    
-    
-    
-    <category term="JavaScript" scheme="https://blog.hmoumou.xyz/categories/JavaScript/"/>
-    
-    
-    <category term="js" scheme="https://blog.hmoumou.xyz/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Js获取数组中出现次数最多的元素值</title>
-    <link href="https://blog.hmoumou.xyz/2021/09/08/js-huo-qu-shu-zu-zhong-chu-xian-ci-shu-zui-duo-de-yuan-su-zhi/"/>
-    <id>https://blog.hmoumou.xyz/2021/09/08/js-huo-qu-shu-zu-zhong-chu-xian-ci-shu-zui-duo-de-yuan-su-zhi/</id>
-    <published>2021-09-08T14:58:28.000Z</published>
-    <updated>2021-09-08T15:05:16.993Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;js获取数组中出现次数做多的元素值&quot;&gt;&lt;a href=&quot;#js获取数组中出现次数做多的元素值&quot; class=&quot;headerlink&quot; title=&quot;js获取数组中出现次数做多的元素值&quot;&gt;&lt;/a&gt;js获取数组中出现次数做多的元素值&lt;/h1&gt;&lt;pre</summary>
-        
-      
-    
-    
-    
-    <category term="JavaScript" scheme="https://blog.hmoumou.xyz/categories/JavaScript/"/>
-    
-    
-    <category term="js" scheme="https://blog.hmoumou.xyz/tags/js/"/>
     
   </entry>
   
