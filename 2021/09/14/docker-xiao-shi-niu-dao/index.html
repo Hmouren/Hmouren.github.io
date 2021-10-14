@@ -649,7 +649,7 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]<
 <ul>
 <li><p>可能打包部署的程序会出现<strong>中文乱码问题</strong>,可以参考下方</p>
 <ul>
-<li><p>```shell</p>
+<li><p>```</p>
 <h1 id="Docker-image-for-springboot-file-run"><a href="#Docker-image-for-springboot-file-run" class="headerlink" title="Docker image for springboot file run"></a>Docker image for springboot file run</h1><h1 id="VERSION-0-0-1"><a href="#VERSION-0-0-1" class="headerlink" title="VERSION 0.0.1"></a>VERSION 0.0.1</h1><h1 id="Author-eangulee"><a href="#Author-eangulee" class="headerlink" title="Author: eangulee"></a>Author: eangulee</h1><h1 id="基础镜像使用java"><a href="#基础镜像使用java" class="headerlink" title="基础镜像使用java"></a>基础镜像使用java</h1><p>FROM houwm/jdk8</p>
 <h1 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h1><p>MAINTAINER hmoumou <a href="mailto:huanglei@freedom.com">huanglei@freedom.com</a></p>
 <h1 id="VOLUME-指定了临时文件目录为-tmp。"><a href="#VOLUME-指定了临时文件目录为-tmp。" class="headerlink" title="VOLUME 指定了临时文件目录为/tmp。"></a>VOLUME 指定了临时文件目录为/tmp。</h1><h1 id="其效果是在主机-var-lib-docker-目录下创建了一个临时文件，并链接到容器的-tmp"><a href="#其效果是在主机-var-lib-docker-目录下创建了一个临时文件，并链接到容器的-tmp" class="headerlink" title="其效果是在主机 /var/lib/docker 目录下创建了一个临时文件，并链接到容器的/tmp"></a>其效果是在主机 /var/lib/docker 目录下创建了一个临时文件，并链接到容器的/tmp</h1><p>VOLUME /tmp </p>
