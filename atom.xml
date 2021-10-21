@@ -6,7 +6,7 @@
   <link href="https://hmouren.github.io/atom.xml" rel="self"/>
   
   <link href="https://hmouren.github.io/"/>
-  <updated>2021-10-11T05:33:12.199Z</updated>
+  <updated>2021-10-21T16:03:57.766Z</updated>
   <id>https://hmouren.github.io/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows下nginx部署多个vue项目+转发配置</title>
+    <link href="https://hmouren.github.io/2021/10/21/windows-xia-nginx-bu-shu-duo-ge-vue-xiang-mu-zhuan-fa-pei-zhi/"/>
+    <id>https://hmouren.github.io/2021/10/21/windows-xia-nginx-bu-shu-duo-ge-vue-xiang-mu-zhuan-fa-pei-zhi/</id>
+    <published>2021-10-21T15:04:46.000Z</published>
+    <updated>2021-10-21T16:03:57.766Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;需求：nginx部署两个vue项目，一个是vue-cli3创建，一个是vite创建&lt;/p&gt;
+&lt;p&gt;同时两个项目中会调用后端接口&lt;/p&gt;
+&lt;p&gt;vue中配置的proxy在打包部署后失效，需要通过nginx配置&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p</summary>
+        
+      
+    
+    
+    
+    <category term="项目部署" scheme="https://hmouren.github.io/categories/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="nginx" scheme="https://hmouren.github.io/tags/nginx/"/>
+    
+    <category term="vue部署" scheme="https://hmouren.github.io/tags/vue%E9%83%A8%E7%BD%B2/"/>
+    
+    <category term="vue代理" scheme="https://hmouren.github.io/tags/vue%E4%BB%A3%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>通过EasyPOI&#39;导入excel数据</title>
@@ -537,29 +571,6 @@
       
     
     
-    
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL基础总结</title>
-    <link href="https://hmouren.github.io/2021/09/23/mysql-ji-chu-zong-jie/"/>
-    <id>https://hmouren.github.io/2021/09/23/mysql-ji-chu-zong-jie/</id>
-    <published>2021-09-23T15:34:21.000Z</published>
-    <updated>2021-09-23T15:36:34.767Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Mysql前奏！！！先来个2万字的基础总结&quot;&gt;&lt;a href=&quot;#Mysql前奏！！！先来个2万字的基础总结&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="MySQL" scheme="https://hmouren.github.io/categories/MySQL/"/>
     
     
   </entry>
