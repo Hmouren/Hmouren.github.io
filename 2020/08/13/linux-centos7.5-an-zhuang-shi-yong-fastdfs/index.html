@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
 </head>
 
 
@@ -458,138 +458,138 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="一、安装FastDFS"><a href="#一、安装FastDFS" class="headerlink" title="一、安装FastDFS"></a>一、安装FastDFS</h1><p>new</p>
-<h2 id="1、安装编译工具以及库文件"><a href="#1、安装编译工具以及库文件" class="headerlink" title="1、安装编译工具以及库文件"></a>1、安装编译工具以及库文件</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum -y install make zlib zlib-devel gcc-c++ libtool openssl openssl-devel<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="1、安装编译工具以及库文件"><a href="#1、安装编译工具以及库文件" class="headerlink" title="1、安装编译工具以及库文件"></a>1、安装编译工具以及库文件</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum -y <span class="token function">install</span> <span class="token function">make</span> zlib zlib-devel gcc-c++ libtool openssl openssl-devel<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="2、上传所需文件到linux虚拟机中"><a href="#2、上传所需文件到linux虚拟机中" class="headerlink" title="2、上传所需文件到linux虚拟机中"></a>2、上传所需文件到linux虚拟机中</h2><p>此处放于/usr/local/leyou</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">可以使用xftp工具或者npm install -y lrzsz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">可以使用xftp工具或者npm <span class="token function">install</span> -y lrzsz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="/2020/08/13/linux-centos7.5-an-zhuang-shi-yong-fastdfs/%E8%BD%AF%E4%BB%B6%E7%89%88%E6%9C%AC.png" alt="所需软件版本"></p>
 <h3 style="color:red">建议版本与上述推荐一致，避免不必要的错误</h3>
 
 <h2 id="3、安装libfastcommon"><a href="#3、安装libfastcommon" class="headerlink" title="3、安装libfastcommon"></a>3、安装libfastcommon</h2><p><b>&nbsp; &nbsp; 此处！建议使用libfastcommon-master-zip版本，其余版本eglibfastcommon_v1.04.tar.gz可能在编译安装完成之后，再去FastDFS中编译安装会报错，缺少文件</b></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	mkdir -p /usr/local/leyou
-2	cd /usr/local/leyou
-3	unzip libfastcommon-master.zip    #解压到当前文件夹
-4	cd ./libfastcommon-master
-5	./make.sh &amp;&amp; ./make.sh install    #是c语言写的，实现编译与安装<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token function">mkdir</span> -p /usr/local/leyou
+<span class="token number">2</span>	<span class="token builtin class-name">cd</span> /usr/local/leyou
+<span class="token number">3</span>	<span class="token function">unzip</span> libfastcommon-master.zip    <span class="token comment">#解压到当前文件夹</span>
+<span class="token number">4</span>	<span class="token builtin class-name">cd</span> ./libfastcommon-master
+<span class="token number">5</span>	./make.sh <span class="token operator">&amp;&amp;</span> ./make.sh <span class="token function">install</span>    <span class="token comment">#是c语言写的，实现编译与安装</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 <p>编译安装后，发现libfastcommon默认安装到/usr/lib64/中</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ls | grep libfastcommon.so   #可以通过此命令在/usr/lib64和/usr/lib目录均查看<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">ls</span> <span class="token operator">|</span> <span class="token function">grep</span> libfastcommon.so   <span class="token comment">#可以通过此命令在/usr/lib64和/usr/lib目录均查看</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	cd /usr/lib
-2	ls | grep libfastcommon.so
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token builtin class-name">cd</span> /usr/lib
+<span class="token number">2</span>	<span class="token function">ls</span> <span class="token operator">|</span> <span class="token function">grep</span> libfastcommon.so
 
-3	cd /usr/lib64/
-4	ls | grep libfastcommon.so<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token number">3</span>	<span class="token builtin class-name">cd</span> /usr/lib64/
+<span class="token number">4</span>	<span class="token function">ls</span> <span class="token operator">|</span> <span class="token function">grep</span> libfastcommon.so<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 <p>创建软连接，由于FastDFS主程序设置的目录为/usr/local/lib，所以需要创建/usr/lib64/下的一些核心执行程序的软连接文件</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	cd /usr/local/lib	  #如果不存在则手动创建
-#建立软连接
-2	ln -s /usr/lib64/libfastcommon.so /usr/local/lib/libfastcommon.so
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token builtin class-name">cd</span> /usr/local/lib	  <span class="token comment">#如果不存在则手动创建</span>
+<span class="token comment">#建立软连接</span>
+<span class="token number">2</span>	<span class="token function">ln</span> -s /usr/lib64/libfastcommon.so /usr/local/lib/libfastcommon.so
  
-3	ln -s /usr/lib64/libfastcommon.so /usr/lib/libfastcommon.so  
+<span class="token number">3</span>	<span class="token function">ln</span> -s /usr/lib64/libfastcommon.so /usr/lib/libfastcommon.so  
  
-4	ln -s /usr/lib64/libfdfsclient.so /usr/local/lib/libfdfsclient.so 
+<span class="token number">4</span>	<span class="token function">ln</span> -s /usr/lib64/libfdfsclient.so /usr/local/lib/libfdfsclient.so 
  
-5	ln -s /usr/lib64/libfdfsclient.so /usr/lib/libfdfsclient.so
+<span class="token number">5</span>	<span class="token function">ln</span> -s /usr/lib64/libfdfsclient.so /usr/lib/libfdfsclient.so
 
-#如果是FastDFS5.0.8，在创建时，可能有的会提示已存在（无所谓，下面不做特殊说明，均用5.08版本）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">#如果是FastDFS5.0.8，在创建时，可能有的会提示已存在（无所谓，下面不做特殊说明，均用5.08版本）</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-<h2 id="4、安装FastDFS"><a href="#4、安装FastDFS" class="headerlink" title="4、安装FastDFS"></a>4、安装FastDFS</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	cd /usr/local/leyou
-2	tar -zxvf FastDFS_v5.08.tar.gz
-3	cd ./FastDFS
-4	./make.sh &amp;&amp; ./make.sh install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4、安装FastDFS"><a href="#4、安装FastDFS" class="headerlink" title="4、安装FastDFS"></a>4、安装FastDFS</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token builtin class-name">cd</span> /usr/local/leyou
+<span class="token number">2</span>	<span class="token function">tar</span> -zxvf FastDFS_v5.08.tar.gz
+<span class="token number">3</span>	<span class="token builtin class-name">cd</span> ./FastDFS
+<span class="token number">4</span>	./make.sh <span class="token operator">&amp;&amp;</span> ./make.sh <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>如果编译安装成功,显示如图</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	cd /etc/init.d/
-2	ll
-3	cd /etc/fdfs/
-4	ll<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token builtin class-name">cd</span> /etc/init.d/
+<span class="token number">2</span>	ll
+<span class="token number">3</span>	<span class="token builtin class-name">cd</span> /etc/fdfs/
+<span class="token number">4</span>	ll<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="/2020/08/13/linux-centos7.5-an-zhuang-shi-yong-fastdfs/image-20200813160212569.png" alt="image-20200813160212569"></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd /usr/bin &amp;&amp; ls | grep fdfs	#进入/usr/bin目录下，且显示fdfs的所有执行脚本<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token builtin class-name">cd</span> /usr/bin <span class="token operator">&amp;&amp;</span> <span class="token function">ls</span> <span class="token operator">|</span> <span class="token function">grep</span> fdfs	<span class="token comment">#进入/usr/bin目录下，且显示fdfs的所有执行脚本</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="/2020/08/13/linux-centos7.5-an-zhuang-shi-yong-fastdfs/image-20200813160429865.png" alt="image-20200813160429865"></p>
 <p><b style="color:red">这里提一下，5.05版本需要更改，5.08默认是/usr/bin</b></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	#因为FastDFS服务脚本设置的bin目录为/usr/local/bin/下,但是实际我们安装在了/usr/bin/下面。所以我们需要修改FastDFS配置文件中的路径，也就是需要修改两个配置文件
-2	yum install -y vim
-3	vim /etc/init.d/fdfs_storaged
-4	:%s+/usr/local/bin+/usr/bin #然后回车，执行全局替换命令，:wq!保存退出
-5	vim /etc/init.d/fdfs_trackerd
-6	:%s+/usr/local/bin+/usr/bin #然后回车，执行全局替换命令，:wq!保存退出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token comment">#因为FastDFS服务脚本设置的bin目录为/usr/local/bin/下,但是实际我们安装在了/usr/bin/下面。所以我们需要修改FastDFS配置文件中的路径，也就是需要修改两个配置文件</span>
+<span class="token number">2</span>	yum <span class="token function">install</span> -y <span class="token function">vim</span>
+<span class="token number">3</span>	<span class="token function">vim</span> /etc/init.d/fdfs_storaged
+<span class="token number">4</span>	:%s+/usr/local/bin+/usr/bin <span class="token comment">#然后回车，执行全局替换命令，:wq!保存退出</span>
+<span class="token number">5</span>	<span class="token function">vim</span> /etc/init.d/fdfs_trackerd
+<span class="token number">6</span>	:%s+/usr/local/bin+/usr/bin <span class="token comment">#然后回车，执行全局替换命令，:wq!保存退出</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	cd /etc/fdfs/
-2	cp storage.conf.sample storage.conf
-3	cp client.conf.sample client.conf
-4	cp tracker.conf.sample tracker.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token builtin class-name">cd</span> /etc/fdfs/
+<span class="token number">2</span>	<span class="token function">cp</span> storage.conf.sample storage.conf
+<span class="token number">3</span>	<span class="token function">cp</span> client.conf.sample client.conf
+<span class="token number">4</span>	<span class="token function">cp</span> tracker.conf.sample tracker.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>编辑tracker.conf：</strong></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	vim /etc/fdfs/tracker.conf
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token function">vim</span> /etc/fdfs/tracker.conf
 
-2	base_path=/fastdfs/tracker
+<span class="token number">2</span>	<span class="token assign-left variable">base_path</span><span class="token operator">=</span>/fastdfs/tracker
 
-3	mkdir -p /fastdfs/tracker<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token number">3</span>	<span class="token function">mkdir</span> -p /fastdfs/tracker<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>关闭防火墙</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">systemctl stop firewalld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>启动tracker</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#第一种方式
-1	/etc/init.d/fdfs_trackerd start
-2	/etc/init.d/fdfs_trackerd stop
-#第二种方式
-3	/usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf start #启动tracker命令
-4	/usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf stop #关闭tracker命令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment">#第一种方式</span>
+<span class="token number">1</span>	/etc/init.d/fdfs_trackerd start
+<span class="token number">2</span>	/etc/init.d/fdfs_trackerd stop
+<span class="token comment">#第二种方式</span>
+<span class="token number">3</span>	/usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf start <span class="token comment">#启动tracker命令</span>
+<span class="token number">4</span>	/usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf stop <span class="token comment">#关闭tracker命令</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>如果启动成功</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	ps -ef | grep fdfs	#会出现三个进程
-2	cd /fastdfs/tracker/ &amp;&amp; ll	#会生成data和logs文件夹<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> fdfs	<span class="token comment">#会出现三个进程</span>
+<span class="token number">2</span>	<span class="token builtin class-name">cd</span> /fastdfs/tracker/ <span class="token operator">&amp;&amp;</span> ll	<span class="token comment">#会生成data和logs文件夹</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p><img src="/2020/08/13/linux-centos7.5-an-zhuang-shi-yong-fastdfs/image-20200813161734515.png" alt="image-20200813161734515"></p>
 <p><strong>修改client.conf</strong></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	vim /etc/fdfs/client.conf
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token function">vim</span> /etc/fdfs/client.conf
 
-2	base_path=/fastdfs/tracker
-3	tracker_server=192.168.77.131:22122   #如果是主机连接虚拟机，则填写虚拟机的ip
-4	http.tracker_server_port=80		#端口统一<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token number">2</span>	<span class="token assign-left variable">base_path</span><span class="token operator">=</span>/fastdfs/tracker
+<span class="token number">3</span>	<span class="token assign-left variable">tracker_server</span><span class="token operator">=</span><span class="token number">192.168</span>.77.131:22122   <span class="token comment">#如果是主机连接虚拟机，则填写虚拟机的ip</span>
+<span class="token number">4</span>	http.tracker_server_port<span class="token operator">=</span><span class="token number">80</span>		<span class="token comment">#端口统一</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	vim /etc/fdfs/storage.conf
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token function">vim</span> /etc/fdfs/storage.conf
 
-2	#修改内容如下
-3	base_path=/fastdfs/storage 
-4	store_path0=/fastdfs/storage 
-5	tracker_server=192.168.77.131:22122 ##改成自己的虚拟机IP地址
-6	http.server_port=80<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token number">2</span>	<span class="token comment">#修改内容如下</span>
+<span class="token number">3</span>	<span class="token assign-left variable">base_path</span><span class="token operator">=</span>/fastdfs/storage 
+<span class="token number">4</span>	<span class="token assign-left variable">store_path0</span><span class="token operator">=</span>/fastdfs/storage 
+<span class="token number">5</span>	<span class="token assign-left variable">tracker_server</span><span class="token operator">=</span><span class="token number">192.168</span>.77.131:22122 <span class="token comment">##改成自己的虚拟机IP地址</span>
+<span class="token number">6</span>	http.server_port<span class="token operator">=</span><span class="token number">80</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>启动storaged</strong></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#第一种方法
-1	/etc/init.d/fdfs_storaged start  #启动storaged 
-2	/etc/init.d/fdfs_storaged stop #关闭storaged
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment">#第一种方法</span>
+<span class="token number">1</span>	/etc/init.d/fdfs_storaged start  <span class="token comment">#启动storaged </span>
+<span class="token number">2</span>	/etc/init.d/fdfs_storaged stop <span class="token comment">#关闭storaged</span>
 
-#第二种方法
-3	/usr/bin/fdfs_storaged /etc/fdfs/storage.conf start    #启动storaged
-4   /usr/bin/fdfs_storaged  /etc/fdfs/storage.conf stop    #关闭storaged<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">#第二种方法</span>
+<span class="token number">3</span>	/usr/bin/fdfs_storaged /etc/fdfs/storage.conf start    <span class="token comment">#启动storaged</span>
+<span class="token number">4</span>   /usr/bin/fdfs_storaged  /etc/fdfs/storage.conf stop    <span class="token comment">#关闭storaged</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>如果成功启动</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	cd /fastdfs/storage/data &amp;&amp; ls<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token builtin class-name">cd</span> /fastdfs/storage/data <span class="token operator">&amp;&amp;</span> <span class="token function">ls</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="/2020/08/13/linux-centos7.5-an-zhuang-shi-yong-fastdfs/image-20200813162619756.png" alt="image-20200813162619756"></p>
 <p>设置服务开机自启</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	vim /etc/rc.d/rc.local
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token function">vim</span> /etc/rc.d/rc.local
 
-#加入下列配置
-2	/etc/init.d/fdfs_trackerd start
-3	/etc/init.d/fdfs_storaged start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">#加入下列配置</span>
+<span class="token number">2</span>	/etc/init.d/fdfs_trackerd start
+<span class="token number">3</span>	/etc/init.d/fdfs_storaged start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <img src="/2020/08/13/linux-centos7.5-an-zhuang-shi-yong-fastdfs/image-20200813162903213.png" alt="image-20200813162903213" style="zoom:150%;">
 
@@ -604,93 +604,93 @@
 
 <p>这生成的group1/M00/00/00/wKhNgl80y26ALvZBAAdhomzfHGU319.jpg就是我们访问路径的一部分，完整路径是192.168.77.131/group1/M00/00/00/wKhNgl80y26ALvZBAAdhomzfHGU319.jpg</p>
 <h1 id="二、安装nginx"><a href="#二、安装nginx" class="headerlink" title="二、安装nginx"></a>二、安装nginx</h1><p>·此处建议不用yum方式安装nginx，因为需要添加模块，没有./configure</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	cd /usr/local/leyou
-2	tar -zxvf nginx-1.14.1.tar.gz -C /usr/local<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token builtin class-name">cd</span> /usr/local/leyou
+<span class="token number">2</span>	<span class="token function">tar</span> -zxvf nginx-1.14.1.tar.gz -C /usr/local<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>安装pcre：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#可以直接下载安装包解压，也可以使用wget
-1	cd /usr/local/leyou
-2	yum install -y wget
-3	wget http://downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz #安装pcre
-4 	tar -zxvf pcre-8.35.tar.gz -C /usr/local #解压到/usr/local
-5	cd /usr/local/pcre-8.35
-6	./configure
-7	make &amp;&amp; make install
-8	pcre-config --version #查看版本号<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment">#可以直接下载安装包解压，也可以使用wget</span>
+<span class="token number">1</span>	<span class="token builtin class-name">cd</span> /usr/local/leyou
+<span class="token number">2</span>	yum <span class="token function">install</span> -y <span class="token function">wget</span>
+<span class="token number">3</span>	<span class="token function">wget</span> http://downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz <span class="token comment">#安装pcre</span>
+<span class="token number">4</span> 	<span class="token function">tar</span> -zxvf pcre-8.35.tar.gz -C /usr/local <span class="token comment">#解压到/usr/local</span>
+<span class="token number">5</span>	<span class="token builtin class-name">cd</span> /usr/local/pcre-8.35
+<span class="token number">6</span>	./configure
+<span class="token number">7</span>	<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+<span class="token number">8</span>	pcre-config --version <span class="token comment">#查看版本号</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 <p>进入nginx安装目录</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	cd /usr/local/nginx-1.14.1
-2	./configure --prefix=/usr/local/nginx --with-http_stub_status_module
-3	make &amp;&amp; make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token builtin class-name">cd</span> /usr/local/nginx-1.14.1
+<span class="token number">2</span>	./configure --prefix<span class="token operator">=</span>/usr/local/nginx --with-http_stub_status_module
+<span class="token number">3</span>	<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>启动nginx</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd /usr/nginx
-#可以看到四个文件夹
-#conf配置文件
-#html网页文件
-#logs日志文件
-#sbin主要二进制程序
-#启动nginx
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token builtin class-name">cd</span> /usr/nginx
+<span class="token comment">#可以看到四个文件夹</span>
+<span class="token comment">#conf配置文件</span>
+<span class="token comment">#html网页文件</span>
+<span class="token comment">#logs日志文件</span>
+<span class="token comment">#sbin主要二进制程序</span>
+<span class="token comment">#启动nginx</span>
 ./sbin/nginx
-#查看进程
-ps -ef | grep nginx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">#查看进程</span>
+<span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> nginx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>现在可以在主机的浏览器中输入你的ip地址，效果如下：</p>
 <p><img src="/2020/08/13/linux-centos7.5-an-zhuang-shi-yong-fastdfs/image-20200813164541418.png" alt="image-20200813164541418"></p>
 <h1 id="三、FastDFS与Nginx整合"><a href="#三、FastDFS与Nginx整合" class="headerlink" title="三、FastDFS与Nginx整合"></a>三、FastDFS与Nginx整合</h1><p>首先需要安装fastdfs-nginx-module</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	cd /usr/local/leyou/ &amp;&amp; ll
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token builtin class-name">cd</span> /usr/local/leyou/ <span class="token operator">&amp;&amp;</span> ll
 
-2	tar ./fastdfs-nginx-module_v1.16.tar.gz
-3	cd ./fastdfs-nginx-module/src/
-4	vim ./config
-5	:%s+/usr/local+/usr #将config文件中的/usr/local替换成/usr<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	cd /usr/local/
-2	rm -rf nginx
-3	cd ./nginx-1.14.1
-
-#编译时要添加模块
-./configure --prefix=/usr/local/nginx --add-module=/usr/fastdfs-nginx-module/src
-#这一步可能会报错，直接看下面的错误解决
-
-5	make &amp;&amp; make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#复制fastdfs-nginx-module中的配置文件，到etc/fdfs中
-1	cp /usr/local/leyou/fastdfs-nginx-module/src/mod_fastdfs.conf /etc/fdfs/
-
-#接下来在etc/fdfs中修改盖菜copy的mod_fastdfs.conf文件
-2	vim /etc/fdfs/mod_fastdfs.conf
-
-#修改内容如下
-3	connect_timeout=10 
-4	tracker_server=192.168.59.131:22122 
-5	url_have_group_name = true 
-6	store_path0=/fastdfs/storage<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	cd /usr/local/leyou/FastDFS/conf
-2	cp http.conf mime.types /etc/fdfs
+<span class="token number">2</span>	<span class="token function">tar</span> ./fastdfs-nginx-module_v1.16.tar.gz
+<span class="token number">3</span>	<span class="token builtin class-name">cd</span> ./fastdfs-nginx-module/src/
+<span class="token number">4</span>	<span class="token function">vim</span> ./config
+<span class="token number">5</span>	:%s+/usr/local+/usr <span class="token comment">#将config文件中的/usr/local替换成/usr</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-##创建一个软连接，在/fastdfs/storage文件存储目录下创建软连接，将其链接到实际存放数据 的目录。 
-3	cd /fastdfs/storage   #进入/fastdfs/storage目录下
+
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token builtin class-name">cd</span> /usr/local/
+<span class="token number">2</span>	<span class="token function">rm</span> -rf nginx
+<span class="token number">3</span>	<span class="token builtin class-name">cd</span> ./nginx-1.14.1
+
+<span class="token comment">#编译时要添加模块</span>
+./configure --prefix<span class="token operator">=</span>/usr/local/nginx --add-module<span class="token operator">=</span>/usr/fastdfs-nginx-module/src
+<span class="token comment">#这一步可能会报错，直接看下面的错误解决</span>
+
+<span class="token number">5</span>	<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment">#复制fastdfs-nginx-module中的配置文件，到etc/fdfs中</span>
+<span class="token number">1</span>	<span class="token function">cp</span> /usr/local/leyou/fastdfs-nginx-module/src/mod_fastdfs.conf /etc/fdfs/
+
+<span class="token comment">#接下来在etc/fdfs中修改盖菜copy的mod_fastdfs.conf文件</span>
+<span class="token number">2</span>	<span class="token function">vim</span> /etc/fdfs/mod_fastdfs.conf
+
+<span class="token comment">#修改内容如下</span>
+<span class="token number">3</span>	<span class="token assign-left variable">connect_timeout</span><span class="token operator">=</span><span class="token number">10</span> 
+<span class="token number">4</span>	<span class="token assign-left variable">tracker_server</span><span class="token operator">=</span><span class="token number">192.168</span>.59.131:22122 
+<span class="token number">5</span>	url_have_group_name <span class="token operator">=</span> <span class="token boolean">true</span> 
+<span class="token number">6</span>	<span class="token assign-left variable">store_path0</span><span class="token operator">=</span>/fastdfs/storage<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token builtin class-name">cd</span> /usr/local/leyou/FastDFS/conf
+<span class="token number">2</span>	<span class="token function">cp</span> http.conf mime.types /etc/fdfs
+
+
+<span class="token comment">##创建一个软连接，在/fastdfs/storage文件存储目录下创建软连接，将其链接到实际存放数据 的目录。 </span>
+<span class="token number">3</span>	<span class="token builtin class-name">cd</span> /fastdfs/storage   <span class="token comment">#进入/fastdfs/storage目录下</span>
  
-4	ln -s /fastdfs/storage/data/ /fastdfs/storage/data/M00<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token number">4</span>	<span class="token function">ln</span> -s /fastdfs/storage/data/ /fastdfs/storage/data/M00<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	cd /usr/local/nginx/conf
-2	vim nginx.conf
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token builtin class-name">cd</span> /usr/local/nginx/conf
+<span class="token number">2</span>	<span class="token function">vim</span> nginx.conf
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p><img src="/2020/08/13/linux-centos7.5-an-zhuang-shi-yong-fastdfs/image-20200813165536252.png" alt="image-20200813165536252"></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">location ~/group([0-9])/M00 {            
-        root  /fastdfs/storage/data;
-        ngx_fastdfs_module;
-   }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">location ~/group<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span>-9<span class="token punctuation">]</span><span class="token punctuation">)</span>/M00 <span class="token punctuation">{</span>            
+        root  /fastdfs/storage/data<span class="token punctuation">;</span>
+        ngx_fastdfs_module<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -702,22 +702,22 @@ ps -ef | grep nginx<span aria-hidden="true" class="line-numbers-rows"><span></sp
 <p>查看版本命令：/usr/local/nginx/sbin/nginx -v</p>
 <p>如果直接用nginx -s stop，nginx -s reload,nginx -v    会报错：</p>
 <p><b style="color:red">解决方法</b></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	vim /etc/profile
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	<span class="token function">vim</span> /etc/profile
 
-2	PATH=$PATH:/usr/local/nginx/sbin
+<span class="token number">2</span>	<span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span>:/usr/local/nginx/sbin
 
-3	source /etc/profile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token number">3</span>	<span class="token builtin class-name">source</span> /etc/profile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 <h1 id="四、最后一步测试"><a href="#四、最后一步测试" class="headerlink" title="四、最后一步测试"></a>四、最后一步测试</h1><p>开启storage、tracker、nginx</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">1	/etc/init.d/fdfs_trackerd start
-2	/etc/init.d/fdfs_storaged start
-3	nginx
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">1</span>	/etc/init.d/fdfs_trackerd start
+<span class="token number">2</span>	/etc/init.d/fdfs_storaged start
+<span class="token number">3</span>	nginx
 
-#查看是否启动成功
-4	ps -ef | grep fdfs
-5	ps -ef | grep nginx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">#查看是否启动成功</span>
+<span class="token number">4</span>	<span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> fdfs
+<span class="token number">5</span>	<span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> nginx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 

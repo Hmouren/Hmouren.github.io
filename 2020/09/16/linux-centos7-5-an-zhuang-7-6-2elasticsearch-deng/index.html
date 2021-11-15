@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
 </head>
 
 
@@ -475,52 +475,52 @@
 </ul>
 <h1 id="1-在linux安装elasticsearch"><a href="#1-在linux安装elasticsearch" class="headerlink" title="1.在linux安装elasticsearch"></a>1.在linux安装elasticsearch</h1><h2 id="1-1新建一个用户leyou"><a href="#1-1新建一个用户leyou" class="headerlink" title="1.1新建一个用户leyou"></a>1.1新建一个用户leyou</h2><p>·出于安全考虑，Elasticsearch默认不允许以root账户运行</p>
 <p>创建用户leyou</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">useradd leyou<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">useradd</span> leyou<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>设置密码为leyou</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">passwd leyou<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">passwd</span> leyou<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>切换用户</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">su - leyou<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">su</span> - leyou<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
 <h2 id="1-2解压安装Elasticsearch"><a href="#1-2解压安装Elasticsearch" class="headerlink" title="1.2解压安装Elasticsearch"></a>1.2解压安装Elasticsearch</h2><p>·在root中新增用户之后，会自动在/home/目录下创建对应用户名的文件夹</p>
 <p>·将安装包放于/home/leyou/下</p>
 <p>·退出到root用户中，修改文件的权限为leyou用户leyou组</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">chown leyou:leyou elasticsearch-6.2.4.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">chown</span> leyou:leyou elasticsearch-6.2.4.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>·修改文件的操作权限</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">chmod 755 elasticsearch-6.2.4.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">chmod</span> <span class="token number">755</span> elasticsearch-6.2.4.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
 <p>·使用leyou用户，解压配置elasticsearch-6.2.4.tar.gz</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">su - leyou
-tar -zxvf elasticsearch-6.2.4.tar.gz
-mv elasticsearch-6.2.4.tar.gz elasticsearch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">su</span> - leyou
+<span class="token function">tar</span> -zxvf elasticsearch-6.2.4.tar.gz
+<span class="token function">mv</span> elasticsearch-6.2.4.tar.gz elasticsearch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>· 修改配置文件</p>
 <p>需要注意的是，7.6.2版本应该默认是1g。</p>
 <p>需要将虚拟机的内存调至2g，否者启动报错</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim /elasticsearch/config/jvm.options
-#修改如下
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">vim</span> /elasticsearch/config/jvm.options
+<span class="token comment">#修改如下</span>
 -Xms1g
 -Xmx1g<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim /elasticsearch/config/elasticsearch.yml
-#修改如下
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">vim</span> /elasticsearch/config/elasticsearch.yml
+<span class="token comment">#修改如下</span>
 path.data: /home/leyou/elasticsearch/data
 path.logs: /home/leyou/elasticsearch/logs
-network.host: 0.0.0.0
+network.host: <span class="token number">0.0</span>.0.0
 node.name: node-1
-network.bind_host: 0.0.0.0
-cluster.initial_master_nodes: ["node-1"]
-discovery.zen.minimum_master_nodes: 1
-gateway.recover_after_nodes: 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+network.bind_host: <span class="token number">0.0</span>.0.0
+cluster.initial_master_nodes: <span class="token punctuation">[</span><span class="token string">"node-1"</span><span class="token punctuation">]</span>
+discovery.zen.minimum_master_nodes: <span class="token number">1</span>
+gateway.recover_after_nodes: <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>·在elasticsearch中创建对应的文件夹data</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mkdir -p data<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">mkdir</span> -p data<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 

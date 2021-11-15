@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
 </head>
 
 
@@ -483,24 +483,24 @@
 
 
 
-<h2 id="修改application-yml配置"><a href="#修改application-yml配置" class="headerlink" title="修改application.yml配置"></a>修改application.yml配置</h2><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">#  配置mybatis-Plus
-mybatis-plus:
-  configuration:
-    map-underscore-to-camel-case: true
-    auto-mapping-behavior: full
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  mapper-locations: classpath:mapper/*Mapper.xml
-  global-config:
-#    逻辑删除配置
-    db-config:
-#      删除前
-      logic-not-delete-value: 1
-#      删除后
-      logic-delete-value: 0
-#      驼峰命名
-      table-underline: true
-#      设置扫描实体类
-  type-aliases-package: com.huangl.project.entity<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="修改application-yml配置"><a href="#修改application-yml配置" class="headerlink" title="修改application.yml配置"></a>修改application.yml配置</h2><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token comment">#  配置mybatis-Plus</span>
+<span class="token key atrule">mybatis-plus</span><span class="token punctuation">:</span>
+  <span class="token key atrule">configuration</span><span class="token punctuation">:</span>
+    <span class="token key atrule">map-underscore-to-camel-case</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">auto-mapping-behavior</span><span class="token punctuation">:</span> full
+    <span class="token key atrule">log-impl</span><span class="token punctuation">:</span> org.apache.ibatis.logging.stdout.StdOutImpl
+  <span class="token key atrule">mapper-locations</span><span class="token punctuation">:</span> classpath<span class="token punctuation">:</span>mapper/<span class="token important">*Mapper.xml</span>
+  <span class="token key atrule">global-config</span><span class="token punctuation">:</span>
+<span class="token comment">#    逻辑删除配置</span>
+    <span class="token key atrule">db-config</span><span class="token punctuation">:</span>
+<span class="token comment">#      删除前</span>
+      <span class="token key atrule">logic-not-delete-value</span><span class="token punctuation">:</span> <span class="token number">1</span>
+<span class="token comment">#      删除后</span>
+      <span class="token key atrule">logic-delete-value</span><span class="token punctuation">:</span> <span class="token number">0</span>
+<span class="token comment">#      驼峰命名</span>
+      <span class="token key atrule">table-underline</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token comment">#      设置扫描实体类</span>
+  <span class="token key atrule">type-aliases-package</span><span class="token punctuation">:</span> com.huangl.project.entity<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 

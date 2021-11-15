@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
 </head>
 
 
@@ -472,25 +472,25 @@
 </blockquote>
 <h2 id="一、配置Elasticsearch"><a href="#一、配置Elasticsearch" class="headerlink" title="一、配置Elasticsearch"></a>一、配置Elasticsearch</h2><ol>
 <li><p>修改Elasticsearch配置文件elasticsearch.yml</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">#节点名称（自定义）
-node.name: es-test
-#数据存储位置
-path.data: E:\App\elasticsearch\data
-#日志存储位置
-path.logs: E:\App\elasticsearch\logs
-#绑定访问的主机ip，0.0.0.0为不限制
-network.host: 0.0.0.0
-#绑定的访问端口，默认的为9200
-http.port: 9200
-#集群初始化的主节点，这个需要包含node.name，否则报错
-cluster.inital_master_nodes: ["es-test"]
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token comment">#节点名称（自定义）</span>
+<span class="token key atrule">node.name</span><span class="token punctuation">:</span> es<span class="token punctuation">-</span>test
+<span class="token comment">#数据存储位置</span>
+<span class="token key atrule">path.data</span><span class="token punctuation">:</span> E<span class="token punctuation">:</span>\App\elasticsearch\data
+<span class="token comment">#日志存储位置</span>
+<span class="token key atrule">path.logs</span><span class="token punctuation">:</span> E<span class="token punctuation">:</span>\App\elasticsearch\logs
+<span class="token comment">#绑定访问的主机ip，0.0.0.0为不限制</span>
+<span class="token key atrule">network.host</span><span class="token punctuation">:</span> 0.0.0.0
+<span class="token comment">#绑定的访问端口，默认的为9200</span>
+<span class="token key atrule">http.port</span><span class="token punctuation">:</span> <span class="token number">9200</span>
+<span class="token comment">#集群初始化的主节点，这个需要包含node.name，否则报错</span>
+<span class="token key atrule">cluster.inital_master_nodes</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"es-test"</span><span class="token punctuation">]</span>
 
-#下面的是es-head所需的配置（它是针对elasticsearch的客户端工具）
-http.cors.enabled: true
-http.cors.allow-origin: "*"
-node.master: true
-node.data: true
-xpack.ml.enabled: false<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<span class="token comment">#下面的是es-head所需的配置（它是针对elasticsearch的客户端工具）</span>
+<span class="token key atrule">http.cors.enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">http.cors.allow-origin</span><span class="token punctuation">:</span> <span class="token string">"*"</span>
+<span class="token key atrule">node.master</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">node.data</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">xpack.ml.enabled</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <p>2.修改完成后直接在bin中启动elasticsearch.bat</p>
 <p>浏览器访问 127.0.0.1:9200</p>
@@ -524,24 +524,24 @@ elaticsearch.hosts: ["http://192.168.1.108:9200"]<span aria-hidden="true" class=
 <li><p>创建filetest.conf来配置输入、输出、过滤(这里就直接用logstash本身的日志测试)</p>
 </li>
 <li><p>在config下创建filetest.conf，配置如下</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">input{
-  file{
-    path =&gt; ["E:/App/logstash/logs/logstash-plain.log"]
-    type =&gt; "system-log"
-    start_position =&gt; "beginning"
-  }
-}
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">input<span class="token punctuation">{</span>
+  file<span class="token punctuation">{</span>
+    path =<span class="token punctuation">&gt;</span> <span class="token punctuation">[</span><span class="token string">"E:/App/logstash/logs/logstash-plain.log"</span><span class="token punctuation">]</span>
+    type =<span class="token punctuation">&gt;</span> "system<span class="token punctuation">-</span>log"
+    start_position =<span class="token punctuation">&gt;</span> "beginning"
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
  
-filter{
+filter<span class="token punctuation">{</span>
  
-}
+<span class="token punctuation">}</span>
  
-output{
-  elasticsearch{
-    hosts =&gt; ["192.168.1.108:9200"]
-    index =&gt; "system-log-%{+YYYY.MM}"
-  }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+output<span class="token punctuation">{</span>
+  elasticsearch<span class="token punctuation">{</span>
+    hosts =<span class="token punctuation">&gt;</span> <span class="token punctuation">[</span><span class="token string">"192.168.1.108:9200"</span><span class="token punctuation">]</span>
+    index =<span class="token punctuation">&gt;</span> "system<span class="token punctuation">-</span>log<span class="token punctuation">-</span>%<span class="token punctuation">{</span>+YYYY.MM<span class="token punctuation">}</span>"
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>运行logstash即可，可通过es-head查看</p>
 </li>
@@ -552,9 +552,9 @@ output{
 <h2 id="三、配置es-head"><a href="#三、配置es-head" class="headerlink" title="三、配置es-head"></a>三、配置es-head</h2><ol>
 <li>修改elasticsearch.yml增加参数</li>
 </ol>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">#增加es-head所需参数
-http.cors.enabled: true
-http.cors.allow-origin: "*"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token comment">#增加es-head所需参数</span>
+<span class="token key atrule">http.cors.enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">http.cors.allow-origin</span><span class="token punctuation">:</span> <span class="token string">"*"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <ol start="2">
 <li><p>下载head插件</p>

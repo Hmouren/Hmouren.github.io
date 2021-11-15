@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
 </head>
 
 
@@ -459,7 +459,7 @@
 </blockquote>
 <p>首先通过<code>ip addr</code>查看你的网卡名称</p>
 <p>修改网卡配置文件</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim /etc/sysconfig/network-scripts/ifcfg-ens32<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">vim</span> /etc/sysconfig/network-scripts/ifcfg-ens32<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>如果采用动态获取IP地址修改如下</p>
 <pre class="line-numbers language-none"><code class="language-none">BOOTPROTO="dhcp"
@@ -468,16 +468,16 @@ ONBOOT="yes"
 systemctl restart network<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>不过动态IP有时会自己改变IP地址,不方便使用</p>
-<h1 id="2-配置静态IP地址"><a href="#2-配置静态IP地址" class="headerlink" title="2.配置静态IP地址"></a>2.配置静态IP地址</h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#首先一样还是修改如下
-vim /etc/sysconfig/network-scripts/ifcfg-ens32
-#然后
-BOOTPROTO="static"
-#并且加上如下配置
-IPADDR=192.168.1.160    #IP地址
-NETMASK=255.255.255.0	#子网掩码
-GATEWAY=192.168.1.1		#默认网关
-DNS1=119.29.29.29		#DNS服务器
-DNS2=8.8.8.8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="2-配置静态IP地址"><a href="#2-配置静态IP地址" class="headerlink" title="2.配置静态IP地址"></a>2.配置静态IP地址</h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment">#首先一样还是修改如下</span>
+<span class="token function">vim</span> /etc/sysconfig/network-scripts/ifcfg-ens32
+<span class="token comment">#然后</span>
+<span class="token assign-left variable">BOOTPROTO</span><span class="token operator">=</span><span class="token string">"static"</span>
+<span class="token comment">#并且加上如下配置</span>
+<span class="token assign-left variable">IPADDR</span><span class="token operator">=</span><span class="token number">192.168</span>.1.160    <span class="token comment">#IP地址</span>
+<span class="token assign-left variable">NETMASK</span><span class="token operator">=</span><span class="token number">255.255</span>.255.0	<span class="token comment">#子网掩码</span>
+<span class="token assign-left variable">GATEWAY</span><span class="token operator">=</span><span class="token number">192.168</span>.1.1		<span class="token comment">#默认网关</span>
+<span class="token assign-left variable">DNS1</span><span class="token operator">=</span><span class="token number">119.29</span>.29.29		<span class="token comment">#DNS服务器</span>
+<span class="token assign-left variable">DNS2</span><span class="token operator">=</span><span class="token number">8.8</span>.8.8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>重点讲一下GATEWAY默认网关的配置</strong></p>
 <blockquote>

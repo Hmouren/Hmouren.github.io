@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
 </head>
 
 
@@ -460,15 +460,15 @@
                 <h1 id="一、检查文件是否存在"><a href="#一、检查文件是否存在" class="headerlink" title="一、检查文件是否存在"></a>一、检查文件是否存在</h1><p>文件上传后的真实路径<code>/fastdfs/storage/data/M00/00/00</code></p>
 <h1 id="二、检查nginx能否正常启动"><a href="#二、检查nginx能否正常启动" class="headerlink" title="二、检查nginx能否正常启动"></a>二、检查nginx能否正常启动</h1><h2 id="1、检查nginx的主配置文件（nginx-conf）"><a href="#1、检查nginx的主配置文件（nginx-conf）" class="headerlink" title="1、检查nginx的主配置文件（nginx.conf）"></a>1、检查nginx的主配置文件（nginx.conf）</h2><p><img src="/2020/08/13/fastdfs-wen-jian-shang-chuan-cheng-gong-dan-shi-fang-wen-404-ke-neng-de-yuan-yin/image-20200813170920987.png" alt="image-20200813170920987"></p>
 <h1 id="三、检查FastDFS"><a href="#三、检查FastDFS" class="headerlink" title="三、检查FastDFS"></a>三、检查FastDFS</h1><h2 id="1、检测FastDFS中的配置文件"><a href="#1、检测FastDFS中的配置文件" class="headerlink" title="1、检测FastDFS中的配置文件"></a>1、检测FastDFS中的配置文件</h2><p>storage.conf</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">group_name=group1     
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token assign-left variable">group_name</span><span class="token operator">=</span>group1     
  
-base_path=/fastdfs/storage   
+<span class="token assign-left variable">base_path</span><span class="token operator">=</span>/fastdfs/storage   
  
-store_path0=/fastdfs/storage   
+<span class="token assign-left variable">store_path0</span><span class="token operator">=</span>/fastdfs/storage   
  
-tracker_server=192.168.59.131:22122    
+<span class="token assign-left variable">tracker_server</span><span class="token operator">=</span><span class="token number">192.168</span>.59.131:22122    
  
-http.server_port=80     建议改成80<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+http.server_port<span class="token operator">=</span><span class="token number">80</span>     建议改成80<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
