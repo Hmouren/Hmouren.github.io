@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
 </head>
 
 
@@ -515,11 +515,11 @@
                 </a>
                 
                 
-                <a href="/categories/Vue/" title="Vue: 6">
+                <a href="/categories/Vue/" title="Vue: 7">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #D5F5E3;">Vue
-                        <span class="tag-length">6</span>
+                        <span class="tag-length">7</span>
                     </span>
                 </a>
                 
@@ -677,10 +677,28 @@
                 </a>
                 
                 
-                <a href="/categories/Echarts/" title="Echarts: 1">
+                <a href="/categories/Echarts/" title="Echarts: 4">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
                             style="background-color: #E8F8F5;">Echarts
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Knife4j/" title="Knife4j: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #85C1E9;">Knife4j
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/ElementPlus/" title="ElementPlus: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8C471;">ElementPlus
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -696,6 +714,155 @@
 
     <article id="articles" class="container articles">
         <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/10/30/echarts-tiao-xing-tu-she-zhi-zuo-ce-wen-zi-zuo-dui-qi/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Echarts-条形图设置左侧文字左对齐">
+                            
+                            <span class="card-title">Echarts-条形图设置左侧文字左对齐</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                Echarts-条形图设置左侧文字左对齐
+​        在场景中需要左对齐y轴时，可以通过设置
+grid中的left
+和yAxis中的axisLabel中的margin，相互配合知道达成所需效果
+yAxis:[
+  {
+    axis
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-30
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Echarts/" class="post-category">
+                                    Echarts
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/10/28/echarts-tiao-xing-tu-zeng-jia-dian-ji-shi-jian/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Echarts条形图增加点击事件">
+                            
+                            <span class="card-title">Echarts条形图增加点击事件</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+需求： 点击条形图对应y轴，显示其对应的数据
+我这里数据是，点击获取y轴坐标再用坐标从相应的数组中取值
+y轴1  –&gt;  table[1]
+
+​        点击事件，其实就是在绘制完echarts图后，添加点击方法
+核心代码：
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-28
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Echarts/" class="post-category">
+                                    Echarts
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E5%9B%BE%E5%BD%A2%E7%82%B9%E5%87%BB/">
+                            <span class="chip bg-color">图形点击</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/10/24/echarts-tu-biao-shi-xian-gun-dong-xiao-guo-fei-datazoom/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="echarts图表实现滚动效果（非dataZoom）">
+                            
+                            <span class="card-title">echarts图表实现滚动效果（非dataZoom）</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                ​        首先，echarts中自带的滚动效果dataZoom    会改变echarts图表本身，不符合所需要的要求。
+所需展示效果如下：
+
+
+实现方式：使用两个盒子，内层盒子高度需要溢出，外层高度固定且设置滚动条。
+
+通过ele
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-24
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Echarts/" class="post-category">
+                                    Echarts
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E6%BB%9A%E5%8A%A8%E6%95%88%E6%9E%9C/">
+                            <span class="chip bg-color">滚动效果</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -823,7 +990,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">286.8k</span>&nbsp;字
+                class="white-color">288.6k</span>&nbsp;字
             
             
             
