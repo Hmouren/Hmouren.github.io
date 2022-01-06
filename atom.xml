@@ -6,7 +6,7 @@
   <link href="https://hmouren.github.io/atom.xml" rel="self"/>
   
   <link href="https://hmouren.github.io/"/>
-  <updated>2021-12-15T15:02:42.345Z</updated>
+  <updated>2022-01-04T15:06:35.611Z</updated>
   <id>https://hmouren.github.io/</id>
   
   <author>
@@ -17,11 +17,63 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>表单手机号与座机号正则校验</title>
+    <link href="https://hmouren.github.io/2022/01/04/biao-dan-shou-ji-hao-yu-zuo-ji-hao-zheng-ze-xiao-yan/"/>
+    <id>https://hmouren.github.io/2022/01/04/biao-dan-shou-ji-hao-yu-zuo-ji-hao-zheng-ze-xiao-yan/</id>
+    <published>2022-01-04T15:04:32.000Z</published>
+    <updated>2022-01-04T15:06:35.611Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre class=&quot;line-numbers language-js&quot; data-language=&quot;js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;//验证手机号&lt;/span&gt;
+&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="Vue" scheme="https://hmouren.github.io/categories/Vue/"/>
+    
+    
+    <category term="validator" scheme="https://hmouren.github.io/tags/validator/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>表单身份证号码校验，含最后一位加权校验</title>
+    <link href="https://hmouren.github.io/2022/01/04/biao-dan-shen-fen-zheng-hao-ma-xiao-yan-han-zui-hou-yi-wei-jia-quan-xiao-yan/"/>
+    <id>https://hmouren.github.io/2022/01/04/biao-dan-shen-fen-zheng-hao-ma-xiao-yan-han-zui-hou-yi-wei-jia-quan-xiao-yan/</id>
+    <published>2022-01-04T15:04:07.000Z</published>
+    <updated>2022-01-04T15:07:16.989Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre class=&quot;line-numbers language-js&quot; data-language=&quot;js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;/*验证身份证号码*/&lt;/span&gt;
+&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="Vue" scheme="https://hmouren.github.io/categories/Vue/"/>
+    
+    
+    <category term="validator" scheme="https://hmouren.github.io/tags/validator/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Vue深拷贝</title>
     <link href="https://hmouren.github.io/2021/12/15/vue-shen-kao-bei/"/>
     <id>https://hmouren.github.io/2021/12/15/vue-shen-kao-bei/</id>
     <published>2021-12-15T14:41:36.000Z</published>
-    <updated>2021-12-15T15:02:42.345Z</updated>
+    <updated>2021-12-15T17:09:25.378Z</updated>
     
     
       
@@ -512,61 +564,6 @@
     
     
     <category term="函数" scheme="https://hmouren.github.io/tags/%E5%87%BD%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java将文件打包为压缩包输出</title>
-    <link href="https://hmouren.github.io/2021/10/03/java-jiang-wen-jian-da-bao-wei-ya-suo-bao-shu-chu/"/>
-    <id>https://hmouren.github.io/2021/10/03/java-jiang-wen-jian-da-bao-wei-ya-suo-bao-shu-chu/</id>
-    <published>2021-10-03T04:43:44.000Z</published>
-    <updated>2021-10-03T05:20:32.816Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Java将文件打包为压缩包输出&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.cnblogs.com/zeng1994/p/7862288.html&quot;&gt;参考文章&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;工具类&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://hmouren.github.io/categories/Java/"/>
-    
-    
-    <category term="文件压缩导出" scheme="https://hmouren.github.io/tags/%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9%E5%AF%BC%E5%87%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot+Poi-tl根据Word模板动态生成word（含动态行表格、合并单元格）</title>
-    <link href="https://hmouren.github.io/2021/10/02/springboot-poi-tl-gen-ju-word-mo-ban-dong-tai-sheng-cheng-word-han-dong-tai-xing-biao-ge-he-bing-dan-yuan-ge/"/>
-    <id>https://hmouren.github.io/2021/10/02/springboot-poi-tl-gen-ju-word-mo-ban-dong-tai-sheng-cheng-word-han-dong-tai-xing-biao-ge-he-bing-dan-yuan-ge/</id>
-    <published>2021-10-02T11:56:51.000Z</published>
-    <updated>2021-10-03T04:31:11.903Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;SpringBoot+Poi-tl根据Word模板动态生成word（含动态行表格、合并单元格）&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;延伸功能&quot;&gt;&lt;a href=&quot;#延伸功能&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="SpringBoot" scheme="https://hmouren.github.io/categories/SpringBoot/"/>
-    
-    
-    <category term="Poi-tl" scheme="https://hmouren.github.io/tags/Poi-tl/"/>
-    
-    <category term="word模板操作" scheme="https://hmouren.github.io/tags/word%E6%A8%A1%E6%9D%BF%E6%93%8D%E4%BD%9C/"/>
     
   </entry>
   
