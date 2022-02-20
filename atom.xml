@@ -6,7 +6,7 @@
   <link href="https://hmouren.github.io/atom.xml" rel="self"/>
   
   <link href="https://hmouren.github.io/"/>
-  <updated>2022-01-04T15:06:35.611Z</updated>
+  <updated>2022-02-20T11:31:36.557Z</updated>
   <id>https://hmouren.github.io/</id>
   
   <author>
@@ -15,6 +15,165 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ElementPlus实现滚动加载</title>
+    <link href="https://hmouren.github.io/2022/02/20/elementplus-shi-xian-gun-dong-jia-zai/"/>
+    <id>https://hmouren.github.io/2022/02/20/elementplus-shi-xian-gun-dong-jia-zai/</id>
+    <published>2022-02-20T11:01:06.000Z</published>
+    <updated>2022-02-20T11:31:36.557Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;ElementPlus实现滚动加载&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-vue&quot; data-language=&quot;vue&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="ElementPlus" scheme="https://hmouren.github.io/categories/ElementPlus/"/>
+    
+    
+    <category term="滚动加载" scheme="https://hmouren.github.io/tags/%E6%BB%9A%E5%8A%A8%E5%8A%A0%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自定义音频播放控件</title>
+    <link href="https://hmouren.github.io/2022/02/20/zi-ding-yi-yin-pin-bo-fang-kong-jian/"/>
+    <id>https://hmouren.github.io/2022/02/20/zi-ding-yi-yin-pin-bo-fang-kong-jian/</id>
+    <published>2022-02-20T10:44:59.000Z</published>
+    <updated>2022-02-20T11:28:09.530Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;自定义音频播放控件&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-vue&quot; data-language=&quot;vue&quot;&gt;&lt;code class=&quot;language-vue&quot;&gt;&amp;lt;template&amp;gt;
+  </summary>
+        
+      
+    
+    
+    
+    <category term="自定义" scheme="https://hmouren.github.io/categories/%E8%87%AA%E5%AE%9A%E4%B9%89/"/>
+    
+    
+    <category term="音频控件样式" scheme="https://hmouren.github.io/tags/%E9%9F%B3%E9%A2%91%E6%8E%A7%E4%BB%B6%E6%A0%B7%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ElementPlus实现输入框联想</title>
+    <link href="https://hmouren.github.io/2022/02/20/elementplus-shi-xian-shu-ru-kuang-lian-xiang/"/>
+    <id>https://hmouren.github.io/2022/02/20/elementplus-shi-xian-shu-ru-kuang-lian-xiang/</id>
+    <published>2022-02-20T10:17:03.000Z</published>
+    <updated>2022-02-20T10:28:55.408Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;ElementPlus实现输入框联想&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-vue&quot; data-language=&quot;vue&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="ElementPlus" scheme="https://hmouren.github.io/categories/ElementPlus/"/>
+    
+    
+    <category term="输入框联想" scheme="https://hmouren.github.io/tags/%E8%BE%93%E5%85%A5%E6%A1%86%E8%81%94%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java文件转base64</title>
+    <link href="https://hmouren.github.io/2022/02/09/java-wen-jian-zhuan-base64/"/>
+    <id>https://hmouren.github.io/2022/02/09/java-wen-jian-zhuan-base64/</id>
+    <published>2022-02-09T12:24:21.000Z</published>
+    <updated>2022-02-09T12:26:30.818Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;java文件转base64&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-java&quot; data-language=&quot;java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="Vesper后端工具" scheme="https://hmouren.github.io/categories/Vesper%E5%90%8E%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="java文件流" scheme="https://hmouren.github.io/tags/java%E6%96%87%E4%BB%B6%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>通过文件的url获取获取文件的base64</title>
+    <link href="https://hmouren.github.io/2022/02/09/tong-guo-wen-jian-de-url-huo-qu-huo-qu-wen-jian-de-base64/"/>
+    <id>https://hmouren.github.io/2022/02/09/tong-guo-wen-jian-de-url-huo-qu-huo-qu-wen-jian-de-base64/</id>
+    <published>2022-02-09T12:09:42.000Z</published>
+    <updated>2022-02-09T12:22:57.727Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;通过文件的url获取文件的base64&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;package org.Util;
+
+import</summary>
+        
+      
+    
+    
+    
+    <category term="Vesper后端工具" scheme="https://hmouren.github.io/categories/Vesper%E5%90%8E%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Base64" scheme="https://hmouren.github.io/tags/Base64/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL实现按天、按月聚合，如该天、月无数据补0</title>
+    <link href="https://hmouren.github.io/2022/01/11/mysql-shi-xian-an-tian-an-yue-ju-he-ru-gai-tian-yue-wu-shu-ju-bu-0/"/>
+    <id>https://hmouren.github.io/2022/01/11/mysql-shi-xian-an-tian-an-yue-ju-he-ru-gai-tian-yue-wu-shu-ju-bu-0/</id>
+    <published>2022-01-11T08:52:04.000Z</published>
+    <updated>2022-01-13T08:21:58.651Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;MySQL实现按天、按月聚合，如该天、月无数据补0&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;基础&quot;&gt;&lt;a href=&quot;#基础&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="MySQL" scheme="https://hmouren.github.io/categories/MySQL/"/>
+    
+    
+    <category term="数据聚合" scheme="https://hmouren.github.io/tags/%E6%95%B0%E6%8D%AE%E8%81%9A%E5%90%88/"/>
+    
+  </entry>
   
   <entry>
     <title>表单手机号与座机号正则校验</title>
@@ -391,179 +550,6 @@
     
     <category term="Vesper后端工具" scheme="https://hmouren.github.io/categories/Vesper%E5%90%8E%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>JavaMailSender发送用户注册邮件</title>
-    <link href="https://hmouren.github.io/2021/10/06/javamailsender-fa-song-yong-hu-zhu-ce-you-jian/"/>
-    <id>https://hmouren.github.io/2021/10/06/javamailsender-fa-song-yong-hu-zhu-ce-you-jian/</id>
-    <published>2021-10-06T04:57:45.000Z</published>
-    <updated>2021-10-06T05:08:32.945Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;在用户进行注册操作时，可以通过验证邮箱提高安全性&lt;/li&gt;
-&lt;li&gt;一分钟之内只能发送一个验证码&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="JavaMailSender" scheme="https://hmouren.github.io/categories/JavaMailSender/"/>
-    
-    
-    <category term="发邮件" scheme="https://hmouren.github.io/tags/%E5%8F%91%E9%82%AE%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Echarts实现用户分布图</title>
-    <link href="https://hmouren.github.io/2021/10/06/echarts-shi-xian-yong-hu-fen-bu-tu/"/>
-    <id>https://hmouren.github.io/2021/10/06/echarts-shi-xian-yong-hu-fen-bu-tu/</id>
-    <published>2021-10-06T03:51:35.000Z</published>
-    <updated>2021-10-06T05:00:52.950Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;前端代码&quot;&gt;&lt;a href=&quot;#前端代码&quot; class=&quot;headerlink&quot; title=&quot;前端代码&quot;&gt;&lt;/a&gt;前端代码&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-html&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Echarts" scheme="https://hmouren.github.io/categories/Echarts/"/>
-    
-    
-    <category term="用户分布" scheme="https://hmouren.github.io/tags/%E7%94%A8%E6%88%B7%E5%88%86%E5%B8%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java后端验证码工具类</title>
-    <link href="https://hmouren.github.io/2021/10/05/java-hou-duan-yan-zheng-ma-gong-ju-lei/"/>
-    <id>https://hmouren.github.io/2021/10/05/java-hou-duan-yan-zheng-ma-gong-ju-lei/</id>
-    <published>2021-10-05T08:06:04.000Z</published>
-    <updated>2021-10-05T08:38:07.723Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Java后端验证码工具类&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;CaptchaUtil工具类&quot;&gt;&lt;a href=&quot;#CaptchaUtil工具类&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Vesper后端工具" scheme="https://hmouren.github.io/categories/Vesper%E5%90%8E%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="验证码" scheme="https://hmouren.github.io/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/"/>
-    
-    <category term="Java" scheme="https://hmouren.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java统一返回结果数据</title>
-    <link href="https://hmouren.github.io/2021/10/05/java-tong-yi-fan-hui-jie-guo-shu-ju/"/>
-    <id>https://hmouren.github.io/2021/10/05/java-tong-yi-fan-hui-jie-guo-shu-ju/</id>
-    <published>2021-10-05T07:42:35.000Z</published>
-    <updated>2021-10-05T08:05:34.720Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Java后台统一返回结果类&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;Result-class&quot;&gt;&lt;a href=&quot;#Result-class&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://hmouren.github.io/categories/Java/"/>
-    
-    
-    <category term="后台统一返回结果" scheme="https://hmouren.github.io/tags/%E5%90%8E%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MybatisPlus中使用@TableField完成字段自动填充</title>
-    <link href="https://hmouren.github.io/2021/10/03/mybatisplus-zhong-shi-yong-tablefield-wan-cheng-zi-duan-zi-dong-tian-chong/"/>
-    <id>https://hmouren.github.io/2021/10/03/mybatisplus-zhong-shi-yong-tablefield-wan-cheng-zi-duan-zi-dong-tian-chong/</id>
-    <published>2021-10-03T12:10:29.000Z</published>
-    <updated>2021-10-05T07:41:25.263Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;MybatisPlus中使用@TableField完成字段自动填充&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;字段注解@TableField&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;值&lt;/th&gt;
-</summary>
-        
-      
-    
-    
-    
-    <category term="MyBatisPlus" scheme="https://hmouren.github.io/categories/MyBatisPlus/"/>
-    
-    
-    <category term="字段自动填充" scheme="https://hmouren.github.io/tags/%E5%AD%97%E6%AE%B5%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%85%85/"/>
-    
-    <category term="MetaObjectHandler" scheme="https://hmouren.github.io/tags/MetaObjectHandler/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL函数学习</title>
-    <link href="https://hmouren.github.io/2021/10/03/mysql-han-shu-xue-xi/"/>
-    <id>https://hmouren.github.io/2021/10/03/mysql-han-shu-xue-xi/</id>
-    <published>2021-10-03T05:42:41.000Z</published>
-    <updated>2021-10-03T11:36:11.396Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;学习目标：了解MySQL内置函数&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;MySQL字符串函数&quot;&gt;&lt;a href=&quot;#MySQL字符串函数&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="MySQL" scheme="https://hmouren.github.io/categories/MySQL/"/>
-    
-    
-    <category term="函数" scheme="https://hmouren.github.io/tags/%E5%87%BD%E6%95%B0/"/>
     
   </entry>
   
