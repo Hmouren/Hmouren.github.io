@@ -308,6 +308,87 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2021/09/23/springboot-zhi-mybatis-chuan-can-zuo-wei-zi-duan-biao-ming-de-zhu-yi-shi-xiang/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="SpringBoot之Mybatis传参作为字段/表名的注意事项">
+                            
+                            <span class="card-title">SpringBoot之Mybatis传参作为字段/表名的注意事项</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+在这里容易产生问题，主要是要了解#{} 和 ${}的区别
+
+场景复现一个简单的 demo 来演示下使用姿势，根据传参，来指定排序的字段；
+List&lt;MoneyPo&gt; orderBy(@Param("order")String 
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-23
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                不吃肉夹馍
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/09/23/mysql-ji-chu-zong-jie/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="MySQL基础总结">
+                            
+                            <span class="card-title">MySQL基础总结</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                Mysql前奏！！！先来个2万字的基础总结Windows服务-- 启动MySQL
+    net start mysql
+-- 创建Windows服务
+    sc create mysql binPath= mysqld_bin_path
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-23
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/MySQL/" class="post-category">
+                                    MySQL
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2021/09/23/idea-de-5-da-diao-shi-ji-qiao/">
                         <div class="card-image">
                             
@@ -769,118 +850,6 @@ unique(arr) {
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/09/08/mysql-zhong-tong-guo-replace-chu-li-uuid-shu-ju-chong-fu/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Mysql中通过replace处理uuid数据重复">
-                            
-                            <span class="card-title">Mysql中通过replace处理uuid数据重复</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                问题：在SQL中直接使用replace()去除uuid()中的“-”,可能会造成数据重复
-select REPLACE(uuid(),"-","") as uid,REPLACE(uuid(),"-","") as uid2
-
-
-
-解决方法
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/SQL%E8%AF%AD%E5%8F%A5/" class="post-category">
-                                    SQL语句
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/MySQL/">
-                            <span class="chip bg-color">MySQL</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/09/08/js-shan-chu-zi-fu-chuan-zui-hou-yi-ge-zi-fu/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Js删除字符串最后一个字符">
-                            
-                            <span class="card-title">Js删除字符串最后一个字符</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-需求：数据str = “测试数据1，测试数据2，”
-目标：删除最后一个逗号
-
-
-最常用的方法就是通过ｓｕｂｓｔｒｉｎｇ（）
-
-let strNew = str.substring(0,str.length()-1)
-
-
-
-
-删除特定字符
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/JavaScript/" class="post-category">
-                                    JavaScript
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/js/">
-                            <span class="chip bg-color">js</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -983,7 +952,7 @@ let strNew = str.substring(0,str.length()-1)
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">291.1k</span>&nbsp;字
+                class="white-color">291.5k</span>&nbsp;字
             
             
             
