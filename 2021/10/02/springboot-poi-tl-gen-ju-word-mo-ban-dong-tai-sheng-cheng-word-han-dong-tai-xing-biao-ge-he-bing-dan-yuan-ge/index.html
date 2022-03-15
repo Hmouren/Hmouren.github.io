@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
 </head>
 
 
@@ -420,14 +420,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-03
+                    2022-03-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.2k
+                    5.3k
                 </div>
                 
 
@@ -459,7 +459,21 @@
             <div id="articleContent">
                 <p><strong>SpringBoot+Poi-tl根据Word模板动态生成word（含动态行表格、合并单元格）</strong></p>
 <h1 id="延伸功能"><a href="#延伸功能" class="headerlink" title="延伸功能"></a>延伸功能</h1><p><strong>功能1：导出多个动态行表格（固定个数）<br>功能2：导出循环列表下的动态行表格（个数不固定）<br>功能3：导出合并单元格<br>功能4：导出循环列表下合并单元格<br>功能5：导出循环列表下合并单元格、外加一个动态行表格</strong></p>
-<h1 id="导出多个动态行表格（固定个数）"><a href="#导出多个动态行表格（固定个数）" class="headerlink" title="导出多个动态行表格（固定个数）"></a>导出多个动态行表格（固定个数）</h1><h2 id="新建word模板"><a href="#新建word模板" class="headerlink" title="新建word模板"></a>新建word模板</h2><p><img src="/2021/10/02/springboot-poi-tl-gen-ju-word-mo-ban-dong-tai-sheng-cheng-word-han-dong-tai-xing-biao-ge-he-bing-dan-yuan-ge/image-20211003110652907.png" alt="image-20211003110652907"></p>
+<h1 id="导出多个动态行表格（固定个数）"><a href="#导出多个动态行表格（固定个数）" class="headerlink" title="导出多个动态行表格（固定个数）"></a>导出多个动态行表格（固定个数）</h1><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/*当前工作目录，用户获取当前项目运行所在盘符*/</span>
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">String</span> panFu <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"user.dir"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"user.dir"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">":"</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"user.dir"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">":"</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//获取项目中静态文档 </span>
+<span class="token comment">//word模板地址获取方式一：缺点---打jar包获取不到该路径</span>
+<span class="token comment">//			String basePath=ClassUtils.getDefaultClassLoader().getResource("").getPath()+"static/template/";</span>
+<span class="token comment">//			String resource =basePath+"order2.docx";//word模板地址</span>
+<span class="token comment">//word模板地址获取 此种不会在jar包或者linux中失效，但是路径不能有中文</span>
+            <span class="token class-name">ClassPathResource</span> classPathResource <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathResource</span><span class="token punctuation">(</span><span class="token string">"static/template/template.docx"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+<h2 id="新建word模板"><a href="#新建word模板" class="headerlink" title="新建word模板"></a>新建word模板</h2><p><img src="/2021/10/02/springboot-poi-tl-gen-ju-word-mo-ban-dong-tai-sheng-cheng-word-han-dong-tai-xing-biao-ge-he-bing-dan-yuan-ge/image-20211003110652907.png" alt="image-20211003110652907"></p>
 <h2 id="在exportWordController类中，编写导出方法"><a href="#在exportWordController类中，编写导出方法" class="headerlink" title="在exportWordController类中，编写导出方法"></a>在exportWordController类中，编写导出方法</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java">	<span class="token comment">/**
 	 * 销售订单信息导出word --- poi-tl（包含两个动态行表格）
 	 * @throws IOException 
@@ -1874,7 +1888,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">292.8k</span>&nbsp;字
+                class="white-color">294.7k</span>&nbsp;字
             
             
             

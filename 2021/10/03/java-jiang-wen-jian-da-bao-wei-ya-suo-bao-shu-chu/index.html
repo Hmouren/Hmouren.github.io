@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="随笔" type="application/atom+xml">
 </head>
 
 
@@ -416,14 +416,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-03
+                    2022-03-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    334
+                    333
                 </div>
                 
 
@@ -476,8 +476,8 @@
      * @param srcDir  压缩文件夹路径
      * @param outputStream 压缩文件输出流
      * @param keepDirStructure 是否保留原来的目录结构，
-     *                         true：保留目录结构
-     *                         false：所以文件跑到压缩包根目录下（不保留目录结构可能会出现同名文件，导致压缩失败）
+     * true：保留目录结构
+     * false：所以文件跑到压缩包根目录下（不保留目录结构可能会出现同名文件，导致压缩失败）
      */</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">zipFiles</span><span class="token punctuation">(</span>
             <span class="token class-name">String</span> srcDir<span class="token punctuation">,</span> <span class="token class-name">OutputStream</span> outputStream<span class="token punctuation">,</span> <span class="token keyword">boolean</span> keepDirStructure
@@ -537,14 +537,16 @@
 
 
 
-<h1 id="方法调用，参数"><a href="#方法调用，参数" class="headerlink" title="方法调用，参数"></a>方法调用，参数</h1><pre class="line-numbers language-none"><code class="language-none">//将月报word写入目录
-            String yueBaoDir= panFu+dateFormat.format(new Date())+"月报/";
-/*导出文件压缩包*/
-File[] yueBaoFiles = {new File(temDir+fileName)};
-File zipFile = new File(yueBaoDir + ".zip");
-FileOutputStream fileOutputStream = new FileOutputStream(zipFile);
-//调用压缩方法
-VesperZipFiles.zipFiles(yueBaoDir,fileOutputStream,true);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="方法调用，参数"><a href="#方法调用，参数" class="headerlink" title="方法调用，参数"></a>方法调用，参数</h1><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//将月报word写入目录</span>
+<span class="token class-name">String</span> yueBaoDir<span class="token operator">=</span> <span class="token string">"D:/exportFile/file"</span><span class="token punctuation">;</span>
+<span class="token comment">/*导出文件压缩包*/</span>
+<span class="token class-name">File</span><span class="token punctuation">[</span><span class="token punctuation">]</span> yueBaoFiles <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D:/exportFile/file"</span><span class="token operator">+</span><span class="token string">"file"</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token class-name">File</span> zipFile <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span> <span class="token string">"D:/exportFile"</span> <span class="token operator">+</span> <span class="token string">".zip"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">FileOutputStream</span> fileOutputStream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span>zipFile<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//调用压缩方法</span>
+<span class="token class-name">VesperZipFiles</span><span class="token punctuation">.</span><span class="token function">zipFiles</span><span class="token punctuation">(</span>yueBaoDir<span class="token punctuation">,</span>fileOutputStream<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
                 
             </div>
             <hr/>
@@ -1135,7 +1137,7 @@ VesperZipFiles.zipFiles(yueBaoDir,fileOutputStream,true);<span aria-hidden="true
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">292.8k</span>&nbsp;字
+                class="white-color">294.7k</span>&nbsp;字
             
             
             
